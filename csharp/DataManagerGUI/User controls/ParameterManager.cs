@@ -341,9 +341,6 @@ namespace DataManagerGUI
                             txtReplaceOldValue.Text = splitStr[0];
                         if (splitStr.Length > 1)
                             txtReplaceNewValue.Text = splitStr[1];
-
-                        txtReplaceNewValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text));
-                        txtReplaceOldValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text));
                     }
                     else if (cmbModifier.Text == "RegExVarReplace" || cmbModifier.Text == "RegExVarAppend")
                     {
@@ -355,8 +352,6 @@ namespace DataManagerGUI
                         pnlMultiValues.Visible = true;
                         txtMultiValue.Text = txtTextValue.Text;
                         txtMultiValue_TextChanged(sender, e);
-
-                        txtMultiValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text));
                     }
                     else
                         switch (cmbModifier.Text)
@@ -364,15 +359,9 @@ namespace DataManagerGUI
                             case "Calc":
                                 pnlCalcValue.Visible = true;
                                 txtCalcValue.Text = txtTextValue.Text;
-                                txtCalcValue.AutoCompleteMode = AutoCompleteMode.Append;
-                                txtCalcValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text + "_Calc"));
                                 break;
                             default:
-
                                 pnlTextValue.Visible = true;
-                                if (userInfo != null)
-                                    txtTextValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text));
-
                                 break;
                         }
                     break;
@@ -385,15 +374,12 @@ namespace DataManagerGUI
                             txtReplaceOldValue.Text = splitStr[0];
                         if (splitStr.Length > 1)
                             txtReplaceNewValue.Text = splitStr[1];
-                        txtReplaceOldValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text));
-                        txtReplaceNewValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text));
                     }
                     else if (Global.MultiParamKeyModifiers.Contains(cmbModifier.Text))
                     {
                         pnlMultiValues.Visible = true;
                         txtMultiValue.Text = txtTextValue.Text;
                         txtMultiValue_TextChanged(sender, e);
-                        txtMultiValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text));
                     }
                     else
                         switch (cmbModifier.Text)
@@ -401,7 +387,6 @@ namespace DataManagerGUI
                             case "Calc":
                                 pnlCalcValue.Visible = true;
                                 txtCalcValue.Text = txtTextValue.Text;
-                                txtCalcValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text + "_Calc"));
                                 break;
                             default:
                                 switch (_type)
@@ -411,11 +396,9 @@ namespace DataManagerGUI
                                         PopulateMultiSelect(Global.GetKeyType(cmbField.Text));
                                         cmbTextValue.Text = txtTextValue.Text;
                                         cmbTextValue.AutoCompleteCustomSource.Clear();
-                                        cmbTextValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text));
                                         break;
                                     default:
                                         pnlTextValue.Visible = true;
-                                        txtTextValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text));
                                         break;
                                 }
                                 break;
@@ -440,7 +423,6 @@ namespace DataManagerGUI
                                 pnlCalcValue.Visible = true;
                                 txtCalcValue.ReadOnly = false;
                                 txtCalcValue_TextChanged(sender, e);
-                                txtCalcValue.AutoCompleteCustomSource.AddRange(userInfo.GetAutoComplete(cmbField.Text + "_Calc"));
                                 break;
                             case "SetValue":
                                 pnlNumericValue.Visible = true;
@@ -890,16 +872,6 @@ namespace DataManagerGUI
         {
             string tmpString = string.Format("<<{0}.{1}:{2}>>", new string[] { cmbField.Text, cmbModifier.Text, txtTextValue.Text });
             keyType tmpKeyType = Global.GetKeyType(cmbField.Text);
-            if (cmbModifier.Text == "Calc")
-                userInfo.AddAutoComplete(cmbField.Text + "_Calc", txtTextValue.Text);
-            else
-                switch (tmpKeyType)
-                {
-                    case keyType.List:
-                    case keyType.String:
-                        userInfo.AddAutoComplete(cmbField.Text, txtTextValue.Text);
-                        break;
-                }
 
             if (this.ParameterTypeRestriction == ParameterType.Rule)
                 return new dmRule(tmpString);

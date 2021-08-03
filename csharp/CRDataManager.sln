@@ -1,45 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataManager", "DataManager", "{F3D9EDEE-D887-4D3A-992C-A3B6963D2D3B}"
-	ProjectSection(SolutionItems) = preProject
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Add.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Add.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Apply.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Apply.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\AutoCreate16.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\AutoCreate16.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\back.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\back.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dataman.dat = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dataman.dat
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dataman.ini = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dataman.ini
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\DataMan.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\DataMan.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\DataMan16.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\DataMan16.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\DataMan32.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\DataMan32.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Delete16.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Delete16.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dmAutoCreate.py = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dmAutoCreate.py
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dmClasses.py = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dmClasses.py
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dmGlobals.py = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dmGlobals.py
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dmMod.py = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\dmMod.py
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\document-new.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\document-new.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Down.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Down.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\edit-cut.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\edit-cut.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\edit-paste.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\edit-paste.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Erase.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Erase.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\find.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\find.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\forward.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\forward.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\guidebug.log = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\guidebug.log
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\home.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\home.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\iniReadWrite.py = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\iniReadWrite.py
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Lightning.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Lightning.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Package.ini = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Package.ini
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\pyevent.py = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\pyevent.py
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\reload.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\reload.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\runProcess.py = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\runProcess.py
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\stop.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\stop.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Text.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Text.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\trash.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\trash.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\up.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\up.png
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\user.ini = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\user.ini
-		C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Yes.png = C:\Users\t3kn0gh057\AppData\Roaming\cYo\ComicRack\Scripts\Data Manager Mod\Yes.png
-	EndProjectSection
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagerGUI", "DataManagerGUI\DataManagerGUI.csproj", "{B313F337-EAF7-4516-BA61-0A96A265EAE1}"
 EndProject
 Global
@@ -55,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA0F94F2-950E-40D9-B576-C37AB812CC3F}
 	EndGlobalSection
 EndGlobal

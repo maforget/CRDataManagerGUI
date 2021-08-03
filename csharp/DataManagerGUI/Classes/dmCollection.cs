@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 using System.Xml.Linq;
 
 namespace DataManagerGUI
@@ -364,6 +365,7 @@ namespace DataManagerGUI
 
         public void Save(string strFileandPathName)
         {
+            Version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             XDocument x = new XDocument(new XDeclaration("1.0", "utf-8", "yes"));
             x.Add(this.ToXML("collection"));
             x.Save(strFileandPathName);

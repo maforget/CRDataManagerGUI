@@ -10,7 +10,7 @@ namespace DataManagerGUI
     {
         public abstract string Match { get; }
         public abstract int Length { get; }
-        public string Location { get; set; }
+        public abstract string Location { get; set; }
     }
 
     class TreeSearchResults : SearchResults
@@ -22,7 +22,7 @@ namespace DataManagerGUI
             get
             {
                 if (_node != null)
-                    return _node.Text;
+                    return ((dmNode)_node.Tag).Name;
                 else
                     return "";
             }
@@ -55,6 +55,7 @@ namespace DataManagerGUI
                 return _node;
             }
         }
+        public override string Location { get; set; }
 
         public TreeSearchResults(System.Windows.Forms.TreeNode tnNode)
         {
@@ -64,7 +65,7 @@ namespace DataManagerGUI
         public TreeSearchResults(System.Windows.Forms.TreeNode tnNode, string strLocation)
         	:this(tnNode)
         {
-            this.Location = strLocation;
+            Location = strLocation;
         }
         
         public override int Length
@@ -90,5 +91,6 @@ namespace DataManagerGUI
                     return ((dmRuleset)_node.Tag).QuickView;
             }
         }
+
     }
 }

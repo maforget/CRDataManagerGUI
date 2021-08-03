@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace DataManagerGUI
@@ -9,7 +10,6 @@ namespace DataManagerGUI
     {
         public const string Divider = "# -------------------------------";
         public const string GroupHeader = "#@ GROUP ";
-        public static string GroupFilterAndDefaults = "@ FILTERSANDDEFAULTS ";
         public const string EndOfGroup = "#@ END_GROUP";
         public const string RulesetNameHeader = "#@ NAME ";
         public const string CommentHeader = "@ COMMENT ";
@@ -21,11 +21,12 @@ namespace DataManagerGUI
         public const string EndOfNotes = "#@ END_NOTES";
         public const string InvalidRuleset = "#@ Invalid Ruleset ";
         public const string MultiModUpdateVersion = "1.2.0.0";
+        public static string GroupFilterAndDefaults = "@ FILTERSANDDEFAULTS ";
         public static SortedDictionary<string, string> LanguageISOs = new SortedDictionary<string, string>();
 
         //from dataman.ini
 
-        public static string CurrentVersion = "1.2.0";
+        public static string CurrentVersion = Assembly.GetCallingAssembly().GetName().Version.ToString();
         public static string DELIMITER = "||";
         public static string[] AllowedKeys = new string[0];
         public static string[] AllowedValues = new string[0];
@@ -81,6 +82,7 @@ namespace DataManagerGUI
             List<string> arrAllowedModifiers = new List<string>();
             switch (FieldType)
             {
+                case keyType.Custom:
                 case keyType.String:
                     arrAllowedModifiers = new List<string>(StringKeysModifiers);
                     break;
@@ -107,7 +109,7 @@ namespace DataManagerGUI
                     arrAllowedModifiers = new List<string>(DateTimeKeyModifiers);
                     break;
                 default:
-                    arrAllowedModifiers = new List<string>(CustomKeyModifiers);
+                    arrAllowedModifiers = new List<string>();
                     break;
             }
             return arrAllowedModifiers.ToArray();
@@ -123,8 +125,9 @@ namespace DataManagerGUI
             List<string> arrAllowedModifiers = new List<string>();
             switch (FieldType)
             {
+                case keyType.Custom:
                 case keyType.String:
-                    arrAllowedModifiers = new List<string>(AllowedValueModifiers);
+                    arrAllowedModifiers = new List<string>(StringValueModifiers);
                     break;
                 case keyType.Bool:
                     arrAllowedModifiers = new List<string>(BoolValueModifiers);
@@ -145,9 +148,6 @@ namespace DataManagerGUI
                 case keyType.MangaYesNo:
                     arrAllowedModifiers = new List<string>(MangaYesNoValueModifiers);
                     break;
-                case keyType.Custom:
-                    arrAllowedModifiers = new List<string>(CustomValueModifiers);
-                    break;
                 case keyType.DateTime:
                     arrAllowedModifiers = new List<string>(DateTimeValueModifiers);
                     break;
@@ -158,18 +158,7 @@ namespace DataManagerGUI
         }
         public static string[] GetAllowedValueModifiers(string strAllowedKey)
         {
-            List<string> AllowedModifiers;
-            if (!ReadOnlyKeys.Contains(strAllowedKey))
-            { AllowedModifiers = new List<string>(GetAllowedValueModifiers(GetKeyType(strAllowedKey))); }
-            else
-            { AllowedModifiers = new List<string>(); }
-
-            if (AllowedRegExVarReplace.Contains(strAllowedKey) || GetKeyType(strAllowedKey) == keyType.Custom)
-            {
-                AllowedModifiers.Add("RegExVarReplace");
-                AllowedModifiers.Add("RegExVarAppend");
-            }
-
+            List<string> AllowedModifiers = !ReadOnlyKeys.Contains(strAllowedKey) ? new List<string>(GetAllowedValueModifiers(GetKeyType(strAllowedKey))) : new List<string>();
             return AllowedModifiers.ToArray();
         }
 

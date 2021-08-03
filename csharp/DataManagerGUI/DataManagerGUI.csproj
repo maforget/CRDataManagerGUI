@@ -120,7 +120,6 @@
     <Compile Include="Classes\dmParameters.cs" />
     <Compile Include="Classes\dmRuleset.cs" />
     <Compile Include="Classes\dmSearchResults.cs" />
-    <Compile Include="Classes\dmTemplate.cs" />
     <Compile Include="Classes\dmUserInfo.cs" />
     <Compile Include="Utilities\DragHelper.cs" />
     <Compile Include="Utilities\Extensions.cs" />
@@ -173,9 +172,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="app.config" />
-    <None Include="bin\Debug\dataman.ini" />
-    <None Include="bin\Debug\user.ini" />
+    <None Include="dataman.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\DataSources\TextSearchResults.datasource" />
     <None Include="Properties\DataSources\TreeSearchResults.datasource" />
     <None Include="Properties\Settings.settings">
@@ -187,6 +190,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="user.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DataMan.png" />

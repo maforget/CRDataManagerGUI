@@ -9,8 +9,6 @@ namespace DataManagerGUI
     [Serializable]
     public class dmRuleset : dmNode, IEquatable<dmRuleset>
     {
-        private string _original;
-
         public string QuickView
         {
             get
@@ -22,14 +20,11 @@ namespace DataManagerGUI
         {
             get
             {
-                if (string.IsNullOrEmpty(_original))
-                    return QuickView;
-                else
-                    return _original;
+                return QuickView;
             }
             set
             {
-                _original = value;
+                FromXML(value);
             }
         }
         public RulesetModes RuleMode { get; set; }
@@ -222,28 +217,7 @@ namespace DataManagerGUI
 
         public override string ToString()
         {
-            string strReturn = "";
-            if (RuleMode == RulesetModes.OR)
-            {
-                strReturn += "|";
-            }
-
-            for (int i = 0; i < Rules.Count; i++)
-            {
-                strReturn += Rules[i].Compile() + " ";
-            }
-
-            strReturn += "=> ";
-
-            for (int i = 0; i < Actions.Count; i++)
-            {
-                strReturn += Actions[i].Compile();
-                if (i != Actions.Count - 1)
-                {
-                    strReturn += " ";
-                }
-            }
-            return strReturn;
+            return ToXML("ruleset").ToString().Replace("\r", "").Replace("\n", "");
         }
 
         public string[] Compile()
@@ -307,12 +281,19 @@ namespace DataManagerGUI
 
         public override void FromXML(XElement xParameters)
         {
+            Clear();
             base.FromXML(xParameters);
             this.RuleMode = (RulesetModes)Enum.Parse(typeof(RulesetModes), xParameters.Attribute("rulesetmode").Value);
             foreach (XElement item in xParameters.Elements("rule"))
                 this.Rules.Add(new dmRule(item));
             foreach (XElement item in xParameters.Elements("action"))
                 this.Actions.Add(new dmAction(item));
+        }
+
+        public void FromXML(string xString)
+        {
+            XElement xParameters = XElement.Parse(xString);
+            FromXML(xParameters);
         }
 
         public override void Clear()

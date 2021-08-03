@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Threading;
 using System.Globalization;
+using System.Xml.Linq;
 
 namespace DataManagerGUI
 {
@@ -57,10 +58,24 @@ namespace DataManagerGUI
                 Clipboard.SetData(typeof(dmRule).FullName, ((dmRule)item).ToXML("rule").ToString());
             else if (item.GetType() == typeof(dmAction))
                 Clipboard.SetData(typeof(dmAction).FullName, ((dmAction)item).ToXML("action").ToString());
-            else if (item.GetType() == typeof(dmRuleTemplate))
-                Clipboard.SetData(item.GetType().FullName, ((dmRuleTemplate)item).ToXML("ruletemplate").ToString());
-            else if (item.GetType() == typeof(dmActionTemplate))
-                Clipboard.SetData(item.GetType().FullName, ((dmActionTemplate)item).ToXML("actiontemplate").ToString());
+            else if (item.GetType() == typeof(List<dmRule>))
+            {
+                XElement xElement = new XElement("rules");
+                foreach (dmRule item2 in (List<dmRule>)item)
+                {
+                    xElement.Add(item2.ToXML("rule"));
+                }
+                Clipboard.SetData(item.GetType().FullName, xElement.ToString());
+            }
+            else if (item.GetType() == typeof(List<dmAction>))
+            {
+                XElement xElement = new XElement("actions");
+                foreach (dmAction item3 in (List<dmAction>)item)
+                {
+                    xElement.Add(item3.ToXML("action"));
+                }
+                Clipboard.SetData(item.GetType().FullName, xElement.ToString());
+            }
         }
-    }    
+    }
 }

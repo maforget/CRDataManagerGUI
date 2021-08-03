@@ -12,7 +12,7 @@ namespace DataManagerGUI
         Ruleset = 2,
         Rule = 3,
         Action = 4, 
-        RuleTemplate = 5,
-        ActionTemplate = 6        
+        ListOfRules = 5,
+        ListOfActions = 6        
     }
 }

@@ -16,8 +16,6 @@ namespace DataManagerGUI
 
     public class dmUserInfo
     {
-        public List<dmTemplate> RuleTemplates { get; set; }
-        public List<dmTemplate> ActionTemplates { get; set; }
         Dictionary<string, string> KeyStorage { get; set; }
         DebugLevel DebugLevel { get; set; }
 
@@ -120,8 +118,6 @@ namespace DataManagerGUI
         public dmUserInfo()
         {
             KeyStorage = new Dictionary<string, string>();
-            RuleTemplates = new List<dmTemplate>();
-            ActionTemplates = new List<dmTemplate>();
             ConfirmOverwrite = true;
             DateTimeFormat = "yyyy/MM/dd hh:mm:dd";
             BreakAfterFirstError = false;
@@ -185,11 +181,7 @@ namespace DataManagerGUI
             Dictionary<string, string> tmpKeys = ConfigHandler.ReadAllKeys(strFilePath);
             foreach (KeyValuePair<string, string> item in tmpKeys)
             {
-                if (item.Key.StartsWith("RuleTemplate_")) 
-                    RuleTemplates.Add(new dmRuleTemplate(item.Key.Replace("RuleTemplate_", ""), item.Value));
-                else if (item.Key.StartsWith("ActionTemplate_")) 
-                    ActionTemplates.Add(new dmActionTemplate(item.Key.Replace("ActionTemplate_", ""), item.Value));
-                else if (item.Key.StartsWith("AutoComplete_"))
+                if (item.Key.StartsWith("AutoComplete_"))
                     AutoCompleteStrings.Add(item.Key.Replace("AutoComplete_", ""), new List<string>(item.Value.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)));
                 else 
                     AddToKeyStorage(item.Key, item.Value);
@@ -210,32 +202,10 @@ namespace DataManagerGUI
 
             foreach (KeyValuePair<string, string> item in KeyStorage)
                 tmpKeys.Add(item.Key, item.Value);
-            for (int i = 0; i < RuleTemplates.Count; i++)
-                tmpKeys.Add("RuleTemplate_" + RuleTemplates[i].Name, RuleTemplates[i].ToString());
-            for (int i = 0; i < ActionTemplates.Count; i++)
-                tmpKeys.Add("ActionTemplate_" + ActionTemplates[i].Name, ActionTemplates[i].ToString());
             if (!System.IO.Directory.Exists(System.IO.Path.GetDirectoryName(strFilePath)))
                 System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(strFilePath));
 
-            foreach (KeyValuePair<string, List<string>> item in AutoCompleteStrings)
-                tmpKeys.Add("AutoComplete_" + item.Key, item.Value.ToArray().Join(','));
             ConfigHandler.WriteAllKeys(tmpKeys, strFilePath);
-        }
-
-        public string[] GetAutoComplete(string p)
-        {
-            if (!AutoCompleteStrings.ContainsKey(p))
-                AutoCompleteStrings.Add(p, new List<string>());
-            AutoCompleteStrings[p].Sort();
-            return AutoCompleteStrings[p].ToArray();
-        }
-
-        public void AddAutoComplete(string p, string p_2)
-        {
-            if (!AutoCompleteStrings.ContainsKey(p))
-                AutoCompleteStrings.Add(p, new List<string>());
-            if (!AutoCompleteStrings[p].Contains(p_2))
-                AutoCompleteStrings[p].Add(p_2);
         }
     }
 }

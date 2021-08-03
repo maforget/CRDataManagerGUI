@@ -1,2 +1,7 @@
 obj
 bin
+*.editorconfig
+/csharp/.vs
+*.suo
+/csharp/DataManagerGUI/dataman.ini
+/csharp/DataManagerGUI/user.ini

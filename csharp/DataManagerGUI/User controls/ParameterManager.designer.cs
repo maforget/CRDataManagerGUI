@@ -99,7 +99,7 @@
             this.cmbField.Name = "cmbField";
             this.cmbField.Size = new System.Drawing.Size(214, 21);
             this.cmbField.TabIndex = 0;
-            this.cmbField.SelectedIndexChanged += new System.EventHandler(this.cmbField_SelectedIndexChanged);
+            this.cmbField.TextUpdate += new System.EventHandler(this.cmbField_SelectedIndexChanged);
             this.cmbField.TextChanged += new System.EventHandler(this.cmbField_SelectedIndexChanged);
             this.cmbField.Validated += new System.EventHandler(this.cmbField_Validated);
             // 
@@ -170,8 +170,6 @@
             // 
             // txtMultiValue
             // 
-            this.txtMultiValue.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtMultiValue.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtMultiValue.HideSelection = false;
             this.txtMultiValue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtMultiValue.Location = new System.Drawing.Point(3, 3);
@@ -357,8 +355,6 @@
             // 
             // txtTextValue
             // 
-            this.txtTextValue.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtTextValue.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtTextValue.HideSelection = false;
             this.txtTextValue.Location = new System.Drawing.Point(4, 3);
             this.txtTextValue.Name = "txtTextValue";
@@ -462,8 +458,6 @@
             // 
             // txtReplaceNewValue
             // 
-            this.txtReplaceNewValue.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtReplaceNewValue.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtReplaceNewValue.ContextMenuStrip = this.contextMenuStrip1;
             this.txtReplaceNewValue.HideSelection = false;
             this.txtReplaceNewValue.Location = new System.Drawing.Point(128, 4);
@@ -474,8 +468,6 @@
             // 
             // txtReplaceOldValue
             // 
-            this.txtReplaceOldValue.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtReplaceOldValue.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtReplaceOldValue.ContextMenuStrip = this.contextMenuStrip1;
             this.txtReplaceOldValue.HideSelection = false;
             this.txtReplaceOldValue.Location = new System.Drawing.Point(3, 4);
@@ -504,8 +496,6 @@
             // 
             // txtCalcValue
             // 
-            this.txtCalcValue.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtCalcValue.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCalcValue.CausesValidation = false;
             this.txtCalcValue.ContextMenuStrip = this.contextMenuStrip1;
             this.txtCalcValue.HideSelection = false;

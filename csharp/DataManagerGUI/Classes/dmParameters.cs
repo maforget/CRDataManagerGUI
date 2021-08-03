@@ -47,12 +47,12 @@ namespace DataManagerGUI
         public string CustomField { get; set; }
         public string Compile()
         {
-            return string.Format("<<{0}.{1}:{2}>>", new string[] { Field, Modifier, Value });
+            return ToString();
         }
 
         public override string ToString()
         {
-            return Compile();
+            return ToXML(Type.ToString().ToLowerInvariant()).ToString();
         }
 
         public dmParameters(ParameterType ptType, string strCompleteField, string strModifier, string strValue)
@@ -92,27 +92,34 @@ namespace DataManagerGUI
 
         public void Parse(string strDataManagerParameters)
         {
-            //remove the <<
-            string cleanString = strDataManagerParameters.Trim(new char[] { '<', ' ' }).Trim(new char[] { '>', ' ' });
-
-            string[] CriteriaAndTestValue = cleanString.Split(new char[] { ':' }, 2);
-            string[] CriteriaAndModifier = CriteriaAndTestValue[0].Split(new char[] { '.' }, 2);
-
-            this.Field = CriteriaAndModifier[0];
-
-
-            if (CriteriaAndModifier.Length < 2)
+            try
             {
-                if (this.Type == ParameterType.Action)
-                    this.Modifier = "SetValue";
-                else
-                    this.Modifier = "Is";
+                XElement xParameters = XElement.Parse(strDataManagerParameters);
+                FromXML(xParameters);
             }
-            else
-                this.Modifier = CriteriaAndModifier[1];
+            catch (Exception)
+            {
+                //remove the <<
+                string cleanString = strDataManagerParameters.Trim('<', '>');
 
-            this.Value = CriteriaAndTestValue[1];
+                string[] CriteriaAndTestValue = cleanString.Split(new char[] { ':' }, 2);
+                string[] CriteriaAndModifier = CriteriaAndTestValue[0].Split(new char[] { '.' }, 2);
 
+                this.Field = CriteriaAndModifier[0];
+
+
+                if (CriteriaAndModifier.Length < 2)
+                {
+                    if (this.Type == ParameterType.Action)
+                        this.Modifier = "SetValue";
+                    else
+                        this.Modifier = "Is";
+                }
+                else
+                    this.Modifier = CriteriaAndModifier[1];
+
+                this.Value = CriteriaAndTestValue[1];
+            }
         }
         public void Parse(string strDataManagerParameters, Version version)
         {
