@@ -16,15 +16,20 @@ namespace DataManagerGUI
                 return ToString();
             }
         }
+
+        private string _original;
         public string OriginalText
         {
             get
             {
-                return QuickView;
+                if (string.IsNullOrEmpty(_original))
+                    return QuickView;
+                else
+                    return _original;
             }
             set
             {
-                FromXML(value);
+                _original = value;
             }
         }
         public RulesetModes RuleMode { get; set; }
