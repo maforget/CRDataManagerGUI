@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="nameLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="commentLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="lblRulesetOriginalText.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1032, 56</value>
   </metadata>
@@ -125,7 +134,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABC
-        ZAAAAk1TRnQBSQFMAgEBGQEAAVABDQFQAQ0BEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        ZAAAAk1TRnQBSQFMAgEBGQEAAWABDQFgAQ0BEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABcAMAAQEBAAEgBgABcBoAAWIBYQFZAekCbQFSAfcCZQFSAfQCZQFSAfQCZQFSAfQCZQFSAfQCZQFS
         AfQCZQFSAfQCZQFSAfQCZQFSAfQCZQFSAfQBnQIAAf8BXQJcAcrMAAJlAVIB9Cj/AfYB8wHsAf8CXQFa
         AdPMAAJlAWQB9AH9AvwB/wGzAgAB/wG1AgAB/wG3AgAB/wG3AgAB/wG2AgAB/wGzAgAB/wGzAgAB/wGw
@@ -570,9 +579,6 @@
   <metadata name="GroupBinder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>514, 17</value>
   </metadata>
-  <metadata name="GroupBinder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>514, 17</value>
-  </metadata>
   <metadata name="GroupGroupBinder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>635, 17</value>
   </metadata>
@@ -593,18 +599,6 @@
   </metadata>
   <metadata name="CollectionGroupBinder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>158, 17</value>
-  </metadata>
-  <metadata name="TemplateItemsBinder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>429, 95</value>
-  </metadata>
-  <metadata name="UserInfoTemplateBinder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>246, 95</value>
-  </metadata>
-  <metadata name="UserInfoTemplateBinder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>246, 95</value>
-  </metadata>
-  <metadata name="UserInfoBinder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>114, 95</value>
   </metadata>
   <metadata name="UserInfoBinder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>114, 95</value>
@@ -752,75 +746,6 @@
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>702, 56</value>
   </metadata>
-  <metadata name="lblRulesetOriginalText.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="commentLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="nameLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Field.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Field.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvtcRulesetActionValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvtcRulesetActionValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvtcRulesetRuleValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dgvtcRulesetRuleValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="nameLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="commentLabel1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <metadata name="lblRulesetOriginalText.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="tsmiFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHuSURBVDhPnZNLaBNRFIZvDLRCXbupBK31QUvRuqhaUOKi
-        Qn21VCiKsRhDTIrGYDqhUQkBUVAL6qoLBRfiTkTRTcDnQkWEYBAVSaWkBZvSRKsyAUHM57mmmpkGorj4
-        Fvf893zcYc5RgKtYLD5IJBKlfD7Pv6DvSs8j3at0cyaTYTgS4HxoHaPR9pqMhNoJePtJpVKYpvlUaZtx
-        1MvEzaXw6TAUo7WZPcLkreXs3NpBoVBA6SedHlwFn8PwLW5j5GwXl0d3VNX5GmFw+wJyuVxZcC4sAjNm
-        423Kj1KKeKyzKtMY/U6L4JgIZodsXDjjpr7OydS7wLwsAjN+jD3WFwyJIB+y0eV20dPdxI2r2/Dta+Xh
-        tVZIL4NndfBEYexVFkFUBFPBP5jvfSysd/76BE1bs+LHc/njLyoYHqtgWATZPhjvhrH1vLnbyEm/4vZF
-        ReNixZ1L0vTSjjFgFcRWwGsJ5nHvimLj2uq6xvBaBSdEkJHAwpeUwt2heHzdXv+N4bMK4iLIOgQJ58iL
-        YE2L4mO6UqvgwDhkEZw6LoJp4YOEc3yfUBTHKmcb0ysJ7neUBXqUDwzsIpteLaO8W+j9C31Mvmqhc0Nz
-        eZT1MunF6O3ZwkHPIsLBhpr4PA1s3tRGMpksL1OpVFoikvv/t864fgIkTd/8Wm8CBAAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
   <data name="tsmiProfileImport.ToolTipText" xml:space="preserve">
     <value>Imports the individual items from 
 anothr file, note this is different from
@@ -1106,6 +1031,21 @@ to the end of your ruleset collection.</value>
         woa2hA1tCRvaEja0JWxoO0D2LzhI/ahcycH4AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="tsmiFile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHuSURBVDhPnZNLaBNRFIZvDLRCXbupBK31QUvRuqhaUOKi
+        Qn21VCiKsRhDTIrGYDqhUQkBUVAL6qoLBRfiTkTRTcDnQkWEYBAVSaWkBZvSRKsyAUHM57mmmpkGorj4
+        Fvf893zcYc5RgKtYLD5IJBKlfD7Pv6DvSs8j3at0cyaTYTgS4HxoHaPR9pqMhNoJePtJpVKYpvlUaZtx
+        1MvEzaXw6TAUo7WZPcLkreXs3NpBoVBA6SedHlwFn8PwLW5j5GwXl0d3VNX5GmFw+wJyuVxZcC4sAjNm
+        423Kj1KKeKyzKtMY/U6L4JgIZodsXDjjpr7OydS7wLwsAjN+jD3WFwyJIB+y0eV20dPdxI2r2/Dta+Xh
+        tVZIL4NndfBEYexVFkFUBFPBP5jvfSysd/76BE1bs+LHc/njLyoYHqtgWATZPhjvhrH1vLnbyEm/4vZF
+        ReNixZ1L0vTSjjFgFcRWwGsJ5nHvimLj2uq6xvBaBSdEkJHAwpeUwt2heHzdXv+N4bMK4iLIOgQJ58iL
+        YE2L4mO6UqvgwDhkEZw6LoJp4YOEc3yfUBTHKmcb0ysJ7neUBXqUDwzsIpteLaO8W+j9C31Mvmqhc0Nz
+        eZT1MunF6O3ZwkHPIsLBhpr4PA1s3tRGMpksL1OpVFoikvv/t864fgIkTd/8Wm8CBAAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
   <data name="tsbSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1139,6 +1079,24 @@ to the end of your ruleset collection.</value>
         CQT/AIW/N/6pFPopAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvtcRulesetRuleValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgvtcRulesetActionValue.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Field.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>124</value>
   </metadata>

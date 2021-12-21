@@ -335,10 +335,10 @@ namespace DataManagerGUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gui));
             System.Windows.Forms.Label nameLabel1;
             System.Windows.Forms.Label commentLabel1;
             System.Windows.Forms.Label lblRulesetOriginalText;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gui));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.RulesetBinder = new System.Windows.Forms.BindingSource(this.components);
             this.RuleBinder = new System.Windows.Forms.BindingSource(this.components);
@@ -366,6 +366,33 @@ namespace DataManagerGUI
             this.tssContext1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiContextExportGroup = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnGroupDefaultRemove = new System.Windows.Forms.Button();
+            this.btnGroupDefaultUpdate = new System.Windows.Forms.Button();
+            this.btnGroupDefaultClear = new System.Windows.Forms.Button();
+            this.btnGroupDefaultAdd = new System.Windows.Forms.Button();
+            this.btnGroupFilterAdd = new System.Windows.Forms.Button();
+            this.btnGroupFilterClear = new System.Windows.Forms.Button();
+            this.btnGroupFilterUpdate = new System.Windows.Forms.Button();
+            this.btnGroupFilterRemove = new System.Windows.Forms.Button();
+            this.btnGroupDefaultMoveUp = new System.Windows.Forms.Button();
+            this.btnGroupDefaultMoveDown = new System.Windows.Forms.Button();
+            this.btnGroupFiltersMoveUp = new System.Windows.Forms.Button();
+            this.btnGroupFiltersMoveDown = new System.Windows.Forms.Button();
+            this.btnGroupGroupMoveUp = new System.Windows.Forms.Button();
+            this.btnGroupGroupMoveDown = new System.Windows.Forms.Button();
+            this.btnGroupRulesetMoveUp = new System.Windows.Forms.Button();
+            this.btnGroupRulesetMoveDown = new System.Windows.Forms.Button();
+            this.btnRulesetActionRemove = new System.Windows.Forms.Button();
+            this.btnRulesetActionUpdate = new System.Windows.Forms.Button();
+            this.btnRulesetActionClear = new System.Windows.Forms.Button();
+            this.btnRulesetActionAdd = new System.Windows.Forms.Button();
+            this.btnRulesetRuleAdd = new System.Windows.Forms.Button();
+            this.btnRulesetRuleClear = new System.Windows.Forms.Button();
+            this.btnRulesetRuleUpdate = new System.Windows.Forms.Button();
+            this.btnRulesetRuleRemove = new System.Windows.Forms.Button();
+            this.btnRulesetReparse = new System.Windows.Forms.Button();
+            this.btnActionMoveUp = new System.Windows.Forms.Button();
+            this.btnActionMoveDown = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsslCurrentFile = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslLastSave = new System.Windows.Forms.ToolStripStatusLabel();
@@ -374,6 +401,15 @@ namespace DataManagerGUI
             this.SearchWorker = new System.ComponentModel.BackgroundWorker();
             this.tabSearch = new System.Windows.Forms.TabPage();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
             this.tsSearch = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tscbSearchType = new System.Windows.Forms.ToolStripComboBox();
@@ -386,139 +422,8 @@ namespace DataManagerGUI
             this.tstbValue = new System.Windows.Forms.ToolStripTextBox();
             this.tsbRunSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.locationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabEdit = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pnlGeneral = new System.Windows.Forms.Panel();
-            this.btnCollectionGroupRemove = new System.Windows.Forms.Button();
-            this.dgvCollectionGroups = new System.Windows.Forms.DataGridView();
-            this.dgvtcCollectionGroupRulesetCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtcCollectionGroupGroupCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtcCollectionGroupComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtcCollectionGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCollectionRulesetsRemove = new System.Windows.Forms.Button();
-            this.dgvCollectionRulesets = new System.Windows.Forms.DataGridView();
-            this.dgvtcCollectionRulesetComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtcCollectionRulesetQuickView = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtcCollectionRulesetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCollectionGroupAdd = new System.Windows.Forms.Button();
-            this.btnCollectionRulesetAdd = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtCollectionAuthor = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtCollectionNotes = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.btnCollectionGroupMoveUp = new System.Windows.Forms.Button();
-            this.btnCollectionGroupMoveDown = new System.Windows.Forms.Button();
-            this.btnCollectionRulesetMoveUp = new System.Windows.Forms.Button();
-            this.btnCollectionRulesetMoveDown = new System.Windows.Forms.Button();
-            this.pnlGroups = new System.Windows.Forms.Panel();
-            this.txtGroupName = new System.Windows.Forms.TextBox();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.txtGroupComment = new System.Windows.Forms.TextBox();
-            this.commentLabel = new System.Windows.Forms.Label();
-            this.lblGroupOverview = new System.Windows.Forms.Label();
-            this.tabGroupTabs = new System.Windows.Forms.TabControl();
-            this.tabGrpRuleset = new System.Windows.Forms.TabPage();
-            this.btnGroupDefaultRemove = new System.Windows.Forms.Button();
-            this.btnGroupDefaultUpdate = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btnGroupDefaultClear = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.btnGroupDefaultAdd = new System.Windows.Forms.Button();
-            this.dgvGroupDefaults = new System.Windows.Forms.DataGridView();
-            this.valueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modifierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvGroupFilters = new System.Windows.Forms.DataGridView();
-            this.valueDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modifierDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Field = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGroupFilterAdd = new System.Windows.Forms.Button();
-            this.btnGroupFilterClear = new System.Windows.Forms.Button();
-            this.btnGroupFilterUpdate = new System.Windows.Forms.Button();
-            this.btnGroupFilterRemove = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnGroupDefaultMoveUp = new System.Windows.Forms.Button();
-            this.btnGroupDefaultMoveDown = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.btnGroupFiltersMoveUp = new System.Windows.Forms.Button();
-            this.btnGroupFiltersMoveDown = new System.Windows.Forms.Button();
-            this.pmGroupFilters = new DataManagerGUI.ParameterManager();
-            this.pmGroupDefaultActions = new DataManagerGUI.ParameterManager();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnGroupGroupAdd = new System.Windows.Forms.Button();
-            this.btnGroupGroupMoveUp = new System.Windows.Forms.Button();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.btnGroupRulesetAdd = new System.Windows.Forms.Button();
-            this.btnGroupGroupMoveDown = new System.Windows.Forms.Button();
-            this.dgvGroupGroups = new System.Windows.Forms.DataGridView();
-            this.dgvtcGroupGroupRulesetCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtcGroupGroupGroupCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtcGroupGroupComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtcGroupGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGroupRulesetMoveUp = new System.Windows.Forms.Button();
-            this.dgvGroupRulesets = new System.Windows.Forms.DataGridView();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quickViewDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnGroupRulesetMoveDown = new System.Windows.Forms.Button();
-            this.btnGroupGroupRemove = new System.Windows.Forms.Button();
-            this.btnGroupRulesetRemove = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.pnlRulesets = new System.Windows.Forms.Panel();
-            this.btnRulesetActionRemove = new System.Windows.Forms.Button();
-            this.btnRulesetActionUpdate = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRulesetActionClear = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnRulesetActionAdd = new System.Windows.Forms.Button();
-            this.dgvRulesetActions = new System.Windows.Forms.DataGridView();
-            this.dgvtcRulesetActionValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtcRulesetActionModifier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvRulesetRules = new System.Windows.Forms.DataGridView();
-            this.dgvtcRulesetRuleValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtcRulesetRuleModifier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtRulesetName = new System.Windows.Forms.TextBox();
-            this.btnRulesetRuleAdd = new System.Windows.Forms.Button();
-            this.txtRulesetComment = new System.Windows.Forms.TextBox();
-            this.btnRulesetRuleClear = new System.Windows.Forms.Button();
-            this.btnRulesetRuleUpdate = new System.Windows.Forms.Button();
-            this.btnRulesetRuleRemove = new System.Windows.Forms.Button();
-            this.txtRulesetReparse = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnRulesetReparse = new System.Windows.Forms.Button();
-            this.btnActionMoveUp = new System.Windows.Forms.Button();
-            this.btnActionMoveDown = new System.Windows.Forms.Button();
-            this.btnRulesetRulesMoveUp = new System.Windows.Forms.Button();
-            this.btnRulesetRulesMoveDown = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dmpActions = new DataManagerGUI.ParameterManager();
-            this.dmpRules = new DataManagerGUI.ParameterManager();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsmiFile = new System.Windows.Forms.ToolStripDropDownButton();
@@ -536,6 +441,101 @@ namespace DataManagerGUI
             this.tsmiSave = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbSave = new System.Windows.Forms.ToolStripButton();
             this.tvCollectionTree = new System.Windows.Forms.TreeView();
+            this.pnlRulesets = new System.Windows.Forms.Panel();
+            this.dmpRules = new DataManagerGUI.ParameterManager();
+            this.dmpActions = new DataManagerGUI.ParameterManager();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnRulesetRulesMoveDown = new System.Windows.Forms.Button();
+            this.btnRulesetRulesMoveUp = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtRulesetReparse = new System.Windows.Forms.TextBox();
+            this.txtRulesetComment = new System.Windows.Forms.TextBox();
+            this.txtRulesetName = new System.Windows.Forms.TextBox();
+            this.dgvRulesetRules = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcRulesetRuleModifier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcRulesetRuleValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvRulesetActions = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcRulesetActionModifier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcRulesetActionValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pnlGroups = new System.Windows.Forms.Panel();
+            this.tabGroupTabs = new System.Windows.Forms.TabControl();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnGroupRulesetRemove = new System.Windows.Forms.Button();
+            this.btnGroupGroupRemove = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvGroupRulesets = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quickViewDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvGroupGroups = new System.Windows.Forms.DataGridView();
+            this.dgvtcGroupGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcGroupGroupComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcGroupGroupGroupCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcGroupGroupRulesetCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGroupRulesetAdd = new System.Windows.Forms.Button();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.btnGroupGroupAdd = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tabGrpRuleset = new System.Windows.Forms.TabPage();
+            this.pmGroupDefaultActions = new DataManagerGUI.ParameterManager();
+            this.pmGroupFilters = new DataManagerGUI.ParameterManager();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.dgvGroupFilters = new System.Windows.Forms.DataGridView();
+            this.Field = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modifierDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvGroupDefaults = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modifierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lblGroupOverview = new System.Windows.Forms.Label();
+            this.commentLabel = new System.Windows.Forms.Label();
+            this.txtGroupComment = new System.Windows.Forms.TextBox();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.txtGroupName = new System.Windows.Forms.TextBox();
+            this.pnlGeneral = new System.Windows.Forms.Panel();
+            this.btnCollectionRulesetMoveDown = new System.Windows.Forms.Button();
+            this.btnCollectionRulesetMoveUp = new System.Windows.Forms.Button();
+            this.btnCollectionGroupMoveDown = new System.Windows.Forms.Button();
+            this.btnCollectionGroupMoveUp = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtCollectionNotes = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCollectionAuthor = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnCollectionRulesetAdd = new System.Windows.Forms.Button();
+            this.btnCollectionGroupAdd = new System.Windows.Forms.Button();
+            this.dgvCollectionRulesets = new System.Windows.Forms.DataGridView();
+            this.dgvtcCollectionRulesetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcCollectionRulesetQuickView = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcCollectionRulesetComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCollectionRulesetsRemove = new System.Windows.Forms.Button();
+            this.dgvCollectionGroups = new System.Windows.Forms.DataGridView();
+            this.dgvtcCollectionGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcCollectionGroupComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcCollectionGroupGroupCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtcCollectionGroupRulesetCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCollectionGroupRemove = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             nameLabel1 = new System.Windows.Forms.Label();
             commentLabel1 = new System.Windows.Forms.Label();
@@ -560,38 +560,65 @@ namespace DataManagerGUI
             this.toolStripContainer2.ContentPanel.SuspendLayout();
             this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer2.SuspendLayout();
-            this.tsSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tsSearch.SuspendLayout();
             this.tabEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.pnlGeneral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionGroups)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionRulesets)).BeginInit();
-            this.pnlGroups.SuspendLayout();
-            this.tabGroupTabs.SuspendLayout();
-            this.tabGrpRuleset.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupDefaults)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupFilters)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupGroups)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupRulesets)).BeginInit();
-            this.pnlRulesets.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRulesetActions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRulesetRules)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.pnlRulesets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRulesetRules)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRulesetActions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlGroups.SuspendLayout();
+            this.tabGroupTabs.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupRulesets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupGroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.tabGrpRuleset.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupFilters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupDefaults)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pnlGeneral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionRulesets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionGroups)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // nameLabel1
+            // 
+            nameLabel1.AutoSize = true;
+            nameLabel1.Location = new System.Drawing.Point(53, 8);
+            nameLabel1.Name = "nameLabel1";
+            nameLabel1.Size = new System.Drawing.Size(38, 13);
+            nameLabel1.TabIndex = 0;
+            nameLabel1.Text = "Name:";
+            // 
+            // commentLabel1
+            // 
+            commentLabel1.AutoSize = true;
+            commentLabel1.Location = new System.Drawing.Point(337, 8);
+            commentLabel1.Name = "commentLabel1";
+            commentLabel1.Size = new System.Drawing.Size(54, 13);
+            commentLabel1.TabIndex = 2;
+            commentLabel1.Text = "Comment:";
+            // 
+            // lblRulesetOriginalText
+            // 
+            lblRulesetOriginalText.AutoSize = true;
+            lblRulesetOriginalText.Location = new System.Drawing.Point(22, 36);
+            lblRulesetOriginalText.Name = "lblRulesetOriginalText";
+            lblRulesetOriginalText.Size = new System.Drawing.Size(28, 13);
+            lblRulesetOriginalText.TabIndex = 4;
+            lblRulesetOriginalText.Text = "Text";
             // 
             // imageList1
             // 
@@ -728,7 +755,7 @@ namespace DataManagerGUI
             this.tssContext1,
             this.tsmiContextExportGroup});
             this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(144, 142);
+            this.cmsMenu.Size = new System.Drawing.Size(145, 142);
             this.cmsMenu.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.cmsMenu_Closing);
             this.cmsMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMenu_Opening);
             // 
@@ -736,14 +763,14 @@ namespace DataManagerGUI
             // 
             this.tsmiContextCopy.Image = ((System.Drawing.Image)(resources.GetObject("tsmiContextCopy.Image")));
             this.tsmiContextCopy.Name = "tsmiContextCopy";
-            this.tsmiContextCopy.Size = new System.Drawing.Size(143, 22);
+            this.tsmiContextCopy.Size = new System.Drawing.Size(144, 22);
             this.tsmiContextCopy.Text = "Copy";
             this.tsmiContextCopy.Click += new System.EventHandler(this.tsmiContextCopy_Click);
             // 
             // tsmiCopyAll
             // 
             this.tsmiCopyAll.Name = "tsmiCopyAll";
-            this.tsmiCopyAll.Size = new System.Drawing.Size(143, 22);
+            this.tsmiCopyAll.Size = new System.Drawing.Size(144, 22);
             this.tsmiCopyAll.Text = "Copy All";
             this.tsmiCopyAll.Click += new System.EventHandler(this.tsmiCopyAll_Click);
             // 
@@ -751,7 +778,7 @@ namespace DataManagerGUI
             // 
             this.tsmiContextCut.Image = ((System.Drawing.Image)(resources.GetObject("tsmiContextCut.Image")));
             this.tsmiContextCut.Name = "tsmiContextCut";
-            this.tsmiContextCut.Size = new System.Drawing.Size(143, 22);
+            this.tsmiContextCut.Size = new System.Drawing.Size(144, 22);
             this.tsmiContextCut.Text = "Cut";
             this.tsmiContextCut.Click += new System.EventHandler(this.tsmiContextCut_Click);
             // 
@@ -759,7 +786,7 @@ namespace DataManagerGUI
             // 
             this.tsmiContextPaste.Image = ((System.Drawing.Image)(resources.GetObject("tsmiContextPaste.Image")));
             this.tsmiContextPaste.Name = "tsmiContextPaste";
-            this.tsmiContextPaste.Size = new System.Drawing.Size(143, 22);
+            this.tsmiContextPaste.Size = new System.Drawing.Size(144, 22);
             this.tsmiContextPaste.Text = "Paste";
             this.tsmiContextPaste.Click += new System.EventHandler(this.tsmiContextPaste_Click);
             // 
@@ -767,26 +794,420 @@ namespace DataManagerGUI
             // 
             this.tsmiContextDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsmiContextDelete.Image")));
             this.tsmiContextDelete.Name = "tsmiContextDelete";
-            this.tsmiContextDelete.Size = new System.Drawing.Size(143, 22);
+            this.tsmiContextDelete.Size = new System.Drawing.Size(144, 22);
             this.tsmiContextDelete.Text = "Delete";
             this.tsmiContextDelete.Click += new System.EventHandler(this.tsmiContextDelete_Click);
             // 
             // tssContext1
             // 
             this.tssContext1.Name = "tssContext1";
-            this.tssContext1.Size = new System.Drawing.Size(140, 6);
+            this.tssContext1.Size = new System.Drawing.Size(141, 6);
             // 
             // tsmiContextExportGroup
             // 
             this.tsmiContextExportGroup.Image = ((System.Drawing.Image)(resources.GetObject("tsmiContextExportGroup.Image")));
             this.tsmiContextExportGroup.Name = "tsmiContextExportGroup";
-            this.tsmiContextExportGroup.Size = new System.Drawing.Size(143, 22);
+            this.tsmiContextExportGroup.Size = new System.Drawing.Size(144, 22);
             this.tsmiContextExportGroup.Text = "Export Group";
             this.tsmiContextExportGroup.Click += new System.EventHandler(this.tsmiGroupExport_Click);
             // 
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
+            // 
+            // btnGroupDefaultRemove
+            // 
+            this.btnGroupDefaultRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupDefaultRemove.ImageIndex = 18;
+            this.btnGroupDefaultRemove.ImageList = this.imageList1;
+            this.btnGroupDefaultRemove.Location = new System.Drawing.Point(442, 437);
+            this.btnGroupDefaultRemove.Name = "btnGroupDefaultRemove";
+            this.btnGroupDefaultRemove.Size = new System.Drawing.Size(104, 23);
+            this.btnGroupDefaultRemove.TabIndex = 41;
+            this.btnGroupDefaultRemove.Text = "Remove";
+            this.btnGroupDefaultRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnGroupDefaultRemove, "Removes the selected action from this Ruleset.");
+            this.btnGroupDefaultRemove.UseVisualStyleBackColor = true;
+            this.btnGroupDefaultRemove.Click += new System.EventHandler(this.btnGroupDefaultRemove_Click);
+            // 
+            // btnGroupDefaultUpdate
+            // 
+            this.btnGroupDefaultUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupDefaultUpdate.ImageIndex = 15;
+            this.btnGroupDefaultUpdate.ImageList = this.imageList1;
+            this.btnGroupDefaultUpdate.Location = new System.Drawing.Point(234, 437);
+            this.btnGroupDefaultUpdate.Name = "btnGroupDefaultUpdate";
+            this.btnGroupDefaultUpdate.Size = new System.Drawing.Size(104, 23);
+            this.btnGroupDefaultUpdate.TabIndex = 39;
+            this.btnGroupDefaultUpdate.Text = "Update";
+            this.btnGroupDefaultUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnGroupDefaultUpdate, "Change the currently selected \r\nAction to what is specified above.");
+            this.btnGroupDefaultUpdate.UseVisualStyleBackColor = true;
+            this.btnGroupDefaultUpdate.Click += new System.EventHandler(this.btnGroupDefaultUpdate_Click);
+            // 
+            // btnGroupDefaultClear
+            // 
+            this.btnGroupDefaultClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupDefaultClear.ImageIndex = 7;
+            this.btnGroupDefaultClear.ImageList = this.imageList1;
+            this.btnGroupDefaultClear.Location = new System.Drawing.Point(546, 437);
+            this.btnGroupDefaultClear.Name = "btnGroupDefaultClear";
+            this.btnGroupDefaultClear.Size = new System.Drawing.Size(104, 23);
+            this.btnGroupDefaultClear.TabIndex = 42;
+            this.btnGroupDefaultClear.Text = "Clear Actions";
+            this.btnGroupDefaultClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnGroupDefaultClear, "Removes all actions from this Ruleset");
+            this.btnGroupDefaultClear.UseVisualStyleBackColor = true;
+            this.btnGroupDefaultClear.Click += new System.EventHandler(this.btnGroupDefaultClear_Click);
+            // 
+            // btnGroupDefaultAdd
+            // 
+            this.btnGroupDefaultAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupDefaultAdd.ImageIndex = 17;
+            this.btnGroupDefaultAdd.ImageList = this.imageList1;
+            this.btnGroupDefaultAdd.Location = new System.Drawing.Point(338, 437);
+            this.btnGroupDefaultAdd.Name = "btnGroupDefaultAdd";
+            this.btnGroupDefaultAdd.Size = new System.Drawing.Size(104, 23);
+            this.btnGroupDefaultAdd.TabIndex = 40;
+            this.btnGroupDefaultAdd.Text = "Add";
+            this.btnGroupDefaultAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnGroupDefaultAdd, "Add a new Action as specfied above");
+            this.btnGroupDefaultAdd.UseVisualStyleBackColor = true;
+            this.btnGroupDefaultAdd.Click += new System.EventHandler(this.btnGroupDefaultAdd_Click);
+            // 
+            // btnGroupFilterAdd
+            // 
+            this.btnGroupFilterAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupFilterAdd.ImageIndex = 17;
+            this.btnGroupFilterAdd.ImageList = this.imageList1;
+            this.btnGroupFilterAdd.Location = new System.Drawing.Point(357, 210);
+            this.btnGroupFilterAdd.Name = "btnGroupFilterAdd";
+            this.btnGroupFilterAdd.Size = new System.Drawing.Size(104, 23);
+            this.btnGroupFilterAdd.TabIndex = 30;
+            this.btnGroupFilterAdd.Text = "Add";
+            this.btnGroupFilterAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnGroupFilterAdd, "Add a new Rule as specfied above");
+            this.btnGroupFilterAdd.UseVisualStyleBackColor = true;
+            this.btnGroupFilterAdd.Click += new System.EventHandler(this.btnGroupFilterAdd_Click);
+            // 
+            // btnGroupFilterClear
+            // 
+            this.btnGroupFilterClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupFilterClear.ImageIndex = 7;
+            this.btnGroupFilterClear.ImageList = this.imageList1;
+            this.btnGroupFilterClear.Location = new System.Drawing.Point(565, 210);
+            this.btnGroupFilterClear.Name = "btnGroupFilterClear";
+            this.btnGroupFilterClear.Size = new System.Drawing.Size(104, 23);
+            this.btnGroupFilterClear.TabIndex = 33;
+            this.btnGroupFilterClear.Text = "Clear Rules";
+            this.btnGroupFilterClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnGroupFilterClear, "Clear All Rules from this Ruleset");
+            this.btnGroupFilterClear.UseVisualStyleBackColor = true;
+            this.btnGroupFilterClear.Click += new System.EventHandler(this.btnGroupFilterClear_Click);
+            // 
+            // btnGroupFilterUpdate
+            // 
+            this.btnGroupFilterUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupFilterUpdate.ImageIndex = 15;
+            this.btnGroupFilterUpdate.ImageList = this.imageList1;
+            this.btnGroupFilterUpdate.Location = new System.Drawing.Point(253, 210);
+            this.btnGroupFilterUpdate.Name = "btnGroupFilterUpdate";
+            this.btnGroupFilterUpdate.Size = new System.Drawing.Size(104, 23);
+            this.btnGroupFilterUpdate.TabIndex = 31;
+            this.btnGroupFilterUpdate.Text = "Update";
+            this.btnGroupFilterUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnGroupFilterUpdate, "Change the currently selected \r\nRule to what is specified above.");
+            this.btnGroupFilterUpdate.UseVisualStyleBackColor = true;
+            this.btnGroupFilterUpdate.Click += new System.EventHandler(this.btnGroupFilterUpdate_Click);
+            // 
+            // btnGroupFilterRemove
+            // 
+            this.btnGroupFilterRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupFilterRemove.ImageIndex = 18;
+            this.btnGroupFilterRemove.ImageList = this.imageList1;
+            this.btnGroupFilterRemove.Location = new System.Drawing.Point(461, 210);
+            this.btnGroupFilterRemove.Name = "btnGroupFilterRemove";
+            this.btnGroupFilterRemove.Size = new System.Drawing.Size(104, 23);
+            this.btnGroupFilterRemove.TabIndex = 32;
+            this.btnGroupFilterRemove.Text = "Remove";
+            this.btnGroupFilterRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnGroupFilterRemove, "Removes the selected action from this Ruleset.");
+            this.btnGroupFilterRemove.UseVisualStyleBackColor = true;
+            this.btnGroupFilterRemove.Click += new System.EventHandler(this.btnGroupFilterRemove_Click);
+            // 
+            // btnGroupDefaultMoveUp
+            // 
+            this.btnGroupDefaultMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupDefaultMoveUp.Enabled = false;
+            this.btnGroupDefaultMoveUp.ImageIndex = 12;
+            this.btnGroupDefaultMoveUp.ImageList = this.imageList1;
+            this.btnGroupDefaultMoveUp.Location = new System.Drawing.Point(647, 349);
+            this.btnGroupDefaultMoveUp.Name = "btnGroupDefaultMoveUp";
+            this.btnGroupDefaultMoveUp.Size = new System.Drawing.Size(25, 25);
+            this.btnGroupDefaultMoveUp.TabIndex = 36;
+            this.toolTip1.SetToolTip(this.btnGroupDefaultMoveUp, "Move selected Group up.");
+            this.btnGroupDefaultMoveUp.UseVisualStyleBackColor = true;
+            this.btnGroupDefaultMoveUp.Click += new System.EventHandler(this.btnGroupDefaultMoveUp_Click);
+            // 
+            // btnGroupDefaultMoveDown
+            // 
+            this.btnGroupDefaultMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupDefaultMoveDown.Enabled = false;
+            this.btnGroupDefaultMoveDown.ImageIndex = 13;
+            this.btnGroupDefaultMoveDown.ImageList = this.imageList1;
+            this.btnGroupDefaultMoveDown.Location = new System.Drawing.Point(647, 375);
+            this.btnGroupDefaultMoveDown.Name = "btnGroupDefaultMoveDown";
+            this.btnGroupDefaultMoveDown.Size = new System.Drawing.Size(25, 25);
+            this.btnGroupDefaultMoveDown.TabIndex = 37;
+            this.toolTip1.SetToolTip(this.btnGroupDefaultMoveDown, "Move selected Group down.");
+            this.btnGroupDefaultMoveDown.UseVisualStyleBackColor = true;
+            this.btnGroupDefaultMoveDown.Click += new System.EventHandler(this.btnGroupDefaultMoveDown_Click);
+            // 
+            // btnGroupFiltersMoveUp
+            // 
+            this.btnGroupFiltersMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupFiltersMoveUp.Enabled = false;
+            this.btnGroupFiltersMoveUp.ImageIndex = 12;
+            this.btnGroupFiltersMoveUp.ImageList = this.imageList1;
+            this.btnGroupFiltersMoveUp.Location = new System.Drawing.Point(646, 114);
+            this.btnGroupFiltersMoveUp.Name = "btnGroupFiltersMoveUp";
+            this.btnGroupFiltersMoveUp.Size = new System.Drawing.Size(25, 25);
+            this.btnGroupFiltersMoveUp.TabIndex = 44;
+            this.toolTip1.SetToolTip(this.btnGroupFiltersMoveUp, "Move selected Group up.");
+            this.btnGroupFiltersMoveUp.UseVisualStyleBackColor = true;
+            this.btnGroupFiltersMoveUp.Click += new System.EventHandler(this.btnGroupFiltersMoveUp_Click);
+            // 
+            // btnGroupFiltersMoveDown
+            // 
+            this.btnGroupFiltersMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupFiltersMoveDown.Enabled = false;
+            this.btnGroupFiltersMoveDown.ImageIndex = 13;
+            this.btnGroupFiltersMoveDown.ImageList = this.imageList1;
+            this.btnGroupFiltersMoveDown.Location = new System.Drawing.Point(646, 140);
+            this.btnGroupFiltersMoveDown.Name = "btnGroupFiltersMoveDown";
+            this.btnGroupFiltersMoveDown.Size = new System.Drawing.Size(25, 25);
+            this.btnGroupFiltersMoveDown.TabIndex = 45;
+            this.toolTip1.SetToolTip(this.btnGroupFiltersMoveDown, "Move selected Group down.");
+            this.btnGroupFiltersMoveDown.UseVisualStyleBackColor = true;
+            this.btnGroupFiltersMoveDown.Click += new System.EventHandler(this.btnGroupFiltersMoveDown_Click);
+            // 
+            // btnGroupGroupMoveUp
+            // 
+            this.btnGroupGroupMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupGroupMoveUp.Enabled = false;
+            this.btnGroupGroupMoveUp.ImageIndex = 12;
+            this.btnGroupGroupMoveUp.ImageList = this.imageList1;
+            this.btnGroupGroupMoveUp.Location = new System.Drawing.Point(649, 152);
+            this.btnGroupGroupMoveUp.Name = "btnGroupGroupMoveUp";
+            this.btnGroupGroupMoveUp.Size = new System.Drawing.Size(25, 25);
+            this.btnGroupGroupMoveUp.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnGroupGroupMoveUp, "Move selected Group up.");
+            this.btnGroupGroupMoveUp.UseVisualStyleBackColor = true;
+            this.btnGroupGroupMoveUp.Click += new System.EventHandler(this.btnGroupGroupMoveUp_Click);
+            // 
+            // btnGroupGroupMoveDown
+            // 
+            this.btnGroupGroupMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupGroupMoveDown.Enabled = false;
+            this.btnGroupGroupMoveDown.ImageIndex = 13;
+            this.btnGroupGroupMoveDown.ImageList = this.imageList1;
+            this.btnGroupGroupMoveDown.Location = new System.Drawing.Point(649, 178);
+            this.btnGroupGroupMoveDown.Name = "btnGroupGroupMoveDown";
+            this.btnGroupGroupMoveDown.Size = new System.Drawing.Size(25, 25);
+            this.btnGroupGroupMoveDown.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.btnGroupGroupMoveDown, "Move selected Group down.");
+            this.btnGroupGroupMoveDown.UseVisualStyleBackColor = true;
+            this.btnGroupGroupMoveDown.Click += new System.EventHandler(this.btnGroupGroupMoveDown_Click);
+            // 
+            // btnGroupRulesetMoveUp
+            // 
+            this.btnGroupRulesetMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupRulesetMoveUp.Enabled = false;
+            this.btnGroupRulesetMoveUp.ImageIndex = 12;
+            this.btnGroupRulesetMoveUp.ImageList = this.imageList1;
+            this.btnGroupRulesetMoveUp.Location = new System.Drawing.Point(649, 372);
+            this.btnGroupRulesetMoveUp.Name = "btnGroupRulesetMoveUp";
+            this.btnGroupRulesetMoveUp.Size = new System.Drawing.Size(25, 25);
+            this.btnGroupRulesetMoveUp.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.btnGroupRulesetMoveUp, "Move selected Ruleset up");
+            this.btnGroupRulesetMoveUp.UseVisualStyleBackColor = true;
+            this.btnGroupRulesetMoveUp.Click += new System.EventHandler(this.btnGroupRulesetMoveUp_Click);
+            // 
+            // btnGroupRulesetMoveDown
+            // 
+            this.btnGroupRulesetMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupRulesetMoveDown.Enabled = false;
+            this.btnGroupRulesetMoveDown.ImageIndex = 13;
+            this.btnGroupRulesetMoveDown.ImageList = this.imageList1;
+            this.btnGroupRulesetMoveDown.Location = new System.Drawing.Point(649, 398);
+            this.btnGroupRulesetMoveDown.Name = "btnGroupRulesetMoveDown";
+            this.btnGroupRulesetMoveDown.Size = new System.Drawing.Size(25, 25);
+            this.btnGroupRulesetMoveDown.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.btnGroupRulesetMoveDown, "Move Selected Ruleset down");
+            this.btnGroupRulesetMoveDown.UseVisualStyleBackColor = true;
+            this.btnGroupRulesetMoveDown.Click += new System.EventHandler(this.btnGroupRulesetMoveDown_Click);
+            // 
+            // btnRulesetActionRemove
+            // 
+            this.btnRulesetActionRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetActionRemove.ImageIndex = 18;
+            this.btnRulesetActionRemove.ImageList = this.imageList1;
+            this.btnRulesetActionRemove.Location = new System.Drawing.Point(446, 574);
+            this.btnRulesetActionRemove.Name = "btnRulesetActionRemove";
+            this.btnRulesetActionRemove.Size = new System.Drawing.Size(104, 23);
+            this.btnRulesetActionRemove.TabIndex = 21;
+            this.btnRulesetActionRemove.Text = "Remove";
+            this.btnRulesetActionRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnRulesetActionRemove, "Removes the selected action from this Ruleset.");
+            this.btnRulesetActionRemove.UseVisualStyleBackColor = true;
+            this.btnRulesetActionRemove.Click += new System.EventHandler(this.btnRulesetActionRemove_Click);
+            // 
+            // btnRulesetActionUpdate
+            // 
+            this.btnRulesetActionUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetActionUpdate.ImageIndex = 15;
+            this.btnRulesetActionUpdate.ImageList = this.imageList1;
+            this.btnRulesetActionUpdate.Location = new System.Drawing.Point(238, 574);
+            this.btnRulesetActionUpdate.Name = "btnRulesetActionUpdate";
+            this.btnRulesetActionUpdate.Size = new System.Drawing.Size(104, 23);
+            this.btnRulesetActionUpdate.TabIndex = 19;
+            this.btnRulesetActionUpdate.Text = "Update";
+            this.btnRulesetActionUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnRulesetActionUpdate, "Change the currently selected \r\nAction to what is specified above.");
+            this.btnRulesetActionUpdate.UseVisualStyleBackColor = true;
+            this.btnRulesetActionUpdate.Click += new System.EventHandler(this.btnRulesetActionUpdate_Click);
+            // 
+            // btnRulesetActionClear
+            // 
+            this.btnRulesetActionClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetActionClear.ImageIndex = 7;
+            this.btnRulesetActionClear.ImageList = this.imageList1;
+            this.btnRulesetActionClear.Location = new System.Drawing.Point(550, 574);
+            this.btnRulesetActionClear.Name = "btnRulesetActionClear";
+            this.btnRulesetActionClear.Size = new System.Drawing.Size(104, 23);
+            this.btnRulesetActionClear.TabIndex = 22;
+            this.btnRulesetActionClear.Text = "Clear Actions";
+            this.btnRulesetActionClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnRulesetActionClear, "Removes all actions from this Ruleset");
+            this.btnRulesetActionClear.UseVisualStyleBackColor = true;
+            this.btnRulesetActionClear.Click += new System.EventHandler(this.btnRulesetActionClear_Click);
+            // 
+            // btnRulesetActionAdd
+            // 
+            this.btnRulesetActionAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetActionAdd.ImageIndex = 17;
+            this.btnRulesetActionAdd.ImageList = this.imageList1;
+            this.btnRulesetActionAdd.Location = new System.Drawing.Point(342, 574);
+            this.btnRulesetActionAdd.Name = "btnRulesetActionAdd";
+            this.btnRulesetActionAdd.Size = new System.Drawing.Size(104, 23);
+            this.btnRulesetActionAdd.TabIndex = 20;
+            this.btnRulesetActionAdd.Text = "Add";
+            this.btnRulesetActionAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnRulesetActionAdd, "Add a new Action as specfied above");
+            this.btnRulesetActionAdd.UseVisualStyleBackColor = true;
+            this.btnRulesetActionAdd.Click += new System.EventHandler(this.btnRulesetActionAdd_Click);
+            // 
+            // btnRulesetRuleAdd
+            // 
+            this.btnRulesetRuleAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetRuleAdd.ImageIndex = 17;
+            this.btnRulesetRuleAdd.ImageList = this.imageList1;
+            this.btnRulesetRuleAdd.Location = new System.Drawing.Point(363, 308);
+            this.btnRulesetRuleAdd.Name = "btnRulesetRuleAdd";
+            this.btnRulesetRuleAdd.Size = new System.Drawing.Size(104, 23);
+            this.btnRulesetRuleAdd.TabIndex = 10;
+            this.btnRulesetRuleAdd.Text = "Add";
+            this.btnRulesetRuleAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnRulesetRuleAdd, "Add a new Rule as specfied above");
+            this.btnRulesetRuleAdd.UseVisualStyleBackColor = true;
+            this.btnRulesetRuleAdd.Click += new System.EventHandler(this.btnRulesetRuleAdd_Click);
+            // 
+            // btnRulesetRuleClear
+            // 
+            this.btnRulesetRuleClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetRuleClear.ImageIndex = 7;
+            this.btnRulesetRuleClear.ImageList = this.imageList1;
+            this.btnRulesetRuleClear.Location = new System.Drawing.Point(571, 308);
+            this.btnRulesetRuleClear.Name = "btnRulesetRuleClear";
+            this.btnRulesetRuleClear.Size = new System.Drawing.Size(104, 23);
+            this.btnRulesetRuleClear.TabIndex = 13;
+            this.btnRulesetRuleClear.Text = "Clear Rules";
+            this.btnRulesetRuleClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnRulesetRuleClear, "Clear All Rules from this Ruleset");
+            this.btnRulesetRuleClear.UseVisualStyleBackColor = true;
+            this.btnRulesetRuleClear.Click += new System.EventHandler(this.btnRulesetRuleClear_Click);
+            // 
+            // btnRulesetRuleUpdate
+            // 
+            this.btnRulesetRuleUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetRuleUpdate.ImageIndex = 15;
+            this.btnRulesetRuleUpdate.ImageList = this.imageList1;
+            this.btnRulesetRuleUpdate.Location = new System.Drawing.Point(259, 308);
+            this.btnRulesetRuleUpdate.Name = "btnRulesetRuleUpdate";
+            this.btnRulesetRuleUpdate.Size = new System.Drawing.Size(104, 23);
+            this.btnRulesetRuleUpdate.TabIndex = 11;
+            this.btnRulesetRuleUpdate.Text = "Update";
+            this.btnRulesetRuleUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnRulesetRuleUpdate, "Change the currently selected \r\nRule to what is specified above.");
+            this.btnRulesetRuleUpdate.UseVisualStyleBackColor = true;
+            this.btnRulesetRuleUpdate.Click += new System.EventHandler(this.btnRulesetRuleUpdate_Click);
+            // 
+            // btnRulesetRuleRemove
+            // 
+            this.btnRulesetRuleRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetRuleRemove.ImageIndex = 18;
+            this.btnRulesetRuleRemove.ImageList = this.imageList1;
+            this.btnRulesetRuleRemove.Location = new System.Drawing.Point(467, 308);
+            this.btnRulesetRuleRemove.Name = "btnRulesetRuleRemove";
+            this.btnRulesetRuleRemove.Size = new System.Drawing.Size(104, 23);
+            this.btnRulesetRuleRemove.TabIndex = 12;
+            this.btnRulesetRuleRemove.Text = "Remove";
+            this.btnRulesetRuleRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnRulesetRuleRemove, "Removes the selected action from this Ruleset.");
+            this.btnRulesetRuleRemove.UseVisualStyleBackColor = true;
+            this.btnRulesetRuleRemove.Click += new System.EventHandler(this.btnRulesetRuleRemove_Click);
+            // 
+            // btnRulesetReparse
+            // 
+            this.btnRulesetReparse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetReparse.ImageIndex = 15;
+            this.btnRulesetReparse.ImageList = this.imageList1;
+            this.btnRulesetReparse.Location = new System.Drawing.Point(655, 30);
+            this.btnRulesetReparse.Name = "btnRulesetReparse";
+            this.btnRulesetReparse.Size = new System.Drawing.Size(25, 25);
+            this.btnRulesetReparse.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnRulesetReparse, "You can text edit the ruleset, cut and paste \r\na ruleset from text. And press thi" +
+        "s button to\r\nmodify the ruleset. This will replace the \r\ncurrent ruleset.");
+            this.btnRulesetReparse.UseVisualStyleBackColor = true;
+            this.btnRulesetReparse.Click += new System.EventHandler(this.btnRulesetReparse_Click);
+            // 
+            // btnActionMoveUp
+            // 
+            this.btnActionMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActionMoveUp.Enabled = false;
+            this.btnActionMoveUp.ImageIndex = 12;
+            this.btnActionMoveUp.ImageList = this.imageList1;
+            this.btnActionMoveUp.Location = new System.Drawing.Point(658, 482);
+            this.btnActionMoveUp.Name = "btnActionMoveUp";
+            this.btnActionMoveUp.Size = new System.Drawing.Size(25, 25);
+            this.btnActionMoveUp.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.btnActionMoveUp, "Move selected Group up.");
+            this.btnActionMoveUp.UseVisualStyleBackColor = true;
+            this.btnActionMoveUp.Click += new System.EventHandler(this.btnActionMoveUp_Click);
+            // 
+            // btnActionMoveDown
+            // 
+            this.btnActionMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActionMoveDown.Enabled = false;
+            this.btnActionMoveDown.ImageIndex = 13;
+            this.btnActionMoveDown.ImageList = this.imageList1;
+            this.btnActionMoveDown.Location = new System.Drawing.Point(658, 508);
+            this.btnActionMoveDown.Name = "btnActionMoveDown";
+            this.btnActionMoveDown.Size = new System.Drawing.Size(25, 25);
+            this.btnActionMoveDown.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.btnActionMoveDown, "Move selected Group down.");
+            this.btnActionMoveDown.UseVisualStyleBackColor = true;
+            this.btnActionMoveDown.Click += new System.EventHandler(this.btnActionMoveDown_Click);
             // 
             // statusStrip1
             // 
@@ -866,6 +1287,94 @@ namespace DataManagerGUI
             // toolStripContainer2.TopToolStripPanel
             // 
             this.toolStripContainer2.TopToolStripPanel.Controls.Add(this.tsSearch);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AllowUserToOrderColumns = true;
+            this.dataGridView3.AllowUserToResizeRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn1,
+            this.groupDataGridViewTextBoxColumn,
+            this.pathDataGridViewTextBoxColumn,
+            this.nodeDataGridViewTextBoxColumn,
+            this.lengthDataGridViewTextBoxColumn,
+            this.matchDataGridViewTextBoxColumn,
+            this.locationDataGridViewTextBoxColumn});
+            this.dataGridView3.DataSource = this.SearchResultsTreeBinder;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 31);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.Size = new System.Drawing.Size(908, 548);
+            this.dataGridView3.TabIndex = 4;
+            this.dataGridView3.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentDoubleClick);
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // groupDataGridViewTextBoxColumn
+            // 
+            this.groupDataGridViewTextBoxColumn.DataPropertyName = "Group";
+            this.groupDataGridViewTextBoxColumn.HeaderText = "Group";
+            this.groupDataGridViewTextBoxColumn.Name = "groupDataGridViewTextBoxColumn";
+            this.groupDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pathDataGridViewTextBoxColumn
+            // 
+            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
+            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
+            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
+            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nodeDataGridViewTextBoxColumn
+            // 
+            this.nodeDataGridViewTextBoxColumn.DataPropertyName = "Node";
+            this.nodeDataGridViewTextBoxColumn.HeaderText = "Node";
+            this.nodeDataGridViewTextBoxColumn.Name = "nodeDataGridViewTextBoxColumn";
+            this.nodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lengthDataGridViewTextBoxColumn
+            // 
+            this.lengthDataGridViewTextBoxColumn.DataPropertyName = "Length";
+            this.lengthDataGridViewTextBoxColumn.HeaderText = "Length";
+            this.lengthDataGridViewTextBoxColumn.Name = "lengthDataGridViewTextBoxColumn";
+            this.lengthDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // matchDataGridViewTextBoxColumn
+            // 
+            this.matchDataGridViewTextBoxColumn.DataPropertyName = "Match";
+            this.matchDataGridViewTextBoxColumn.HeaderText = "Match";
+            this.matchDataGridViewTextBoxColumn.Name = "matchDataGridViewTextBoxColumn";
+            this.matchDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // locationDataGridViewTextBoxColumn
+            // 
+            this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
+            this.locationDataGridViewTextBoxColumn.HeaderText = "Location";
+            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
+            this.locationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // label6
+            // 
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(908, 31);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Search Results:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tsSearch
             // 
@@ -965,94 +1474,6 @@ namespace DataManagerGUI
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // label6
-            // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(908, 31);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Search Results:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToOrderColumns = true;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn1,
-            this.groupDataGridViewTextBoxColumn,
-            this.pathDataGridViewTextBoxColumn,
-            this.nodeDataGridViewTextBoxColumn,
-            this.lengthDataGridViewTextBoxColumn,
-            this.matchDataGridViewTextBoxColumn,
-            this.locationDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.SearchResultsTreeBinder;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 31);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(908, 548);
-            this.dataGridView3.TabIndex = 4;
-            this.dataGridView3.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentDoubleClick);
-            // 
-            // locationDataGridViewTextBoxColumn
-            // 
-            this.locationDataGridViewTextBoxColumn.DataPropertyName = "Location";
-            this.locationDataGridViewTextBoxColumn.HeaderText = "Location";
-            this.locationDataGridViewTextBoxColumn.Name = "locationDataGridViewTextBoxColumn";
-            this.locationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // matchDataGridViewTextBoxColumn
-            // 
-            this.matchDataGridViewTextBoxColumn.DataPropertyName = "Match";
-            this.matchDataGridViewTextBoxColumn.HeaderText = "Match";
-            this.matchDataGridViewTextBoxColumn.Name = "matchDataGridViewTextBoxColumn";
-            this.matchDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lengthDataGridViewTextBoxColumn
-            // 
-            this.lengthDataGridViewTextBoxColumn.DataPropertyName = "Length";
-            this.lengthDataGridViewTextBoxColumn.HeaderText = "Length";
-            this.lengthDataGridViewTextBoxColumn.Name = "lengthDataGridViewTextBoxColumn";
-            this.lengthDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nodeDataGridViewTextBoxColumn
-            // 
-            this.nodeDataGridViewTextBoxColumn.DataPropertyName = "Node";
-            this.nodeDataGridViewTextBoxColumn.HeaderText = "Node";
-            this.nodeDataGridViewTextBoxColumn.Name = "nodeDataGridViewTextBoxColumn";
-            this.nodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pathDataGridViewTextBoxColumn
-            // 
-            this.pathDataGridViewTextBoxColumn.DataPropertyName = "Path";
-            this.pathDataGridViewTextBoxColumn.HeaderText = "Path";
-            this.pathDataGridViewTextBoxColumn.Name = "pathDataGridViewTextBoxColumn";
-            this.pathDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // groupDataGridViewTextBoxColumn
-            // 
-            this.groupDataGridViewTextBoxColumn.DataPropertyName = "Group";
-            this.groupDataGridViewTextBoxColumn.HeaderText = "Group";
-            this.groupDataGridViewTextBoxColumn.Name = "groupDataGridViewTextBoxColumn";
-            this.groupDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
             // tabEdit
             // 
             this.tabEdit.Controls.Add(this.splitContainer1);
@@ -1084,1650 +1505,6 @@ namespace DataManagerGUI
             this.splitContainer1.Size = new System.Drawing.Size(908, 604);
             this.splitContainer1.SplitterDistance = 216;
             this.splitContainer1.TabIndex = 1;
-            // 
-            // pnlGeneral
-            // 
-            this.pnlGeneral.Controls.Add(this.btnCollectionRulesetMoveDown);
-            this.pnlGeneral.Controls.Add(this.btnCollectionRulesetMoveUp);
-            this.pnlGeneral.Controls.Add(this.btnCollectionGroupMoveDown);
-            this.pnlGeneral.Controls.Add(this.btnCollectionGroupMoveUp);
-            this.pnlGeneral.Controls.Add(this.label20);
-            this.pnlGeneral.Controls.Add(this.label4);
-            this.pnlGeneral.Controls.Add(this.label18);
-            this.pnlGeneral.Controls.Add(this.txtCollectionNotes);
-            this.pnlGeneral.Controls.Add(this.textBox2);
-            this.pnlGeneral.Controls.Add(this.txtCollectionAuthor);
-            this.pnlGeneral.Controls.Add(this.label17);
-            this.pnlGeneral.Controls.Add(this.label14);
-            this.pnlGeneral.Controls.Add(this.label15);
-            this.pnlGeneral.Controls.Add(this.label16);
-            this.pnlGeneral.Controls.Add(this.btnCollectionRulesetAdd);
-            this.pnlGeneral.Controls.Add(this.btnCollectionGroupAdd);
-            this.pnlGeneral.Controls.Add(this.dgvCollectionRulesets);
-            this.pnlGeneral.Controls.Add(this.btnCollectionRulesetsRemove);
-            this.pnlGeneral.Controls.Add(this.dgvCollectionGroups);
-            this.pnlGeneral.Controls.Add(this.btnCollectionGroupRemove);
-            this.pnlGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlGeneral.Location = new System.Drawing.Point(0, 0);
-            this.pnlGeneral.Name = "pnlGeneral";
-            this.pnlGeneral.Size = new System.Drawing.Size(688, 604);
-            this.pnlGeneral.TabIndex = 2;
-            this.pnlGeneral.Visible = false;
-            // 
-            // btnCollectionGroupRemove
-            // 
-            this.btnCollectionGroupRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCollectionGroupRemove.Enabled = false;
-            this.btnCollectionGroupRemove.ImageIndex = 18;
-            this.btnCollectionGroupRemove.ImageList = this.imageList1;
-            this.btnCollectionGroupRemove.Location = new System.Drawing.Point(565, 233);
-            this.btnCollectionGroupRemove.Name = "btnCollectionGroupRemove";
-            this.btnCollectionGroupRemove.Size = new System.Drawing.Size(79, 23);
-            this.btnCollectionGroupRemove.TabIndex = 6;
-            this.btnCollectionGroupRemove.Text = "Remove";
-            this.btnCollectionGroupRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCollectionGroupRemove.UseVisualStyleBackColor = true;
-            this.btnCollectionGroupRemove.Click += new System.EventHandler(this.btnCollectionGroupRemove_Click);
-            // 
-            // dgvCollectionGroups
-            // 
-            this.dgvCollectionGroups.AllowUserToAddRows = false;
-            this.dgvCollectionGroups.AllowUserToDeleteRows = false;
-            this.dgvCollectionGroups.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCollectionGroups.AutoGenerateColumns = false;
-            this.dgvCollectionGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCollectionGroups.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvCollectionGroups.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvCollectionGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCollectionGroups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvtcCollectionGroupName,
-            this.dgvtcCollectionGroupComment,
-            this.dgvtcCollectionGroupGroupCount,
-            this.dgvtcCollectionGroupRulesetCount});
-            this.dgvCollectionGroups.DataSource = this.CollectionGroupBinder;
-            this.dgvCollectionGroups.Location = new System.Drawing.Point(11, 83);
-            this.dgvCollectionGroups.MultiSelect = false;
-            this.dgvCollectionGroups.Name = "dgvCollectionGroups";
-            this.dgvCollectionGroups.RowHeadersWidth = 25;
-            this.dgvCollectionGroups.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvCollectionGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCollectionGroups.Size = new System.Drawing.Size(633, 144);
-            this.dgvCollectionGroups.TabIndex = 2;
-            this.dgvCollectionGroups.TabStop = false;
-            this.dgvCollectionGroups.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCollectionGroups_CellEndEdit);
-            this.dgvCollectionGroups.Sorted += new System.EventHandler(this.DataGrid_Sorted);
-            this.dgvCollectionGroups.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvCollectionGroups_MouseUp);
-            // 
-            // dgvtcCollectionGroupRulesetCount
-            // 
-            this.dgvtcCollectionGroupRulesetCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dgvtcCollectionGroupRulesetCount.DataPropertyName = "RulesetCount";
-            this.dgvtcCollectionGroupRulesetCount.HeaderText = "Rulesets";
-            this.dgvtcCollectionGroupRulesetCount.Name = "dgvtcCollectionGroupRulesetCount";
-            this.dgvtcCollectionGroupRulesetCount.ReadOnly = true;
-            this.dgvtcCollectionGroupRulesetCount.Width = 73;
-            // 
-            // dgvtcCollectionGroupGroupCount
-            // 
-            this.dgvtcCollectionGroupGroupCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dgvtcCollectionGroupGroupCount.DataPropertyName = "GroupCount";
-            this.dgvtcCollectionGroupGroupCount.HeaderText = "Groups";
-            this.dgvtcCollectionGroupGroupCount.Name = "dgvtcCollectionGroupGroupCount";
-            this.dgvtcCollectionGroupGroupCount.ReadOnly = true;
-            this.dgvtcCollectionGroupGroupCount.Width = 66;
-            // 
-            // dgvtcCollectionGroupComment
-            // 
-            this.dgvtcCollectionGroupComment.DataPropertyName = "Comment";
-            this.dgvtcCollectionGroupComment.HeaderText = "Comment";
-            this.dgvtcCollectionGroupComment.Name = "dgvtcCollectionGroupComment";
-            // 
-            // dgvtcCollectionGroupName
-            // 
-            this.dgvtcCollectionGroupName.DataPropertyName = "Name";
-            this.dgvtcCollectionGroupName.HeaderText = "Name";
-            this.dgvtcCollectionGroupName.Name = "dgvtcCollectionGroupName";
-            // 
-            // btnCollectionRulesetsRemove
-            // 
-            this.btnCollectionRulesetsRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCollectionRulesetsRemove.Enabled = false;
-            this.btnCollectionRulesetsRemove.ImageIndex = 18;
-            this.btnCollectionRulesetsRemove.ImageList = this.imageList1;
-            this.btnCollectionRulesetsRemove.Location = new System.Drawing.Point(565, 423);
-            this.btnCollectionRulesetsRemove.Name = "btnCollectionRulesetsRemove";
-            this.btnCollectionRulesetsRemove.Size = new System.Drawing.Size(79, 23);
-            this.btnCollectionRulesetsRemove.TabIndex = 12;
-            this.btnCollectionRulesetsRemove.Text = "Remove";
-            this.btnCollectionRulesetsRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCollectionRulesetsRemove.UseVisualStyleBackColor = true;
-            this.btnCollectionRulesetsRemove.Click += new System.EventHandler(this.btnCollectionRulesetsRemove_Click);
-            // 
-            // dgvCollectionRulesets
-            // 
-            this.dgvCollectionRulesets.AllowUserToAddRows = false;
-            this.dgvCollectionRulesets.AllowUserToDeleteRows = false;
-            this.dgvCollectionRulesets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCollectionRulesets.AutoGenerateColumns = false;
-            this.dgvCollectionRulesets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCollectionRulesets.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvCollectionRulesets.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvCollectionRulesets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCollectionRulesets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvtcCollectionRulesetName,
-            this.dgvtcCollectionRulesetQuickView,
-            this.dgvtcCollectionRulesetComment});
-            this.dgvCollectionRulesets.DataSource = this.CollectionRulesetBinder;
-            this.dgvCollectionRulesets.Location = new System.Drawing.Point(14, 288);
-            this.dgvCollectionRulesets.MultiSelect = false;
-            this.dgvCollectionRulesets.Name = "dgvCollectionRulesets";
-            this.dgvCollectionRulesets.RowHeadersWidth = 25;
-            this.dgvCollectionRulesets.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvCollectionRulesets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCollectionRulesets.Size = new System.Drawing.Size(630, 129);
-            this.dgvCollectionRulesets.TabIndex = 8;
-            this.dgvCollectionRulesets.TabStop = false;
-            this.dgvCollectionRulesets.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCollectionRulesets_CellEndEdit);
-            this.dgvCollectionRulesets.Sorted += new System.EventHandler(this.DataGrid_Sorted);
-            this.dgvCollectionRulesets.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvCollectionRulesets_MouseUp);
-            // 
-            // dgvtcCollectionRulesetComment
-            // 
-            this.dgvtcCollectionRulesetComment.DataPropertyName = "Comment";
-            this.dgvtcCollectionRulesetComment.HeaderText = "Comment";
-            this.dgvtcCollectionRulesetComment.Name = "dgvtcCollectionRulesetComment";
-            // 
-            // dgvtcCollectionRulesetQuickView
-            // 
-            this.dgvtcCollectionRulesetQuickView.DataPropertyName = "QuickView";
-            this.dgvtcCollectionRulesetQuickView.HeaderText = "QuickView";
-            this.dgvtcCollectionRulesetQuickView.Name = "dgvtcCollectionRulesetQuickView";
-            this.dgvtcCollectionRulesetQuickView.ReadOnly = true;
-            // 
-            // dgvtcCollectionRulesetName
-            // 
-            this.dgvtcCollectionRulesetName.DataPropertyName = "Name";
-            this.dgvtcCollectionRulesetName.HeaderText = "Name";
-            this.dgvtcCollectionRulesetName.Name = "dgvtcCollectionRulesetName";
-            // 
-            // btnCollectionGroupAdd
-            // 
-            this.btnCollectionGroupAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCollectionGroupAdd.ImageIndex = 17;
-            this.btnCollectionGroupAdd.ImageList = this.imageList1;
-            this.btnCollectionGroupAdd.Location = new System.Drawing.Point(484, 233);
-            this.btnCollectionGroupAdd.Name = "btnCollectionGroupAdd";
-            this.btnCollectionGroupAdd.Size = new System.Drawing.Size(79, 23);
-            this.btnCollectionGroupAdd.TabIndex = 5;
-            this.btnCollectionGroupAdd.Text = "Add";
-            this.btnCollectionGroupAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCollectionGroupAdd.UseVisualStyleBackColor = true;
-            this.btnCollectionGroupAdd.Click += new System.EventHandler(this.btnCollectionGroupAdd_Click);
-            // 
-            // btnCollectionRulesetAdd
-            // 
-            this.btnCollectionRulesetAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCollectionRulesetAdd.ImageIndex = 17;
-            this.btnCollectionRulesetAdd.ImageList = this.imageList1;
-            this.btnCollectionRulesetAdd.Location = new System.Drawing.Point(484, 423);
-            this.btnCollectionRulesetAdd.Name = "btnCollectionRulesetAdd";
-            this.btnCollectionRulesetAdd.Size = new System.Drawing.Size(79, 23);
-            this.btnCollectionRulesetAdd.TabIndex = 11;
-            this.btnCollectionRulesetAdd.Text = "Add";
-            this.btnCollectionRulesetAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCollectionRulesetAdd.UseVisualStyleBackColor = true;
-            this.btnCollectionRulesetAdd.Click += new System.EventHandler(this.btnCollectionRulesetsAdd_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(13, 9);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(452, 39);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Ruleset Collection Overview";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(14, 62);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(127, 16);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Groups In Collection";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(18, 266);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(199, 16);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Orphaned Rulesets In Collection";
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(7, 446);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 16);
-            this.label17.TabIndex = 13;
-            this.label17.Text = "Author Info";
-            // 
-            // txtCollectionAuthor
-            // 
-            this.txtCollectionAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtCollectionAuthor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CollectionBinder, "Author", true));
-            this.txtCollectionAuthor.Location = new System.Drawing.Point(67, 466);
-            this.txtCollectionAuthor.Name = "txtCollectionAuthor";
-            this.txtCollectionAuthor.Size = new System.Drawing.Size(162, 20);
-            this.txtCollectionAuthor.TabIndex = 14;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CollectionBinder, "Version", true));
-            this.textBox2.Location = new System.Drawing.Point(585, 470);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(93, 20);
-            this.textBox2.TabIndex = 14;
-            // 
-            // txtCollectionNotes
-            // 
-            this.txtCollectionNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCollectionNotes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CollectionBinder, "Notes", true));
-            this.txtCollectionNotes.Location = new System.Drawing.Point(67, 501);
-            this.txtCollectionNotes.Multiline = true;
-            this.txtCollectionNotes.Name = "txtCollectionNotes";
-            this.txtCollectionNotes.Size = new System.Drawing.Size(612, 96);
-            this.txtCollectionNotes.TabIndex = 16;
-            // 
-            // label18
-            // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(20, 470);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(35, 13);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "Name";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(479, 473);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Compatible Version:";
-            // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(20, 501);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(35, 13);
-            this.label20.TabIndex = 15;
-            this.label20.Text = "Notes";
-            // 
-            // btnCollectionGroupMoveUp
-            // 
-            this.btnCollectionGroupMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCollectionGroupMoveUp.Enabled = false;
-            this.btnCollectionGroupMoveUp.ImageIndex = 12;
-            this.btnCollectionGroupMoveUp.ImageList = this.imageList1;
-            this.btnCollectionGroupMoveUp.Location = new System.Drawing.Point(650, 176);
-            this.btnCollectionGroupMoveUp.Name = "btnCollectionGroupMoveUp";
-            this.btnCollectionGroupMoveUp.Size = new System.Drawing.Size(25, 25);
-            this.btnCollectionGroupMoveUp.TabIndex = 3;
-            this.btnCollectionGroupMoveUp.UseVisualStyleBackColor = true;
-            this.btnCollectionGroupMoveUp.Click += new System.EventHandler(this.btnCollectionGroupMoveUp_Click);
-            // 
-            // btnCollectionGroupMoveDown
-            // 
-            this.btnCollectionGroupMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCollectionGroupMoveDown.Enabled = false;
-            this.btnCollectionGroupMoveDown.ImageIndex = 13;
-            this.btnCollectionGroupMoveDown.ImageList = this.imageList1;
-            this.btnCollectionGroupMoveDown.Location = new System.Drawing.Point(650, 202);
-            this.btnCollectionGroupMoveDown.Name = "btnCollectionGroupMoveDown";
-            this.btnCollectionGroupMoveDown.Size = new System.Drawing.Size(25, 25);
-            this.btnCollectionGroupMoveDown.TabIndex = 4;
-            this.btnCollectionGroupMoveDown.UseVisualStyleBackColor = true;
-            this.btnCollectionGroupMoveDown.Click += new System.EventHandler(this.btnCollectionGroupMoveDown_Click);
-            // 
-            // btnCollectionRulesetMoveUp
-            // 
-            this.btnCollectionRulesetMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCollectionRulesetMoveUp.Enabled = false;
-            this.btnCollectionRulesetMoveUp.ImageIndex = 12;
-            this.btnCollectionRulesetMoveUp.ImageList = this.imageList1;
-            this.btnCollectionRulesetMoveUp.Location = new System.Drawing.Point(650, 366);
-            this.btnCollectionRulesetMoveUp.Name = "btnCollectionRulesetMoveUp";
-            this.btnCollectionRulesetMoveUp.Size = new System.Drawing.Size(25, 25);
-            this.btnCollectionRulesetMoveUp.TabIndex = 9;
-            this.btnCollectionRulesetMoveUp.UseVisualStyleBackColor = true;
-            this.btnCollectionRulesetMoveUp.Click += new System.EventHandler(this.btnCollectionRulesetMoveUp_Click);
-            // 
-            // btnCollectionRulesetMoveDown
-            // 
-            this.btnCollectionRulesetMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCollectionRulesetMoveDown.Enabled = false;
-            this.btnCollectionRulesetMoveDown.ImageIndex = 13;
-            this.btnCollectionRulesetMoveDown.ImageList = this.imageList1;
-            this.btnCollectionRulesetMoveDown.Location = new System.Drawing.Point(650, 392);
-            this.btnCollectionRulesetMoveDown.Name = "btnCollectionRulesetMoveDown";
-            this.btnCollectionRulesetMoveDown.Size = new System.Drawing.Size(25, 25);
-            this.btnCollectionRulesetMoveDown.TabIndex = 10;
-            this.btnCollectionRulesetMoveDown.UseVisualStyleBackColor = true;
-            this.btnCollectionRulesetMoveDown.Click += new System.EventHandler(this.btnCollectionRulesetMoveDown_Click);
-            // 
-            // pnlGroups
-            // 
-            this.pnlGroups.Controls.Add(this.tabGroupTabs);
-            this.pnlGroups.Controls.Add(this.lblGroupOverview);
-            this.pnlGroups.Controls.Add(this.commentLabel);
-            this.pnlGroups.Controls.Add(this.txtGroupComment);
-            this.pnlGroups.Controls.Add(this.nameLabel);
-            this.pnlGroups.Controls.Add(this.txtGroupName);
-            this.pnlGroups.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlGroups.Location = new System.Drawing.Point(0, 0);
-            this.pnlGroups.Name = "pnlGroups";
-            this.pnlGroups.Size = new System.Drawing.Size(688, 604);
-            this.pnlGroups.TabIndex = 3;
-            // 
-            // txtGroupName
-            // 
-            this.txtGroupName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.GroupBinder, "Name", true));
-            this.txtGroupName.Location = new System.Drawing.Point(67, 60);
-            this.txtGroupName.Name = "txtGroupName";
-            this.txtGroupName.Size = new System.Drawing.Size(248, 20);
-            this.txtGroupName.TabIndex = 1;
-            this.txtGroupName.Validated += new System.EventHandler(this.txtGroupName_Validated);
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(7, 63);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(38, 13);
-            this.nameLabel.TabIndex = 0;
-            this.nameLabel.Text = "Name:";
-            this.nameLabel.UseMnemonic = false;
-            // 
-            // txtGroupComment
-            // 
-            this.txtGroupComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtGroupComment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.GroupBinder, "Comment", true));
-            this.txtGroupComment.Location = new System.Drawing.Point(67, 86);
-            this.txtGroupComment.Name = "txtGroupComment";
-            this.txtGroupComment.Size = new System.Drawing.Size(587, 20);
-            this.txtGroupComment.TabIndex = 3;
-            // 
-            // commentLabel
-            // 
-            this.commentLabel.AutoSize = true;
-            this.commentLabel.Location = new System.Drawing.Point(7, 89);
-            this.commentLabel.Name = "commentLabel";
-            this.commentLabel.Size = new System.Drawing.Size(54, 13);
-            this.commentLabel.TabIndex = 2;
-            this.commentLabel.Text = "Comment:";
-            this.commentLabel.UseMnemonic = false;
-            // 
-            // lblGroupOverview
-            // 
-            this.lblGroupOverview.AutoSize = true;
-            this.lblGroupOverview.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGroupOverview.Location = new System.Drawing.Point(13, 9);
-            this.lblGroupOverview.Name = "lblGroupOverview";
-            this.lblGroupOverview.Size = new System.Drawing.Size(268, 39);
-            this.lblGroupOverview.TabIndex = 6;
-            this.lblGroupOverview.Text = "Group Overview";
-            this.lblGroupOverview.UseMnemonic = false;
-            // 
-            // tabGroupTabs
-            // 
-            this.tabGroupTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabGroupTabs.Controls.Add(this.tabPage3);
-            this.tabGroupTabs.Controls.Add(this.tabGrpRuleset);
-            this.tabGroupTabs.Location = new System.Drawing.Point(3, 112);
-            this.tabGroupTabs.Name = "tabGroupTabs";
-            this.tabGroupTabs.SelectedIndex = 0;
-            this.tabGroupTabs.Size = new System.Drawing.Size(685, 489);
-            this.tabGroupTabs.TabIndex = 16;
-            // 
-            // tabGrpRuleset
-            // 
-            this.tabGrpRuleset.Controls.Add(this.pmGroupDefaultActions);
-            this.tabGrpRuleset.Controls.Add(this.pmGroupFilters);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupFiltersMoveDown);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupFiltersMoveUp);
-            this.tabGrpRuleset.Controls.Add(this.comboBox2);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultMoveDown);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultMoveUp);
-            this.tabGrpRuleset.Controls.Add(this.pictureBox3);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupFilterRemove);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupFilterUpdate);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupFilterClear);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupFilterAdd);
-            this.tabGrpRuleset.Controls.Add(this.dgvGroupFilters);
-            this.tabGrpRuleset.Controls.Add(this.dgvGroupDefaults);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultAdd);
-            this.tabGrpRuleset.Controls.Add(this.label21);
-            this.tabGrpRuleset.Controls.Add(this.label22);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultClear);
-            this.tabGrpRuleset.Controls.Add(this.pictureBox4);
-            this.tabGrpRuleset.Controls.Add(this.label23);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultUpdate);
-            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultRemove);
-            this.tabGrpRuleset.Location = new System.Drawing.Point(4, 22);
-            this.tabGrpRuleset.Name = "tabGrpRuleset";
-            this.tabGrpRuleset.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGrpRuleset.Size = new System.Drawing.Size(677, 463);
-            this.tabGrpRuleset.TabIndex = 1;
-            this.tabGrpRuleset.Text = "Filters & Defaults";
-            this.tabGrpRuleset.UseVisualStyleBackColor = true;
-            this.tabGrpRuleset.Click += new System.EventHandler(this.tabPage4_Click);
-            // 
-            // btnGroupDefaultRemove
-            // 
-            this.btnGroupDefaultRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupDefaultRemove.ImageIndex = 18;
-            this.btnGroupDefaultRemove.ImageList = this.imageList1;
-            this.btnGroupDefaultRemove.Location = new System.Drawing.Point(442, 437);
-            this.btnGroupDefaultRemove.Name = "btnGroupDefaultRemove";
-            this.btnGroupDefaultRemove.Size = new System.Drawing.Size(104, 23);
-            this.btnGroupDefaultRemove.TabIndex = 41;
-            this.btnGroupDefaultRemove.Text = "Remove";
-            this.btnGroupDefaultRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnGroupDefaultRemove, "Removes the selected action from this Ruleset.");
-            this.btnGroupDefaultRemove.UseVisualStyleBackColor = true;
-            this.btnGroupDefaultRemove.Click += new System.EventHandler(this.btnGroupDefaultRemove_Click);
-            // 
-            // btnGroupDefaultUpdate
-            // 
-            this.btnGroupDefaultUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupDefaultUpdate.ImageIndex = 15;
-            this.btnGroupDefaultUpdate.ImageList = this.imageList1;
-            this.btnGroupDefaultUpdate.Location = new System.Drawing.Point(234, 437);
-            this.btnGroupDefaultUpdate.Name = "btnGroupDefaultUpdate";
-            this.btnGroupDefaultUpdate.Size = new System.Drawing.Size(104, 23);
-            this.btnGroupDefaultUpdate.TabIndex = 39;
-            this.btnGroupDefaultUpdate.Text = "Update";
-            this.btnGroupDefaultUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnGroupDefaultUpdate, "Change the currently selected \r\nAction to what is specified above.");
-            this.btnGroupDefaultUpdate.UseVisualStyleBackColor = true;
-            this.btnGroupDefaultUpdate.Click += new System.EventHandler(this.btnGroupDefaultUpdate_Click);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(12, 242);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(87, 13);
-            this.label23.TabIndex = 34;
-            this.label23.Text = "Group Actions";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.BackColor = System.Drawing.Color.Black;
-            this.pictureBox4.Location = new System.Drawing.Point(103, 249);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(560, 1);
-            this.pictureBox4.TabIndex = 27;
-            this.pictureBox4.TabStop = false;
-            // 
-            // btnGroupDefaultClear
-            // 
-            this.btnGroupDefaultClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupDefaultClear.ImageIndex = 7;
-            this.btnGroupDefaultClear.ImageList = this.imageList1;
-            this.btnGroupDefaultClear.Location = new System.Drawing.Point(546, 437);
-            this.btnGroupDefaultClear.Name = "btnGroupDefaultClear";
-            this.btnGroupDefaultClear.Size = new System.Drawing.Size(104, 23);
-            this.btnGroupDefaultClear.TabIndex = 42;
-            this.btnGroupDefaultClear.Text = "Clear Actions";
-            this.btnGroupDefaultClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnGroupDefaultClear, "Removes all actions from this Ruleset");
-            this.btnGroupDefaultClear.UseVisualStyleBackColor = true;
-            this.btnGroupDefaultClear.Click += new System.EventHandler(this.btnGroupDefaultClear_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(10, 12);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(77, 13);
-            this.label22.TabIndex = 26;
-            this.label22.Text = "Group Rules";
-            // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(461, 11);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(68, 13);
-            this.label21.TabIndex = 25;
-            this.label21.Text = "Rule Mode";
-            // 
-            // btnGroupDefaultAdd
-            // 
-            this.btnGroupDefaultAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupDefaultAdd.ImageIndex = 17;
-            this.btnGroupDefaultAdd.ImageList = this.imageList1;
-            this.btnGroupDefaultAdd.Location = new System.Drawing.Point(338, 437);
-            this.btnGroupDefaultAdd.Name = "btnGroupDefaultAdd";
-            this.btnGroupDefaultAdd.Size = new System.Drawing.Size(104, 23);
-            this.btnGroupDefaultAdd.TabIndex = 40;
-            this.btnGroupDefaultAdd.Text = "Add";
-            this.btnGroupDefaultAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnGroupDefaultAdd, "Add a new Action as specfied above");
-            this.btnGroupDefaultAdd.UseVisualStyleBackColor = true;
-            this.btnGroupDefaultAdd.Click += new System.EventHandler(this.btnGroupDefaultAdd_Click);
-            // 
-            // dgvGroupDefaults
-            // 
-            this.dgvGroupDefaults.AllowUserToAddRows = false;
-            this.dgvGroupDefaults.AllowUserToDeleteRows = false;
-            this.dgvGroupDefaults.AllowUserToResizeRows = false;
-            this.dgvGroupDefaults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGroupDefaults.AutoGenerateColumns = false;
-            this.dgvGroupDefaults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGroupDefaults.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvGroupDefaults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.modifierDataGridViewTextBoxColumn,
-            this.valueDataGridViewTextBoxColumn1});
-            this.dgvGroupDefaults.DataSource = this.GroupDefaultsBinder;
-            this.dgvGroupDefaults.Location = new System.Drawing.Point(8, 263);
-            this.dgvGroupDefaults.MultiSelect = false;
-            this.dgvGroupDefaults.Name = "dgvGroupDefaults";
-            this.dgvGroupDefaults.ReadOnly = true;
-            this.dgvGroupDefaults.RowHeadersVisible = false;
-            this.dgvGroupDefaults.RowHeadersWidth = 25;
-            this.dgvGroupDefaults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGroupDefaults.Size = new System.Drawing.Size(635, 135);
-            this.dgvGroupDefaults.TabIndex = 35;
-            this.dgvGroupDefaults.Sorted += new System.EventHandler(this.DataGrid_Sorted);
-            this.dgvGroupDefaults.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupDefaults_MouseUp);
-            // 
-            // valueDataGridViewTextBoxColumn1
-            // 
-            this.valueDataGridViewTextBoxColumn1.DataPropertyName = "Value";
-            this.valueDataGridViewTextBoxColumn1.HeaderText = "Value";
-            this.valueDataGridViewTextBoxColumn1.Name = "valueDataGridViewTextBoxColumn1";
-            this.valueDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // modifierDataGridViewTextBoxColumn
-            // 
-            this.modifierDataGridViewTextBoxColumn.DataPropertyName = "Modifier";
-            this.modifierDataGridViewTextBoxColumn.HeaderText = "Modifier";
-            this.modifierDataGridViewTextBoxColumn.Name = "modifierDataGridViewTextBoxColumn";
-            this.modifierDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Field";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Field";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dgvGroupFilters
-            // 
-            this.dgvGroupFilters.AllowUserToAddRows = false;
-            this.dgvGroupFilters.AllowUserToDeleteRows = false;
-            this.dgvGroupFilters.AllowUserToResizeRows = false;
-            this.dgvGroupFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGroupFilters.AutoGenerateColumns = false;
-            this.dgvGroupFilters.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGroupFilters.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvGroupFilters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Field,
-            this.modifierDataGridViewTextBoxColumn1,
-            this.valueDataGridViewTextBoxColumn2});
-            this.dgvGroupFilters.DataSource = this.GroupFiltersBinder;
-            this.dgvGroupFilters.Location = new System.Drawing.Point(8, 31);
-            this.dgvGroupFilters.MultiSelect = false;
-            this.dgvGroupFilters.Name = "dgvGroupFilters";
-            this.dgvGroupFilters.ReadOnly = true;
-            this.dgvGroupFilters.RowHeadersVisible = false;
-            this.dgvGroupFilters.RowHeadersWidth = 25;
-            this.dgvGroupFilters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGroupFilters.Size = new System.Drawing.Size(635, 137);
-            this.dgvGroupFilters.TabIndex = 28;
-            this.dgvGroupFilters.Sorted += new System.EventHandler(this.DataGrid_Sorted);
-            this.dgvGroupFilters.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupFilters_MouseUp);
-            // 
-            // valueDataGridViewTextBoxColumn2
-            // 
-            this.valueDataGridViewTextBoxColumn2.DataPropertyName = "Value";
-            this.valueDataGridViewTextBoxColumn2.HeaderText = "Value";
-            this.valueDataGridViewTextBoxColumn2.Name = "valueDataGridViewTextBoxColumn2";
-            this.valueDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // modifierDataGridViewTextBoxColumn1
-            // 
-            this.modifierDataGridViewTextBoxColumn1.DataPropertyName = "Modifier";
-            this.modifierDataGridViewTextBoxColumn1.HeaderText = "Modifier";
-            this.modifierDataGridViewTextBoxColumn1.Name = "modifierDataGridViewTextBoxColumn1";
-            this.modifierDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // Field
-            // 
-            this.Field.DataPropertyName = "Field";
-            this.Field.HeaderText = "Field";
-            this.Field.Name = "Field";
-            this.Field.ReadOnly = true;
-            // 
-            // btnGroupFilterAdd
-            // 
-            this.btnGroupFilterAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupFilterAdd.ImageIndex = 17;
-            this.btnGroupFilterAdd.ImageList = this.imageList1;
-            this.btnGroupFilterAdd.Location = new System.Drawing.Point(357, 210);
-            this.btnGroupFilterAdd.Name = "btnGroupFilterAdd";
-            this.btnGroupFilterAdd.Size = new System.Drawing.Size(104, 23);
-            this.btnGroupFilterAdd.TabIndex = 30;
-            this.btnGroupFilterAdd.Text = "Add";
-            this.btnGroupFilterAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnGroupFilterAdd, "Add a new Rule as specfied above");
-            this.btnGroupFilterAdd.UseVisualStyleBackColor = true;
-            this.btnGroupFilterAdd.Click += new System.EventHandler(this.btnGroupFilterAdd_Click);
-            // 
-            // btnGroupFilterClear
-            // 
-            this.btnGroupFilterClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupFilterClear.ImageIndex = 7;
-            this.btnGroupFilterClear.ImageList = this.imageList1;
-            this.btnGroupFilterClear.Location = new System.Drawing.Point(565, 210);
-            this.btnGroupFilterClear.Name = "btnGroupFilterClear";
-            this.btnGroupFilterClear.Size = new System.Drawing.Size(104, 23);
-            this.btnGroupFilterClear.TabIndex = 33;
-            this.btnGroupFilterClear.Text = "Clear Rules";
-            this.btnGroupFilterClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnGroupFilterClear, "Clear All Rules from this Ruleset");
-            this.btnGroupFilterClear.UseVisualStyleBackColor = true;
-            this.btnGroupFilterClear.Click += new System.EventHandler(this.btnGroupFilterClear_Click);
-            // 
-            // btnGroupFilterUpdate
-            // 
-            this.btnGroupFilterUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupFilterUpdate.ImageIndex = 15;
-            this.btnGroupFilterUpdate.ImageList = this.imageList1;
-            this.btnGroupFilterUpdate.Location = new System.Drawing.Point(253, 210);
-            this.btnGroupFilterUpdate.Name = "btnGroupFilterUpdate";
-            this.btnGroupFilterUpdate.Size = new System.Drawing.Size(104, 23);
-            this.btnGroupFilterUpdate.TabIndex = 31;
-            this.btnGroupFilterUpdate.Text = "Update";
-            this.btnGroupFilterUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnGroupFilterUpdate, "Change the currently selected \r\nRule to what is specified above.");
-            this.btnGroupFilterUpdate.UseVisualStyleBackColor = true;
-            this.btnGroupFilterUpdate.Click += new System.EventHandler(this.btnGroupFilterUpdate_Click);
-            // 
-            // btnGroupFilterRemove
-            // 
-            this.btnGroupFilterRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupFilterRemove.ImageIndex = 18;
-            this.btnGroupFilterRemove.ImageList = this.imageList1;
-            this.btnGroupFilterRemove.Location = new System.Drawing.Point(461, 210);
-            this.btnGroupFilterRemove.Name = "btnGroupFilterRemove";
-            this.btnGroupFilterRemove.Size = new System.Drawing.Size(104, 23);
-            this.btnGroupFilterRemove.TabIndex = 32;
-            this.btnGroupFilterRemove.Text = "Remove";
-            this.btnGroupFilterRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnGroupFilterRemove, "Removes the selected action from this Ruleset.");
-            this.btnGroupFilterRemove.UseVisualStyleBackColor = true;
-            this.btnGroupFilterRemove.Click += new System.EventHandler(this.btnGroupFilterRemove_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackColor = System.Drawing.Color.Black;
-            this.pictureBox3.Location = new System.Drawing.Point(96, 18);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(353, 1);
-            this.pictureBox3.TabIndex = 24;
-            this.pictureBox3.TabStop = false;
-            // 
-            // btnGroupDefaultMoveUp
-            // 
-            this.btnGroupDefaultMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupDefaultMoveUp.Enabled = false;
-            this.btnGroupDefaultMoveUp.ImageIndex = 12;
-            this.btnGroupDefaultMoveUp.ImageList = this.imageList1;
-            this.btnGroupDefaultMoveUp.Location = new System.Drawing.Point(647, 349);
-            this.btnGroupDefaultMoveUp.Name = "btnGroupDefaultMoveUp";
-            this.btnGroupDefaultMoveUp.Size = new System.Drawing.Size(25, 25);
-            this.btnGroupDefaultMoveUp.TabIndex = 36;
-            this.toolTip1.SetToolTip(this.btnGroupDefaultMoveUp, "Move selected Group up.");
-            this.btnGroupDefaultMoveUp.UseVisualStyleBackColor = true;
-            this.btnGroupDefaultMoveUp.Click += new System.EventHandler(this.btnGroupDefaultMoveUp_Click);
-            // 
-            // btnGroupDefaultMoveDown
-            // 
-            this.btnGroupDefaultMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupDefaultMoveDown.Enabled = false;
-            this.btnGroupDefaultMoveDown.ImageIndex = 13;
-            this.btnGroupDefaultMoveDown.ImageList = this.imageList1;
-            this.btnGroupDefaultMoveDown.Location = new System.Drawing.Point(647, 375);
-            this.btnGroupDefaultMoveDown.Name = "btnGroupDefaultMoveDown";
-            this.btnGroupDefaultMoveDown.Size = new System.Drawing.Size(25, 25);
-            this.btnGroupDefaultMoveDown.TabIndex = 37;
-            this.toolTip1.SetToolTip(this.btnGroupDefaultMoveDown, "Move selected Group down.");
-            this.btnGroupDefaultMoveDown.UseVisualStyleBackColor = true;
-            this.btnGroupDefaultMoveDown.Click += new System.EventHandler(this.btnGroupDefaultMoveDown_Click);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.GroupFiltersAndDefaultsBinders, "RuleMode", true));
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "AND",
-            "OR"});
-            this.comboBox2.Location = new System.Drawing.Point(541, 8);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(102, 21);
-            this.comboBox2.TabIndex = 43;
-            this.comboBox2.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // btnGroupFiltersMoveUp
-            // 
-            this.btnGroupFiltersMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupFiltersMoveUp.Enabled = false;
-            this.btnGroupFiltersMoveUp.ImageIndex = 12;
-            this.btnGroupFiltersMoveUp.ImageList = this.imageList1;
-            this.btnGroupFiltersMoveUp.Location = new System.Drawing.Point(646, 114);
-            this.btnGroupFiltersMoveUp.Name = "btnGroupFiltersMoveUp";
-            this.btnGroupFiltersMoveUp.Size = new System.Drawing.Size(25, 25);
-            this.btnGroupFiltersMoveUp.TabIndex = 44;
-            this.toolTip1.SetToolTip(this.btnGroupFiltersMoveUp, "Move selected Group up.");
-            this.btnGroupFiltersMoveUp.UseVisualStyleBackColor = true;
-            this.btnGroupFiltersMoveUp.Click += new System.EventHandler(this.btnGroupFiltersMoveUp_Click);
-            // 
-            // btnGroupFiltersMoveDown
-            // 
-            this.btnGroupFiltersMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupFiltersMoveDown.Enabled = false;
-            this.btnGroupFiltersMoveDown.ImageIndex = 13;
-            this.btnGroupFiltersMoveDown.ImageList = this.imageList1;
-            this.btnGroupFiltersMoveDown.Location = new System.Drawing.Point(646, 140);
-            this.btnGroupFiltersMoveDown.Name = "btnGroupFiltersMoveDown";
-            this.btnGroupFiltersMoveDown.Size = new System.Drawing.Size(25, 25);
-            this.btnGroupFiltersMoveDown.TabIndex = 45;
-            this.toolTip1.SetToolTip(this.btnGroupFiltersMoveDown, "Move selected Group down.");
-            this.btnGroupFiltersMoveDown.UseVisualStyleBackColor = true;
-            this.btnGroupFiltersMoveDown.Click += new System.EventHandler(this.btnGroupFiltersMoveDown_Click);
-            // 
-            // pmGroupFilters
-            // 
-            this.pmGroupFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pmGroupFilters.Location = new System.Drawing.Point(8, 174);
-            this.pmGroupFilters.MaximumSize = new System.Drawing.Size(2000, 33);
-            this.pmGroupFilters.MinimumSize = new System.Drawing.Size(612, 33);
-            this.pmGroupFilters.Name = "pmGroupFilters";
-            this.pmGroupFilters.ParameterTypeRestriction = DataManagerGUI.ParameterType.Rule;
-            this.pmGroupFilters.Size = new System.Drawing.Size(661, 33);
-            this.pmGroupFilters.TabIndex = 46;
-            // 
-            // pmGroupDefaultActions
-            // 
-            this.pmGroupDefaultActions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pmGroupDefaultActions.Location = new System.Drawing.Point(8, 403);
-            this.pmGroupDefaultActions.MaximumSize = new System.Drawing.Size(2000, 33);
-            this.pmGroupDefaultActions.MinimumSize = new System.Drawing.Size(612, 33);
-            this.pmGroupDefaultActions.Name = "pmGroupDefaultActions";
-            this.pmGroupDefaultActions.ParameterTypeRestriction = DataManagerGUI.ParameterType.Action;
-            this.pmGroupDefaultActions.Size = new System.Drawing.Size(661, 33);
-            this.pmGroupDefaultActions.TabIndex = 47;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label19);
-            this.tabPage3.Controls.Add(this.btnGroupRulesetRemove);
-            this.tabPage3.Controls.Add(this.btnGroupGroupRemove);
-            this.tabPage3.Controls.Add(this.btnGroupRulesetMoveDown);
-            this.tabPage3.Controls.Add(this.button1);
-            this.tabPage3.Controls.Add(this.dgvGroupRulesets);
-            this.tabPage3.Controls.Add(this.btnGroupRulesetMoveUp);
-            this.tabPage3.Controls.Add(this.dgvGroupGroups);
-            this.tabPage3.Controls.Add(this.btnGroupGroupMoveDown);
-            this.tabPage3.Controls.Add(this.btnGroupRulesetAdd);
-            this.tabPage3.Controls.Add(this.dataGridView5);
-            this.tabPage3.Controls.Add(this.btnGroupGroupMoveUp);
-            this.tabPage3.Controls.Add(this.btnGroupGroupAdd);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.label13);
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(677, 463);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Groups & Rulesets";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(5, 232);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(143, 16);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Rulesets In This Group";
-            this.label7.UseMnemonic = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(6, 7);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(134, 16);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Groups In This Group";
-            this.label13.UseMnemonic = false;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.ImageIndex = 17;
-            this.button2.Location = new System.Drawing.Point(475, 209);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Add";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnGroupGroupAdd_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(5, 232);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 16);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Rulesets In This Group";
-            this.label8.UseMnemonic = false;
-            // 
-            // btnGroupGroupAdd
-            // 
-            this.btnGroupGroupAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupGroupAdd.ImageIndex = 17;
-            this.btnGroupGroupAdd.ImageList = this.imageList1;
-            this.btnGroupGroupAdd.Location = new System.Drawing.Point(475, 209);
-            this.btnGroupGroupAdd.Name = "btnGroupGroupAdd";
-            this.btnGroupGroupAdd.Size = new System.Drawing.Size(83, 23);
-            this.btnGroupGroupAdd.TabIndex = 8;
-            this.btnGroupGroupAdd.Text = "Add";
-            this.btnGroupGroupAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGroupGroupAdd.UseVisualStyleBackColor = true;
-            this.btnGroupGroupAdd.Click += new System.EventHandler(this.btnGroupGroupAdd_Click);
-            // 
-            // btnGroupGroupMoveUp
-            // 
-            this.btnGroupGroupMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupGroupMoveUp.Enabled = false;
-            this.btnGroupGroupMoveUp.ImageIndex = 12;
-            this.btnGroupGroupMoveUp.ImageList = this.imageList1;
-            this.btnGroupGroupMoveUp.Location = new System.Drawing.Point(649, 152);
-            this.btnGroupGroupMoveUp.Name = "btnGroupGroupMoveUp";
-            this.btnGroupGroupMoveUp.Size = new System.Drawing.Size(25, 25);
-            this.btnGroupGroupMoveUp.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.btnGroupGroupMoveUp, "Move selected Group up.");
-            this.btnGroupGroupMoveUp.UseVisualStyleBackColor = true;
-            this.btnGroupGroupMoveUp.Click += new System.EventHandler(this.btnGroupGroupMoveUp_Click);
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(3, 30);
-            this.dataGridView5.MultiSelect = false;
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowHeadersWidth = 25;
-            this.dataGridView5.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView5.Size = new System.Drawing.Size(642, 173);
-            this.dataGridView5.TabIndex = 5;
-            this.dataGridView5.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupGroups_CellEndEdit);
-            this.dataGridView5.Sorted += new System.EventHandler(this.DataGrid_Sorted);
-            this.dataGridView5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupGroups_MouseUp);
-            // 
-            // btnGroupRulesetAdd
-            // 
-            this.btnGroupRulesetAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupRulesetAdd.ImageIndex = 17;
-            this.btnGroupRulesetAdd.ImageList = this.imageList1;
-            this.btnGroupRulesetAdd.Location = new System.Drawing.Point(475, 430);
-            this.btnGroupRulesetAdd.Name = "btnGroupRulesetAdd";
-            this.btnGroupRulesetAdd.Size = new System.Drawing.Size(83, 23);
-            this.btnGroupRulesetAdd.TabIndex = 14;
-            this.btnGroupRulesetAdd.Text = "Add";
-            this.btnGroupRulesetAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGroupRulesetAdd.UseVisualStyleBackColor = true;
-            this.btnGroupRulesetAdd.Click += new System.EventHandler(this.btnGroupRulesetAdd_Click);
-            // 
-            // btnGroupGroupMoveDown
-            // 
-            this.btnGroupGroupMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupGroupMoveDown.Enabled = false;
-            this.btnGroupGroupMoveDown.ImageIndex = 13;
-            this.btnGroupGroupMoveDown.ImageList = this.imageList1;
-            this.btnGroupGroupMoveDown.Location = new System.Drawing.Point(649, 178);
-            this.btnGroupGroupMoveDown.Name = "btnGroupGroupMoveDown";
-            this.btnGroupGroupMoveDown.Size = new System.Drawing.Size(25, 25);
-            this.btnGroupGroupMoveDown.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.btnGroupGroupMoveDown, "Move selected Group down.");
-            this.btnGroupGroupMoveDown.UseVisualStyleBackColor = true;
-            this.btnGroupGroupMoveDown.Click += new System.EventHandler(this.btnGroupGroupMoveDown_Click);
-            // 
-            // dgvGroupGroups
-            // 
-            this.dgvGroupGroups.AllowUserToAddRows = false;
-            this.dgvGroupGroups.AllowUserToDeleteRows = false;
-            this.dgvGroupGroups.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGroupGroups.AutoGenerateColumns = false;
-            this.dgvGroupGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGroupGroups.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvGroupGroups.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvGroupGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroupGroups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvtcGroupGroupName,
-            this.dgvtcGroupGroupComment,
-            this.dgvtcGroupGroupGroupCount,
-            this.dgvtcGroupGroupRulesetCount});
-            this.dgvGroupGroups.DataSource = this.GroupGroupBinder;
-            this.dgvGroupGroups.Location = new System.Drawing.Point(3, 30);
-            this.dgvGroupGroups.MultiSelect = false;
-            this.dgvGroupGroups.Name = "dgvGroupGroups";
-            this.dgvGroupGroups.RowHeadersWidth = 25;
-            this.dgvGroupGroups.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvGroupGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGroupGroups.Size = new System.Drawing.Size(642, 173);
-            this.dgvGroupGroups.TabIndex = 5;
-            this.dgvGroupGroups.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupGroups_CellEndEdit);
-            this.dgvGroupGroups.Sorted += new System.EventHandler(this.DataGrid_Sorted);
-            this.dgvGroupGroups.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupGroups_MouseUp);
-            // 
-            // dgvtcGroupGroupRulesetCount
-            // 
-            this.dgvtcGroupGroupRulesetCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dgvtcGroupGroupRulesetCount.DataPropertyName = "RulesetCount";
-            this.dgvtcGroupGroupRulesetCount.HeaderText = "Rulesets";
-            this.dgvtcGroupGroupRulesetCount.Name = "dgvtcGroupGroupRulesetCount";
-            this.dgvtcGroupGroupRulesetCount.ReadOnly = true;
-            this.dgvtcGroupGroupRulesetCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dgvtcGroupGroupRulesetCount.Width = 54;
-            // 
-            // dgvtcGroupGroupGroupCount
-            // 
-            this.dgvtcGroupGroupGroupCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dgvtcGroupGroupGroupCount.DataPropertyName = "GroupCount";
-            this.dgvtcGroupGroupGroupCount.HeaderText = "Groups";
-            this.dgvtcGroupGroupGroupCount.Name = "dgvtcGroupGroupGroupCount";
-            this.dgvtcGroupGroupGroupCount.ReadOnly = true;
-            this.dgvtcGroupGroupGroupCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dgvtcGroupGroupGroupCount.Width = 47;
-            // 
-            // dgvtcGroupGroupComment
-            // 
-            this.dgvtcGroupGroupComment.DataPropertyName = "Comment";
-            this.dgvtcGroupGroupComment.HeaderText = "Comment";
-            this.dgvtcGroupGroupComment.Name = "dgvtcGroupGroupComment";
-            this.dgvtcGroupGroupComment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvtcGroupGroupName
-            // 
-            this.dgvtcGroupGroupName.DataPropertyName = "Name";
-            this.dgvtcGroupGroupName.HeaderText = "Name";
-            this.dgvtcGroupGroupName.Name = "dgvtcGroupGroupName";
-            // 
-            // btnGroupRulesetMoveUp
-            // 
-            this.btnGroupRulesetMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupRulesetMoveUp.Enabled = false;
-            this.btnGroupRulesetMoveUp.ImageIndex = 12;
-            this.btnGroupRulesetMoveUp.ImageList = this.imageList1;
-            this.btnGroupRulesetMoveUp.Location = new System.Drawing.Point(649, 372);
-            this.btnGroupRulesetMoveUp.Name = "btnGroupRulesetMoveUp";
-            this.btnGroupRulesetMoveUp.Size = new System.Drawing.Size(25, 25);
-            this.btnGroupRulesetMoveUp.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.btnGroupRulesetMoveUp, "Move selected Ruleset up");
-            this.btnGroupRulesetMoveUp.UseVisualStyleBackColor = true;
-            this.btnGroupRulesetMoveUp.Click += new System.EventHandler(this.btnGroupRulesetMoveUp_Click);
-            // 
-            // dgvGroupRulesets
-            // 
-            this.dgvGroupRulesets.AllowUserToAddRows = false;
-            this.dgvGroupRulesets.AllowUserToDeleteRows = false;
-            this.dgvGroupRulesets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGroupRulesets.AutoGenerateColumns = false;
-            this.dgvGroupRulesets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGroupRulesets.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvGroupRulesets.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
-            this.dgvGroupRulesets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroupRulesets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.quickViewDataGridViewTextBoxColumn,
-            this.commentDataGridViewTextBoxColumn});
-            this.dgvGroupRulesets.DataSource = this.GroupRulesetBinder;
-            this.dgvGroupRulesets.Location = new System.Drawing.Point(1, 254);
-            this.dgvGroupRulesets.MultiSelect = false;
-            this.dgvGroupRulesets.Name = "dgvGroupRulesets";
-            this.dgvGroupRulesets.RowHeadersWidth = 25;
-            this.dgvGroupRulesets.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvGroupRulesets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGroupRulesets.Size = new System.Drawing.Size(642, 168);
-            this.dgvGroupRulesets.TabIndex = 11;
-            this.dgvGroupRulesets.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupRulesets_CellEndEdit);
-            this.dgvGroupRulesets.Sorted += new System.EventHandler(this.DataGrid_Sorted);
-            this.dgvGroupRulesets.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupRulesets_MouseUp);
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            // 
-            // quickViewDataGridViewTextBoxColumn
-            // 
-            this.quickViewDataGridViewTextBoxColumn.DataPropertyName = "QuickView";
-            this.quickViewDataGridViewTextBoxColumn.HeaderText = "QuickView";
-            this.quickViewDataGridViewTextBoxColumn.Name = "quickViewDataGridViewTextBoxColumn";
-            this.quickViewDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Enabled = false;
-            this.button1.ImageIndex = 18;
-            this.button1.Location = new System.Drawing.Point(560, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Remove";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnGroupGroupRemove_Click);
-            // 
-            // btnGroupRulesetMoveDown
-            // 
-            this.btnGroupRulesetMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupRulesetMoveDown.Enabled = false;
-            this.btnGroupRulesetMoveDown.ImageIndex = 13;
-            this.btnGroupRulesetMoveDown.ImageList = this.imageList1;
-            this.btnGroupRulesetMoveDown.Location = new System.Drawing.Point(649, 398);
-            this.btnGroupRulesetMoveDown.Name = "btnGroupRulesetMoveDown";
-            this.btnGroupRulesetMoveDown.Size = new System.Drawing.Size(25, 25);
-            this.btnGroupRulesetMoveDown.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btnGroupRulesetMoveDown, "Move Selected Ruleset down");
-            this.btnGroupRulesetMoveDown.UseVisualStyleBackColor = true;
-            this.btnGroupRulesetMoveDown.Click += new System.EventHandler(this.btnGroupRulesetMoveDown_Click);
-            // 
-            // btnGroupGroupRemove
-            // 
-            this.btnGroupGroupRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupGroupRemove.Enabled = false;
-            this.btnGroupGroupRemove.ImageIndex = 18;
-            this.btnGroupGroupRemove.ImageList = this.imageList1;
-            this.btnGroupGroupRemove.Location = new System.Drawing.Point(560, 209);
-            this.btnGroupGroupRemove.Name = "btnGroupGroupRemove";
-            this.btnGroupGroupRemove.Size = new System.Drawing.Size(83, 23);
-            this.btnGroupGroupRemove.TabIndex = 9;
-            this.btnGroupGroupRemove.Text = "Remove";
-            this.btnGroupGroupRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGroupGroupRemove.UseVisualStyleBackColor = true;
-            this.btnGroupGroupRemove.Click += new System.EventHandler(this.btnGroupGroupRemove_Click);
-            // 
-            // btnGroupRulesetRemove
-            // 
-            this.btnGroupRulesetRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupRulesetRemove.Enabled = false;
-            this.btnGroupRulesetRemove.ImageIndex = 18;
-            this.btnGroupRulesetRemove.ImageList = this.imageList1;
-            this.btnGroupRulesetRemove.Location = new System.Drawing.Point(560, 430);
-            this.btnGroupRulesetRemove.Name = "btnGroupRulesetRemove";
-            this.btnGroupRulesetRemove.Size = new System.Drawing.Size(83, 23);
-            this.btnGroupRulesetRemove.TabIndex = 15;
-            this.btnGroupRulesetRemove.Text = "Remove";
-            this.btnGroupRulesetRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGroupRulesetRemove.UseVisualStyleBackColor = true;
-            this.btnGroupRulesetRemove.Click += new System.EventHandler(this.btnGroupRulesetRemove_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(6, 7);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(134, 16);
-            this.label19.TabIndex = 4;
-            this.label19.Text = "Groups In This Group";
-            this.label19.UseMnemonic = false;
-            // 
-            // pnlRulesets
-            // 
-            this.pnlRulesets.Controls.Add(this.dmpRules);
-            this.pnlRulesets.Controls.Add(this.dmpActions);
-            this.pnlRulesets.Controls.Add(this.comboBox1);
-            this.pnlRulesets.Controls.Add(this.btnRulesetRulesMoveDown);
-            this.pnlRulesets.Controls.Add(this.btnRulesetRulesMoveUp);
-            this.pnlRulesets.Controls.Add(this.btnActionMoveDown);
-            this.pnlRulesets.Controls.Add(this.btnActionMoveUp);
-            this.pnlRulesets.Controls.Add(this.btnRulesetReparse);
-            this.pnlRulesets.Controls.Add(this.pictureBox2);
-            this.pnlRulesets.Controls.Add(lblRulesetOriginalText);
-            this.pnlRulesets.Controls.Add(this.txtRulesetReparse);
-            this.pnlRulesets.Controls.Add(this.btnRulesetRuleRemove);
-            this.pnlRulesets.Controls.Add(this.btnRulesetRuleUpdate);
-            this.pnlRulesets.Controls.Add(this.btnRulesetRuleClear);
-            this.pnlRulesets.Controls.Add(commentLabel1);
-            this.pnlRulesets.Controls.Add(this.txtRulesetComment);
-            this.pnlRulesets.Controls.Add(this.btnRulesetRuleAdd);
-            this.pnlRulesets.Controls.Add(nameLabel1);
-            this.pnlRulesets.Controls.Add(this.txtRulesetName);
-            this.pnlRulesets.Controls.Add(this.dgvRulesetRules);
-            this.pnlRulesets.Controls.Add(this.dgvRulesetActions);
-            this.pnlRulesets.Controls.Add(this.btnRulesetActionAdd);
-            this.pnlRulesets.Controls.Add(this.label5);
-            this.pnlRulesets.Controls.Add(this.label2);
-            this.pnlRulesets.Controls.Add(this.btnRulesetActionClear);
-            this.pnlRulesets.Controls.Add(this.pictureBox1);
-            this.pnlRulesets.Controls.Add(this.label3);
-            this.pnlRulesets.Controls.Add(this.btnRulesetActionUpdate);
-            this.pnlRulesets.Controls.Add(this.btnRulesetActionRemove);
-            this.pnlRulesets.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRulesets.Location = new System.Drawing.Point(0, 0);
-            this.pnlRulesets.Name = "pnlRulesets";
-            this.pnlRulesets.Size = new System.Drawing.Size(688, 604);
-            this.pnlRulesets.TabIndex = 4;
-            // 
-            // btnRulesetActionRemove
-            // 
-            this.btnRulesetActionRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetActionRemove.ImageIndex = 18;
-            this.btnRulesetActionRemove.ImageList = this.imageList1;
-            this.btnRulesetActionRemove.Location = new System.Drawing.Point(446, 574);
-            this.btnRulesetActionRemove.Name = "btnRulesetActionRemove";
-            this.btnRulesetActionRemove.Size = new System.Drawing.Size(104, 23);
-            this.btnRulesetActionRemove.TabIndex = 21;
-            this.btnRulesetActionRemove.Text = "Remove";
-            this.btnRulesetActionRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnRulesetActionRemove, "Removes the selected action from this Ruleset.");
-            this.btnRulesetActionRemove.UseVisualStyleBackColor = true;
-            this.btnRulesetActionRemove.Click += new System.EventHandler(this.btnRulesetActionRemove_Click);
-            // 
-            // btnRulesetActionUpdate
-            // 
-            this.btnRulesetActionUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetActionUpdate.ImageIndex = 15;
-            this.btnRulesetActionUpdate.ImageList = this.imageList1;
-            this.btnRulesetActionUpdate.Location = new System.Drawing.Point(238, 574);
-            this.btnRulesetActionUpdate.Name = "btnRulesetActionUpdate";
-            this.btnRulesetActionUpdate.Size = new System.Drawing.Size(104, 23);
-            this.btnRulesetActionUpdate.TabIndex = 19;
-            this.btnRulesetActionUpdate.Text = "Update";
-            this.btnRulesetActionUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnRulesetActionUpdate, "Change the currently selected \r\nAction to what is specified above.");
-            this.btnRulesetActionUpdate.UseVisualStyleBackColor = true;
-            this.btnRulesetActionUpdate.Click += new System.EventHandler(this.btnRulesetActionUpdate_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 330);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Actions";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(67, 337);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(607, 1);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnRulesetActionClear
-            // 
-            this.btnRulesetActionClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetActionClear.ImageIndex = 7;
-            this.btnRulesetActionClear.ImageList = this.imageList1;
-            this.btnRulesetActionClear.Location = new System.Drawing.Point(550, 574);
-            this.btnRulesetActionClear.Name = "btnRulesetActionClear";
-            this.btnRulesetActionClear.Size = new System.Drawing.Size(104, 23);
-            this.btnRulesetActionClear.TabIndex = 22;
-            this.btnRulesetActionClear.Text = "Clear Actions";
-            this.btnRulesetActionClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnRulesetActionClear, "Removes all actions from this Ruleset");
-            this.btnRulesetActionClear.UseVisualStyleBackColor = true;
-            this.btnRulesetActionClear.Click += new System.EventHandler(this.btnRulesetActionClear_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Rules";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(464, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Rule Mode";
-            // 
-            // btnRulesetActionAdd
-            // 
-            this.btnRulesetActionAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetActionAdd.ImageIndex = 17;
-            this.btnRulesetActionAdd.ImageList = this.imageList1;
-            this.btnRulesetActionAdd.Location = new System.Drawing.Point(342, 574);
-            this.btnRulesetActionAdd.Name = "btnRulesetActionAdd";
-            this.btnRulesetActionAdd.Size = new System.Drawing.Size(104, 23);
-            this.btnRulesetActionAdd.TabIndex = 20;
-            this.btnRulesetActionAdd.Text = "Add";
-            this.btnRulesetActionAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnRulesetActionAdd, "Add a new Action as specfied above");
-            this.btnRulesetActionAdd.UseVisualStyleBackColor = true;
-            this.btnRulesetActionAdd.Click += new System.EventHandler(this.btnRulesetActionAdd_Click);
-            // 
-            // dgvRulesetActions
-            // 
-            this.dgvRulesetActions.AllowUserToAddRows = false;
-            this.dgvRulesetActions.AllowUserToDeleteRows = false;
-            this.dgvRulesetActions.AllowUserToResizeRows = false;
-            this.dgvRulesetActions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvRulesetActions.AutoGenerateColumns = false;
-            this.dgvRulesetActions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvRulesetActions.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvRulesetActions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dgvtcRulesetActionModifier,
-            this.dgvtcRulesetActionValue});
-            this.dgvRulesetActions.DataSource = this.ActionBinder;
-            this.dgvRulesetActions.Location = new System.Drawing.Point(12, 350);
-            this.dgvRulesetActions.MultiSelect = false;
-            this.dgvRulesetActions.Name = "dgvRulesetActions";
-            this.dgvRulesetActions.ReadOnly = true;
-            this.dgvRulesetActions.RowHeadersVisible = false;
-            this.dgvRulesetActions.RowHeadersWidth = 25;
-            this.dgvRulesetActions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRulesetActions.Size = new System.Drawing.Size(642, 185);
-            this.dgvRulesetActions.TabIndex = 15;
-            this.dgvRulesetActions.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvRulesetActions_MouseUp);
-            // 
-            // dgvtcRulesetActionValue
-            // 
-            this.dgvtcRulesetActionValue.DataPropertyName = "Value";
-            this.dgvtcRulesetActionValue.HeaderText = "Value";
-            this.dgvtcRulesetActionValue.Name = "dgvtcRulesetActionValue";
-            this.dgvtcRulesetActionValue.ReadOnly = true;
-            this.dgvtcRulesetActionValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvtcRulesetActionModifier
-            // 
-            this.dgvtcRulesetActionModifier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvtcRulesetActionModifier.DataPropertyName = "Modifier";
-            this.dgvtcRulesetActionModifier.HeaderText = "Modifier";
-            this.dgvtcRulesetActionModifier.Name = "dgvtcRulesetActionModifier";
-            this.dgvtcRulesetActionModifier.ReadOnly = true;
-            this.dgvtcRulesetActionModifier.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Field";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Field";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dgvRulesetRules
-            // 
-            this.dgvRulesetRules.AllowUserToAddRows = false;
-            this.dgvRulesetRules.AllowUserToDeleteRows = false;
-            this.dgvRulesetRules.AllowUserToResizeRows = false;
-            this.dgvRulesetRules.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvRulesetRules.AutoGenerateColumns = false;
-            this.dgvRulesetRules.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvRulesetRules.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvRulesetRules.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dgvtcRulesetRuleModifier,
-            this.dgvtcRulesetRuleValue});
-            this.dgvRulesetRules.DataSource = this.RuleBinder;
-            this.dgvRulesetRules.Location = new System.Drawing.Point(11, 89);
-            this.dgvRulesetRules.MultiSelect = false;
-            this.dgvRulesetRules.Name = "dgvRulesetRules";
-            this.dgvRulesetRules.ReadOnly = true;
-            this.dgvRulesetRules.RowHeadersVisible = false;
-            this.dgvRulesetRules.RowHeadersWidth = 25;
-            this.dgvRulesetRules.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRulesetRules.Size = new System.Drawing.Size(643, 179);
-            this.dgvRulesetRules.TabIndex = 8;
-            this.dgvRulesetRules.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvRulesetRules_MouseUp);
-            // 
-            // dgvtcRulesetRuleValue
-            // 
-            this.dgvtcRulesetRuleValue.DataPropertyName = "Value";
-            this.dgvtcRulesetRuleValue.HeaderText = "Value";
-            this.dgvtcRulesetRuleValue.Name = "dgvtcRulesetRuleValue";
-            this.dgvtcRulesetRuleValue.ReadOnly = true;
-            this.dgvtcRulesetRuleValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvtcRulesetRuleModifier
-            // 
-            this.dgvtcRulesetRuleModifier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvtcRulesetRuleModifier.DataPropertyName = "Modifier";
-            this.dgvtcRulesetRuleModifier.HeaderText = "Modifier";
-            this.dgvtcRulesetRuleModifier.Name = "dgvtcRulesetRuleModifier";
-            this.dgvtcRulesetRuleModifier.ReadOnly = true;
-            this.dgvtcRulesetRuleModifier.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Field";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Field";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // txtRulesetName
-            // 
-            this.txtRulesetName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RulesetBinder, "Name", true));
-            this.txtRulesetName.Location = new System.Drawing.Point(97, 4);
-            this.txtRulesetName.Name = "txtRulesetName";
-            this.txtRulesetName.Size = new System.Drawing.Size(234, 20);
-            this.txtRulesetName.TabIndex = 1;
-            this.txtRulesetName.TextChanged += new System.EventHandler(this.txtRulesetName_TextChanged);
-            this.txtRulesetName.Validating += new System.ComponentModel.CancelEventHandler(this.txtRulesetName_Validating);
-            this.txtRulesetName.Validated += new System.EventHandler(this.txtRulesetName_Validated);
-            // 
-            // nameLabel1
-            // 
-            nameLabel1.AutoSize = true;
-            nameLabel1.Location = new System.Drawing.Point(53, 8);
-            nameLabel1.Name = "nameLabel1";
-            nameLabel1.Size = new System.Drawing.Size(38, 13);
-            nameLabel1.TabIndex = 0;
-            nameLabel1.Text = "Name:";
-            // 
-            // btnRulesetRuleAdd
-            // 
-            this.btnRulesetRuleAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetRuleAdd.ImageIndex = 17;
-            this.btnRulesetRuleAdd.ImageList = this.imageList1;
-            this.btnRulesetRuleAdd.Location = new System.Drawing.Point(363, 308);
-            this.btnRulesetRuleAdd.Name = "btnRulesetRuleAdd";
-            this.btnRulesetRuleAdd.Size = new System.Drawing.Size(104, 23);
-            this.btnRulesetRuleAdd.TabIndex = 10;
-            this.btnRulesetRuleAdd.Text = "Add";
-            this.btnRulesetRuleAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnRulesetRuleAdd, "Add a new Rule as specfied above");
-            this.btnRulesetRuleAdd.UseVisualStyleBackColor = true;
-            this.btnRulesetRuleAdd.Click += new System.EventHandler(this.btnRulesetRuleAdd_Click);
-            // 
-            // txtRulesetComment
-            // 
-            this.txtRulesetComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRulesetComment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RulesetBinder, "Comment", true));
-            this.txtRulesetComment.Location = new System.Drawing.Point(397, 4);
-            this.txtRulesetComment.Name = "txtRulesetComment";
-            this.txtRulesetComment.Size = new System.Drawing.Size(284, 20);
-            this.txtRulesetComment.TabIndex = 3;
-            this.txtRulesetComment.Validating += new System.ComponentModel.CancelEventHandler(this.txtRulesetComment_Validating);
-            // 
-            // commentLabel1
-            // 
-            commentLabel1.AutoSize = true;
-            commentLabel1.Location = new System.Drawing.Point(337, 8);
-            commentLabel1.Name = "commentLabel1";
-            commentLabel1.Size = new System.Drawing.Size(54, 13);
-            commentLabel1.TabIndex = 2;
-            commentLabel1.Text = "Comment:";
-            // 
-            // btnRulesetRuleClear
-            // 
-            this.btnRulesetRuleClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetRuleClear.ImageIndex = 7;
-            this.btnRulesetRuleClear.ImageList = this.imageList1;
-            this.btnRulesetRuleClear.Location = new System.Drawing.Point(571, 308);
-            this.btnRulesetRuleClear.Name = "btnRulesetRuleClear";
-            this.btnRulesetRuleClear.Size = new System.Drawing.Size(104, 23);
-            this.btnRulesetRuleClear.TabIndex = 13;
-            this.btnRulesetRuleClear.Text = "Clear Rules";
-            this.btnRulesetRuleClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnRulesetRuleClear, "Clear All Rules from this Ruleset");
-            this.btnRulesetRuleClear.UseVisualStyleBackColor = true;
-            this.btnRulesetRuleClear.Click += new System.EventHandler(this.btnRulesetRuleClear_Click);
-            // 
-            // btnRulesetRuleUpdate
-            // 
-            this.btnRulesetRuleUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetRuleUpdate.ImageIndex = 15;
-            this.btnRulesetRuleUpdate.ImageList = this.imageList1;
-            this.btnRulesetRuleUpdate.Location = new System.Drawing.Point(259, 308);
-            this.btnRulesetRuleUpdate.Name = "btnRulesetRuleUpdate";
-            this.btnRulesetRuleUpdate.Size = new System.Drawing.Size(104, 23);
-            this.btnRulesetRuleUpdate.TabIndex = 11;
-            this.btnRulesetRuleUpdate.Text = "Update";
-            this.btnRulesetRuleUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnRulesetRuleUpdate, "Change the currently selected \r\nRule to what is specified above.");
-            this.btnRulesetRuleUpdate.UseVisualStyleBackColor = true;
-            this.btnRulesetRuleUpdate.Click += new System.EventHandler(this.btnRulesetRuleUpdate_Click);
-            // 
-            // btnRulesetRuleRemove
-            // 
-            this.btnRulesetRuleRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetRuleRemove.ImageIndex = 18;
-            this.btnRulesetRuleRemove.ImageList = this.imageList1;
-            this.btnRulesetRuleRemove.Location = new System.Drawing.Point(467, 308);
-            this.btnRulesetRuleRemove.Name = "btnRulesetRuleRemove";
-            this.btnRulesetRuleRemove.Size = new System.Drawing.Size(104, 23);
-            this.btnRulesetRuleRemove.TabIndex = 12;
-            this.btnRulesetRuleRemove.Text = "Remove";
-            this.btnRulesetRuleRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip1.SetToolTip(this.btnRulesetRuleRemove, "Removes the selected action from this Ruleset.");
-            this.btnRulesetRuleRemove.UseVisualStyleBackColor = true;
-            this.btnRulesetRuleRemove.Click += new System.EventHandler(this.btnRulesetRuleRemove_Click);
-            // 
-            // txtRulesetReparse
-            // 
-            this.txtRulesetReparse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRulesetReparse.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RulesetBinder, "OriginalText", true));
-            this.txtRulesetReparse.Location = new System.Drawing.Point(56, 33);
-            this.txtRulesetReparse.Name = "txtRulesetReparse";
-            this.txtRulesetReparse.Size = new System.Drawing.Size(594, 20);
-            this.txtRulesetReparse.TabIndex = 5;
-            // 
-            // lblRulesetOriginalText
-            // 
-            lblRulesetOriginalText.AutoSize = true;
-            lblRulesetOriginalText.Location = new System.Drawing.Point(22, 36);
-            lblRulesetOriginalText.Name = "lblRulesetOriginalText";
-            lblRulesetOriginalText.Size = new System.Drawing.Size(28, 13);
-            lblRulesetOriginalText.TabIndex = 4;
-            lblRulesetOriginalText.Text = "Text";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Location = new System.Drawing.Point(55, 76);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(400, 1);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnRulesetReparse
-            // 
-            this.btnRulesetReparse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetReparse.ImageIndex = 15;
-            this.btnRulesetReparse.ImageList = this.imageList1;
-            this.btnRulesetReparse.Location = new System.Drawing.Point(655, 30);
-            this.btnRulesetReparse.Name = "btnRulesetReparse";
-            this.btnRulesetReparse.Size = new System.Drawing.Size(25, 25);
-            this.btnRulesetReparse.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.btnRulesetReparse, "You can text edit the ruleset, cut and paste \r\na ruleset from text. And press thi" +
-        "s button to\r\nmodify the ruleset. This will replace the \r\ncurrent ruleset.");
-            this.btnRulesetReparse.UseVisualStyleBackColor = true;
-            this.btnRulesetReparse.Click += new System.EventHandler(this.btnRulesetReparse_Click);
-            // 
-            // btnActionMoveUp
-            // 
-            this.btnActionMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActionMoveUp.Enabled = false;
-            this.btnActionMoveUp.ImageIndex = 12;
-            this.btnActionMoveUp.ImageList = this.imageList1;
-            this.btnActionMoveUp.Location = new System.Drawing.Point(658, 482);
-            this.btnActionMoveUp.Name = "btnActionMoveUp";
-            this.btnActionMoveUp.Size = new System.Drawing.Size(25, 25);
-            this.btnActionMoveUp.TabIndex = 16;
-            this.toolTip1.SetToolTip(this.btnActionMoveUp, "Move selected Group up.");
-            this.btnActionMoveUp.UseVisualStyleBackColor = true;
-            this.btnActionMoveUp.Click += new System.EventHandler(this.btnActionMoveUp_Click);
-            // 
-            // btnActionMoveDown
-            // 
-            this.btnActionMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActionMoveDown.Enabled = false;
-            this.btnActionMoveDown.ImageIndex = 13;
-            this.btnActionMoveDown.ImageList = this.imageList1;
-            this.btnActionMoveDown.Location = new System.Drawing.Point(658, 508);
-            this.btnActionMoveDown.Name = "btnActionMoveDown";
-            this.btnActionMoveDown.Size = new System.Drawing.Size(25, 25);
-            this.btnActionMoveDown.TabIndex = 17;
-            this.toolTip1.SetToolTip(this.btnActionMoveDown, "Move selected Group down.");
-            this.btnActionMoveDown.UseVisualStyleBackColor = true;
-            this.btnActionMoveDown.Click += new System.EventHandler(this.btnActionMoveDown_Click);
-            // 
-            // btnRulesetRulesMoveUp
-            // 
-            this.btnRulesetRulesMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetRulesMoveUp.Enabled = false;
-            this.btnRulesetRulesMoveUp.ImageIndex = 12;
-            this.btnRulesetRulesMoveUp.ImageList = this.imageList1;
-            this.btnRulesetRulesMoveUp.Location = new System.Drawing.Point(658, 217);
-            this.btnRulesetRulesMoveUp.Name = "btnRulesetRulesMoveUp";
-            this.btnRulesetRulesMoveUp.Size = new System.Drawing.Size(25, 25);
-            this.btnRulesetRulesMoveUp.TabIndex = 16;
-            this.btnRulesetRulesMoveUp.UseVisualStyleBackColor = true;
-            this.btnRulesetRulesMoveUp.Click += new System.EventHandler(this.btnRulesetRulesMoveUp_Click);
-            // 
-            // btnRulesetRulesMoveDown
-            // 
-            this.btnRulesetRulesMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRulesetRulesMoveDown.Enabled = false;
-            this.btnRulesetRulesMoveDown.ImageIndex = 13;
-            this.btnRulesetRulesMoveDown.ImageList = this.imageList1;
-            this.btnRulesetRulesMoveDown.Location = new System.Drawing.Point(658, 243);
-            this.btnRulesetRulesMoveDown.Name = "btnRulesetRulesMoveDown";
-            this.btnRulesetRulesMoveDown.Size = new System.Drawing.Size(25, 25);
-            this.btnRulesetRulesMoveDown.TabIndex = 17;
-            this.btnRulesetRulesMoveDown.UseVisualStyleBackColor = true;
-            this.btnRulesetRulesMoveDown.Click += new System.EventHandler(this.btnRulesetRulesMoveDown_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.RulesetBinder, "RuleMode", true));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "AND",
-            "OR"});
-            this.comboBox1.Location = new System.Drawing.Point(544, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(130, 21);
-            this.comboBox1.TabIndex = 23;
-            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // dmpActions
-            // 
-            this.dmpActions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dmpActions.Location = new System.Drawing.Point(14, 539);
-            this.dmpActions.MaximumSize = new System.Drawing.Size(2000, 33);
-            this.dmpActions.MinimumSize = new System.Drawing.Size(612, 33);
-            this.dmpActions.Name = "dmpActions";
-            this.dmpActions.ParameterTypeRestriction = DataManagerGUI.ParameterType.Action;
-            this.dmpActions.Size = new System.Drawing.Size(670, 33);
-            this.dmpActions.TabIndex = 24;
-            // 
-            // dmpRules
-            // 
-            this.dmpRules.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dmpRules.Location = new System.Drawing.Point(11, 269);
-            this.dmpRules.MaximumSize = new System.Drawing.Size(2000, 33);
-            this.dmpRules.MinimumSize = new System.Drawing.Size(612, 33);
-            this.dmpRules.Name = "dmpRules";
-            this.dmpRules.ParameterTypeRestriction = DataManagerGUI.ParameterType.Rule;
-            this.dmpRules.Size = new System.Drawing.Size(670, 33);
-            this.dmpRules.TabIndex = 25;
             // 
             // toolStripContainer1
             // 
@@ -2931,10 +1708,1233 @@ namespace DataManagerGUI
             this.tvCollectionTree.QueryContinueDrag += new System.Windows.Forms.QueryContinueDragEventHandler(this.tvCollectionTree_QueryContinueDrag);
             this.tvCollectionTree.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tvCollectionTree_MouseUp);
             // 
+            // pnlRulesets
+            // 
+            this.pnlRulesets.Controls.Add(this.dmpRules);
+            this.pnlRulesets.Controls.Add(this.dmpActions);
+            this.pnlRulesets.Controls.Add(this.comboBox1);
+            this.pnlRulesets.Controls.Add(this.btnRulesetRulesMoveDown);
+            this.pnlRulesets.Controls.Add(this.btnRulesetRulesMoveUp);
+            this.pnlRulesets.Controls.Add(this.btnActionMoveDown);
+            this.pnlRulesets.Controls.Add(this.btnActionMoveUp);
+            this.pnlRulesets.Controls.Add(this.btnRulesetReparse);
+            this.pnlRulesets.Controls.Add(this.pictureBox2);
+            this.pnlRulesets.Controls.Add(lblRulesetOriginalText);
+            this.pnlRulesets.Controls.Add(this.txtRulesetReparse);
+            this.pnlRulesets.Controls.Add(this.btnRulesetRuleRemove);
+            this.pnlRulesets.Controls.Add(this.btnRulesetRuleUpdate);
+            this.pnlRulesets.Controls.Add(this.btnRulesetRuleClear);
+            this.pnlRulesets.Controls.Add(commentLabel1);
+            this.pnlRulesets.Controls.Add(this.txtRulesetComment);
+            this.pnlRulesets.Controls.Add(this.btnRulesetRuleAdd);
+            this.pnlRulesets.Controls.Add(nameLabel1);
+            this.pnlRulesets.Controls.Add(this.txtRulesetName);
+            this.pnlRulesets.Controls.Add(this.dgvRulesetRules);
+            this.pnlRulesets.Controls.Add(this.dgvRulesetActions);
+            this.pnlRulesets.Controls.Add(this.btnRulesetActionAdd);
+            this.pnlRulesets.Controls.Add(this.label5);
+            this.pnlRulesets.Controls.Add(this.label2);
+            this.pnlRulesets.Controls.Add(this.btnRulesetActionClear);
+            this.pnlRulesets.Controls.Add(this.pictureBox1);
+            this.pnlRulesets.Controls.Add(this.label3);
+            this.pnlRulesets.Controls.Add(this.btnRulesetActionUpdate);
+            this.pnlRulesets.Controls.Add(this.btnRulesetActionRemove);
+            this.pnlRulesets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRulesets.Location = new System.Drawing.Point(0, 0);
+            this.pnlRulesets.Name = "pnlRulesets";
+            this.pnlRulesets.Size = new System.Drawing.Size(688, 604);
+            this.pnlRulesets.TabIndex = 4;
+            // 
+            // dmpRules
+            // 
+            this.dmpRules.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dmpRules.Location = new System.Drawing.Point(11, 269);
+            this.dmpRules.MaximumSize = new System.Drawing.Size(2000, 33);
+            this.dmpRules.MinimumSize = new System.Drawing.Size(612, 33);
+            this.dmpRules.Name = "dmpRules";
+            this.dmpRules.ParameterTypeRestriction = DataManagerGUI.ParameterType.Rule;
+            this.dmpRules.Size = new System.Drawing.Size(670, 33);
+            this.dmpRules.TabIndex = 25;
+            // 
+            // dmpActions
+            // 
+            this.dmpActions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dmpActions.Location = new System.Drawing.Point(14, 539);
+            this.dmpActions.MaximumSize = new System.Drawing.Size(2000, 33);
+            this.dmpActions.MinimumSize = new System.Drawing.Size(612, 33);
+            this.dmpActions.Name = "dmpActions";
+            this.dmpActions.ParameterTypeRestriction = DataManagerGUI.ParameterType.Action;
+            this.dmpActions.Size = new System.Drawing.Size(670, 33);
+            this.dmpActions.TabIndex = 24;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.RulesetBinder, "RuleMode", true));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "AND",
+            "OR"});
+            this.comboBox1.Location = new System.Drawing.Point(544, 66);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(130, 21);
+            this.comboBox1.TabIndex = 23;
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // btnRulesetRulesMoveDown
+            // 
+            this.btnRulesetRulesMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetRulesMoveDown.Enabled = false;
+            this.btnRulesetRulesMoveDown.ImageIndex = 13;
+            this.btnRulesetRulesMoveDown.ImageList = this.imageList1;
+            this.btnRulesetRulesMoveDown.Location = new System.Drawing.Point(658, 243);
+            this.btnRulesetRulesMoveDown.Name = "btnRulesetRulesMoveDown";
+            this.btnRulesetRulesMoveDown.Size = new System.Drawing.Size(25, 25);
+            this.btnRulesetRulesMoveDown.TabIndex = 17;
+            this.btnRulesetRulesMoveDown.UseVisualStyleBackColor = true;
+            this.btnRulesetRulesMoveDown.Click += new System.EventHandler(this.btnRulesetRulesMoveDown_Click);
+            // 
+            // btnRulesetRulesMoveUp
+            // 
+            this.btnRulesetRulesMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRulesetRulesMoveUp.Enabled = false;
+            this.btnRulesetRulesMoveUp.ImageIndex = 12;
+            this.btnRulesetRulesMoveUp.ImageList = this.imageList1;
+            this.btnRulesetRulesMoveUp.Location = new System.Drawing.Point(658, 217);
+            this.btnRulesetRulesMoveUp.Name = "btnRulesetRulesMoveUp";
+            this.btnRulesetRulesMoveUp.Size = new System.Drawing.Size(25, 25);
+            this.btnRulesetRulesMoveUp.TabIndex = 16;
+            this.btnRulesetRulesMoveUp.UseVisualStyleBackColor = true;
+            this.btnRulesetRulesMoveUp.Click += new System.EventHandler(this.btnRulesetRulesMoveUp_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(55, 76);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(400, 1);
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtRulesetReparse
+            // 
+            this.txtRulesetReparse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRulesetReparse.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RulesetBinder, "OriginalText", true));
+            this.txtRulesetReparse.Location = new System.Drawing.Point(56, 33);
+            this.txtRulesetReparse.Name = "txtRulesetReparse";
+            this.txtRulesetReparse.Size = new System.Drawing.Size(594, 20);
+            this.txtRulesetReparse.TabIndex = 5;
+            // 
+            // txtRulesetComment
+            // 
+            this.txtRulesetComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRulesetComment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RulesetBinder, "Comment", true));
+            this.txtRulesetComment.Location = new System.Drawing.Point(397, 4);
+            this.txtRulesetComment.Name = "txtRulesetComment";
+            this.txtRulesetComment.Size = new System.Drawing.Size(284, 20);
+            this.txtRulesetComment.TabIndex = 3;
+            this.txtRulesetComment.Validating += new System.ComponentModel.CancelEventHandler(this.txtRulesetComment_Validating);
+            // 
+            // txtRulesetName
+            // 
+            this.txtRulesetName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.RulesetBinder, "Name", true));
+            this.txtRulesetName.Location = new System.Drawing.Point(97, 4);
+            this.txtRulesetName.Name = "txtRulesetName";
+            this.txtRulesetName.Size = new System.Drawing.Size(234, 20);
+            this.txtRulesetName.TabIndex = 1;
+            this.txtRulesetName.TextChanged += new System.EventHandler(this.txtRulesetName_TextChanged);
+            this.txtRulesetName.Validating += new System.ComponentModel.CancelEventHandler(this.txtRulesetName_Validating);
+            this.txtRulesetName.Validated += new System.EventHandler(this.txtRulesetName_Validated);
+            // 
+            // dgvRulesetRules
+            // 
+            this.dgvRulesetRules.AllowUserToAddRows = false;
+            this.dgvRulesetRules.AllowUserToDeleteRows = false;
+            this.dgvRulesetRules.AllowUserToResizeRows = false;
+            this.dgvRulesetRules.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRulesetRules.AutoGenerateColumns = false;
+            this.dgvRulesetRules.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRulesetRules.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvRulesetRules.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3,
+            this.dgvtcRulesetRuleModifier,
+            this.dgvtcRulesetRuleValue});
+            this.dgvRulesetRules.DataSource = this.RuleBinder;
+            this.dgvRulesetRules.Location = new System.Drawing.Point(11, 89);
+            this.dgvRulesetRules.MultiSelect = false;
+            this.dgvRulesetRules.Name = "dgvRulesetRules";
+            this.dgvRulesetRules.ReadOnly = true;
+            this.dgvRulesetRules.RowHeadersVisible = false;
+            this.dgvRulesetRules.RowHeadersWidth = 25;
+            this.dgvRulesetRules.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRulesetRules.Size = new System.Drawing.Size(643, 179);
+            this.dgvRulesetRules.TabIndex = 8;
+            this.dgvRulesetRules.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvRulesetRules_MouseUp);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Field";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Field";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dgvtcRulesetRuleModifier
+            // 
+            this.dgvtcRulesetRuleModifier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvtcRulesetRuleModifier.DataPropertyName = "Modifier";
+            this.dgvtcRulesetRuleModifier.HeaderText = "Modifier";
+            this.dgvtcRulesetRuleModifier.Name = "dgvtcRulesetRuleModifier";
+            this.dgvtcRulesetRuleModifier.ReadOnly = true;
+            this.dgvtcRulesetRuleModifier.Width = 150;
+            // 
+            // dgvtcRulesetRuleValue
+            // 
+            this.dgvtcRulesetRuleValue.DataPropertyName = "Value";
+            this.dgvtcRulesetRuleValue.HeaderText = "Value";
+            this.dgvtcRulesetRuleValue.Name = "dgvtcRulesetRuleValue";
+            this.dgvtcRulesetRuleValue.ReadOnly = true;
+            this.dgvtcRulesetRuleValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvRulesetActions
+            // 
+            this.dgvRulesetActions.AllowUserToAddRows = false;
+            this.dgvRulesetActions.AllowUserToDeleteRows = false;
+            this.dgvRulesetActions.AllowUserToResizeRows = false;
+            this.dgvRulesetActions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRulesetActions.AutoGenerateColumns = false;
+            this.dgvRulesetActions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRulesetActions.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvRulesetActions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dgvtcRulesetActionModifier,
+            this.dgvtcRulesetActionValue});
+            this.dgvRulesetActions.DataSource = this.ActionBinder;
+            this.dgvRulesetActions.Location = new System.Drawing.Point(12, 350);
+            this.dgvRulesetActions.MultiSelect = false;
+            this.dgvRulesetActions.Name = "dgvRulesetActions";
+            this.dgvRulesetActions.ReadOnly = true;
+            this.dgvRulesetActions.RowHeadersVisible = false;
+            this.dgvRulesetActions.RowHeadersWidth = 25;
+            this.dgvRulesetActions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRulesetActions.Size = new System.Drawing.Size(642, 185);
+            this.dgvRulesetActions.TabIndex = 15;
+            this.dgvRulesetActions.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvRulesetActions_MouseUp);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Field";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Field";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dgvtcRulesetActionModifier
+            // 
+            this.dgvtcRulesetActionModifier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvtcRulesetActionModifier.DataPropertyName = "Modifier";
+            this.dgvtcRulesetActionModifier.HeaderText = "Modifier";
+            this.dgvtcRulesetActionModifier.Name = "dgvtcRulesetActionModifier";
+            this.dgvtcRulesetActionModifier.ReadOnly = true;
+            this.dgvtcRulesetActionModifier.Width = 150;
+            // 
+            // dgvtcRulesetActionValue
+            // 
+            this.dgvtcRulesetActionValue.DataPropertyName = "Value";
+            this.dgvtcRulesetActionValue.HeaderText = "Value";
+            this.dgvtcRulesetActionValue.Name = "dgvtcRulesetActionValue";
+            this.dgvtcRulesetActionValue.ReadOnly = true;
+            this.dgvtcRulesetActionValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(464, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Rule Mode";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Rules";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(67, 337);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(607, 1);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 330);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Actions";
+            // 
+            // pnlGroups
+            // 
+            this.pnlGroups.Controls.Add(this.tabGroupTabs);
+            this.pnlGroups.Controls.Add(this.lblGroupOverview);
+            this.pnlGroups.Controls.Add(this.commentLabel);
+            this.pnlGroups.Controls.Add(this.txtGroupComment);
+            this.pnlGroups.Controls.Add(this.nameLabel);
+            this.pnlGroups.Controls.Add(this.txtGroupName);
+            this.pnlGroups.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlGroups.Location = new System.Drawing.Point(0, 0);
+            this.pnlGroups.Name = "pnlGroups";
+            this.pnlGroups.Size = new System.Drawing.Size(688, 604);
+            this.pnlGroups.TabIndex = 3;
+            // 
+            // tabGroupTabs
+            // 
+            this.tabGroupTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabGroupTabs.Controls.Add(this.tabPage3);
+            this.tabGroupTabs.Controls.Add(this.tabGrpRuleset);
+            this.tabGroupTabs.Location = new System.Drawing.Point(3, 112);
+            this.tabGroupTabs.Name = "tabGroupTabs";
+            this.tabGroupTabs.SelectedIndex = 0;
+            this.tabGroupTabs.Size = new System.Drawing.Size(685, 489);
+            this.tabGroupTabs.TabIndex = 16;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label19);
+            this.tabPage3.Controls.Add(this.btnGroupRulesetRemove);
+            this.tabPage3.Controls.Add(this.btnGroupGroupRemove);
+            this.tabPage3.Controls.Add(this.btnGroupRulesetMoveDown);
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.dgvGroupRulesets);
+            this.tabPage3.Controls.Add(this.btnGroupRulesetMoveUp);
+            this.tabPage3.Controls.Add(this.dgvGroupGroups);
+            this.tabPage3.Controls.Add(this.btnGroupGroupMoveDown);
+            this.tabPage3.Controls.Add(this.btnGroupRulesetAdd);
+            this.tabPage3.Controls.Add(this.dataGridView5);
+            this.tabPage3.Controls.Add(this.btnGroupGroupMoveUp);
+            this.tabPage3.Controls.Add(this.btnGroupGroupAdd);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(677, 463);
+            this.tabPage3.TabIndex = 0;
+            this.tabPage3.Text = "Groups & Rulesets";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(6, 7);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(134, 16);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "Groups In This Group";
+            this.label19.UseMnemonic = false;
+            // 
+            // btnGroupRulesetRemove
+            // 
+            this.btnGroupRulesetRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupRulesetRemove.Enabled = false;
+            this.btnGroupRulesetRemove.ImageIndex = 18;
+            this.btnGroupRulesetRemove.ImageList = this.imageList1;
+            this.btnGroupRulesetRemove.Location = new System.Drawing.Point(560, 430);
+            this.btnGroupRulesetRemove.Name = "btnGroupRulesetRemove";
+            this.btnGroupRulesetRemove.Size = new System.Drawing.Size(83, 23);
+            this.btnGroupRulesetRemove.TabIndex = 15;
+            this.btnGroupRulesetRemove.Text = "Remove";
+            this.btnGroupRulesetRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGroupRulesetRemove.UseVisualStyleBackColor = true;
+            this.btnGroupRulesetRemove.Click += new System.EventHandler(this.btnGroupRulesetRemove_Click);
+            // 
+            // btnGroupGroupRemove
+            // 
+            this.btnGroupGroupRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupGroupRemove.Enabled = false;
+            this.btnGroupGroupRemove.ImageIndex = 18;
+            this.btnGroupGroupRemove.ImageList = this.imageList1;
+            this.btnGroupGroupRemove.Location = new System.Drawing.Point(560, 209);
+            this.btnGroupGroupRemove.Name = "btnGroupGroupRemove";
+            this.btnGroupGroupRemove.Size = new System.Drawing.Size(83, 23);
+            this.btnGroupGroupRemove.TabIndex = 9;
+            this.btnGroupGroupRemove.Text = "Remove";
+            this.btnGroupGroupRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGroupGroupRemove.UseVisualStyleBackColor = true;
+            this.btnGroupGroupRemove.Click += new System.EventHandler(this.btnGroupGroupRemove_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Enabled = false;
+            this.button1.ImageIndex = 18;
+            this.button1.Location = new System.Drawing.Point(560, 209);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Remove";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnGroupGroupRemove_Click);
+            // 
+            // dgvGroupRulesets
+            // 
+            this.dgvGroupRulesets.AllowUserToAddRows = false;
+            this.dgvGroupRulesets.AllowUserToDeleteRows = false;
+            this.dgvGroupRulesets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGroupRulesets.AutoGenerateColumns = false;
+            this.dgvGroupRulesets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGroupRulesets.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvGroupRulesets.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvGroupRulesets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGroupRulesets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.quickViewDataGridViewTextBoxColumn,
+            this.commentDataGridViewTextBoxColumn});
+            this.dgvGroupRulesets.DataSource = this.GroupRulesetBinder;
+            this.dgvGroupRulesets.Location = new System.Drawing.Point(1, 254);
+            this.dgvGroupRulesets.MultiSelect = false;
+            this.dgvGroupRulesets.Name = "dgvGroupRulesets";
+            this.dgvGroupRulesets.RowHeadersWidth = 25;
+            this.dgvGroupRulesets.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvGroupRulesets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGroupRulesets.Size = new System.Drawing.Size(642, 168);
+            this.dgvGroupRulesets.TabIndex = 11;
+            this.dgvGroupRulesets.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupRulesets_CellEndEdit);
+            this.dgvGroupRulesets.Sorted += new System.EventHandler(this.DataGrid_Sorted);
+            this.dgvGroupRulesets.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupRulesets_MouseUp);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // quickViewDataGridViewTextBoxColumn
+            // 
+            this.quickViewDataGridViewTextBoxColumn.DataPropertyName = "QuickView";
+            this.quickViewDataGridViewTextBoxColumn.HeaderText = "QuickView";
+            this.quickViewDataGridViewTextBoxColumn.Name = "quickViewDataGridViewTextBoxColumn";
+            this.quickViewDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            // 
+            // dgvGroupGroups
+            // 
+            this.dgvGroupGroups.AllowUserToAddRows = false;
+            this.dgvGroupGroups.AllowUserToDeleteRows = false;
+            this.dgvGroupGroups.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGroupGroups.AutoGenerateColumns = false;
+            this.dgvGroupGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGroupGroups.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvGroupGroups.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvGroupGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGroupGroups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvtcGroupGroupName,
+            this.dgvtcGroupGroupComment,
+            this.dgvtcGroupGroupGroupCount,
+            this.dgvtcGroupGroupRulesetCount});
+            this.dgvGroupGroups.DataSource = this.GroupGroupBinder;
+            this.dgvGroupGroups.Location = new System.Drawing.Point(3, 30);
+            this.dgvGroupGroups.MultiSelect = false;
+            this.dgvGroupGroups.Name = "dgvGroupGroups";
+            this.dgvGroupGroups.RowHeadersWidth = 25;
+            this.dgvGroupGroups.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvGroupGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGroupGroups.Size = new System.Drawing.Size(642, 173);
+            this.dgvGroupGroups.TabIndex = 5;
+            this.dgvGroupGroups.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupGroups_CellEndEdit);
+            this.dgvGroupGroups.Sorted += new System.EventHandler(this.DataGrid_Sorted);
+            this.dgvGroupGroups.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupGroups_MouseUp);
+            // 
+            // dgvtcGroupGroupName
+            // 
+            this.dgvtcGroupGroupName.DataPropertyName = "Name";
+            this.dgvtcGroupGroupName.HeaderText = "Name";
+            this.dgvtcGroupGroupName.Name = "dgvtcGroupGroupName";
+            // 
+            // dgvtcGroupGroupComment
+            // 
+            this.dgvtcGroupGroupComment.DataPropertyName = "Comment";
+            this.dgvtcGroupGroupComment.HeaderText = "Comment";
+            this.dgvtcGroupGroupComment.Name = "dgvtcGroupGroupComment";
+            this.dgvtcGroupGroupComment.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvtcGroupGroupGroupCount
+            // 
+            this.dgvtcGroupGroupGroupCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgvtcGroupGroupGroupCount.DataPropertyName = "GroupCount";
+            this.dgvtcGroupGroupGroupCount.HeaderText = "Groups";
+            this.dgvtcGroupGroupGroupCount.Name = "dgvtcGroupGroupGroupCount";
+            this.dgvtcGroupGroupGroupCount.ReadOnly = true;
+            this.dgvtcGroupGroupGroupCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvtcGroupGroupGroupCount.Width = 47;
+            // 
+            // dgvtcGroupGroupRulesetCount
+            // 
+            this.dgvtcGroupGroupRulesetCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgvtcGroupGroupRulesetCount.DataPropertyName = "RulesetCount";
+            this.dgvtcGroupGroupRulesetCount.HeaderText = "Rulesets";
+            this.dgvtcGroupGroupRulesetCount.Name = "dgvtcGroupGroupRulesetCount";
+            this.dgvtcGroupGroupRulesetCount.ReadOnly = true;
+            this.dgvtcGroupGroupRulesetCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvtcGroupGroupRulesetCount.Width = 54;
+            // 
+            // btnGroupRulesetAdd
+            // 
+            this.btnGroupRulesetAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupRulesetAdd.ImageIndex = 17;
+            this.btnGroupRulesetAdd.ImageList = this.imageList1;
+            this.btnGroupRulesetAdd.Location = new System.Drawing.Point(475, 430);
+            this.btnGroupRulesetAdd.Name = "btnGroupRulesetAdd";
+            this.btnGroupRulesetAdd.Size = new System.Drawing.Size(83, 23);
+            this.btnGroupRulesetAdd.TabIndex = 14;
+            this.btnGroupRulesetAdd.Text = "Add";
+            this.btnGroupRulesetAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGroupRulesetAdd.UseVisualStyleBackColor = true;
+            this.btnGroupRulesetAdd.Click += new System.EventHandler(this.btnGroupRulesetAdd_Click);
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridView5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(3, 30);
+            this.dataGridView5.MultiSelect = false;
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersWidth = 25;
+            this.dataGridView5.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView5.Size = new System.Drawing.Size(642, 173);
+            this.dataGridView5.TabIndex = 5;
+            this.dataGridView5.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupGroups_CellEndEdit);
+            this.dataGridView5.Sorted += new System.EventHandler(this.DataGrid_Sorted);
+            this.dataGridView5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupGroups_MouseUp);
+            // 
+            // btnGroupGroupAdd
+            // 
+            this.btnGroupGroupAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupGroupAdd.ImageIndex = 17;
+            this.btnGroupGroupAdd.ImageList = this.imageList1;
+            this.btnGroupGroupAdd.Location = new System.Drawing.Point(475, 209);
+            this.btnGroupGroupAdd.Name = "btnGroupGroupAdd";
+            this.btnGroupGroupAdd.Size = new System.Drawing.Size(83, 23);
+            this.btnGroupGroupAdd.TabIndex = 8;
+            this.btnGroupGroupAdd.Text = "Add";
+            this.btnGroupGroupAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGroupGroupAdd.UseVisualStyleBackColor = true;
+            this.btnGroupGroupAdd.Click += new System.EventHandler(this.btnGroupGroupAdd_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(5, 232);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(143, 16);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Rulesets In This Group";
+            this.label8.UseMnemonic = false;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.ImageIndex = 17;
+            this.button2.Location = new System.Drawing.Point(475, 209);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(83, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Add";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnGroupGroupAdd_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 7);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(134, 16);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Groups In This Group";
+            this.label13.UseMnemonic = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(5, 232);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(143, 16);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Rulesets In This Group";
+            this.label7.UseMnemonic = false;
+            // 
+            // tabGrpRuleset
+            // 
+            this.tabGrpRuleset.Controls.Add(this.pmGroupDefaultActions);
+            this.tabGrpRuleset.Controls.Add(this.pmGroupFilters);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupFiltersMoveDown);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupFiltersMoveUp);
+            this.tabGrpRuleset.Controls.Add(this.comboBox2);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultMoveDown);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultMoveUp);
+            this.tabGrpRuleset.Controls.Add(this.pictureBox3);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupFilterRemove);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupFilterUpdate);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupFilterClear);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupFilterAdd);
+            this.tabGrpRuleset.Controls.Add(this.dgvGroupFilters);
+            this.tabGrpRuleset.Controls.Add(this.dgvGroupDefaults);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultAdd);
+            this.tabGrpRuleset.Controls.Add(this.label21);
+            this.tabGrpRuleset.Controls.Add(this.label22);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultClear);
+            this.tabGrpRuleset.Controls.Add(this.pictureBox4);
+            this.tabGrpRuleset.Controls.Add(this.label23);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultUpdate);
+            this.tabGrpRuleset.Controls.Add(this.btnGroupDefaultRemove);
+            this.tabGrpRuleset.Location = new System.Drawing.Point(4, 22);
+            this.tabGrpRuleset.Name = "tabGrpRuleset";
+            this.tabGrpRuleset.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGrpRuleset.Size = new System.Drawing.Size(677, 463);
+            this.tabGrpRuleset.TabIndex = 1;
+            this.tabGrpRuleset.Text = "Filters & Defaults";
+            this.tabGrpRuleset.UseVisualStyleBackColor = true;
+            this.tabGrpRuleset.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // pmGroupDefaultActions
+            // 
+            this.pmGroupDefaultActions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pmGroupDefaultActions.Location = new System.Drawing.Point(8, 403);
+            this.pmGroupDefaultActions.MaximumSize = new System.Drawing.Size(2000, 33);
+            this.pmGroupDefaultActions.MinimumSize = new System.Drawing.Size(612, 33);
+            this.pmGroupDefaultActions.Name = "pmGroupDefaultActions";
+            this.pmGroupDefaultActions.ParameterTypeRestriction = DataManagerGUI.ParameterType.Action;
+            this.pmGroupDefaultActions.Size = new System.Drawing.Size(661, 33);
+            this.pmGroupDefaultActions.TabIndex = 47;
+            // 
+            // pmGroupFilters
+            // 
+            this.pmGroupFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pmGroupFilters.Location = new System.Drawing.Point(8, 174);
+            this.pmGroupFilters.MaximumSize = new System.Drawing.Size(2000, 33);
+            this.pmGroupFilters.MinimumSize = new System.Drawing.Size(612, 33);
+            this.pmGroupFilters.Name = "pmGroupFilters";
+            this.pmGroupFilters.ParameterTypeRestriction = DataManagerGUI.ParameterType.Rule;
+            this.pmGroupFilters.Size = new System.Drawing.Size(661, 33);
+            this.pmGroupFilters.TabIndex = 46;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.GroupFiltersAndDefaultsBinders, "RuleMode", true));
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "AND",
+            "OR"});
+            this.comboBox2.Location = new System.Drawing.Point(541, 8);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(102, 21);
+            this.comboBox2.TabIndex = 43;
+            this.comboBox2.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackColor = System.Drawing.Color.Black;
+            this.pictureBox3.Location = new System.Drawing.Point(96, 18);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(353, 1);
+            this.pictureBox3.TabIndex = 24;
+            this.pictureBox3.TabStop = false;
+            // 
+            // dgvGroupFilters
+            // 
+            this.dgvGroupFilters.AllowUserToAddRows = false;
+            this.dgvGroupFilters.AllowUserToDeleteRows = false;
+            this.dgvGroupFilters.AllowUserToResizeRows = false;
+            this.dgvGroupFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGroupFilters.AutoGenerateColumns = false;
+            this.dgvGroupFilters.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGroupFilters.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvGroupFilters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Field,
+            this.modifierDataGridViewTextBoxColumn1,
+            this.valueDataGridViewTextBoxColumn2});
+            this.dgvGroupFilters.DataSource = this.GroupFiltersBinder;
+            this.dgvGroupFilters.Location = new System.Drawing.Point(8, 31);
+            this.dgvGroupFilters.MultiSelect = false;
+            this.dgvGroupFilters.Name = "dgvGroupFilters";
+            this.dgvGroupFilters.ReadOnly = true;
+            this.dgvGroupFilters.RowHeadersVisible = false;
+            this.dgvGroupFilters.RowHeadersWidth = 25;
+            this.dgvGroupFilters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGroupFilters.Size = new System.Drawing.Size(635, 137);
+            this.dgvGroupFilters.TabIndex = 28;
+            this.dgvGroupFilters.Sorted += new System.EventHandler(this.DataGrid_Sorted);
+            this.dgvGroupFilters.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupFilters_MouseUp);
+            // 
+            // Field
+            // 
+            this.Field.DataPropertyName = "Field";
+            this.Field.HeaderText = "Field";
+            this.Field.Name = "Field";
+            this.Field.ReadOnly = true;
+            // 
+            // modifierDataGridViewTextBoxColumn1
+            // 
+            this.modifierDataGridViewTextBoxColumn1.DataPropertyName = "Modifier";
+            this.modifierDataGridViewTextBoxColumn1.HeaderText = "Modifier";
+            this.modifierDataGridViewTextBoxColumn1.Name = "modifierDataGridViewTextBoxColumn1";
+            this.modifierDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // valueDataGridViewTextBoxColumn2
+            // 
+            this.valueDataGridViewTextBoxColumn2.DataPropertyName = "Value";
+            this.valueDataGridViewTextBoxColumn2.HeaderText = "Value";
+            this.valueDataGridViewTextBoxColumn2.Name = "valueDataGridViewTextBoxColumn2";
+            this.valueDataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dgvGroupDefaults
+            // 
+            this.dgvGroupDefaults.AllowUserToAddRows = false;
+            this.dgvGroupDefaults.AllowUserToDeleteRows = false;
+            this.dgvGroupDefaults.AllowUserToResizeRows = false;
+            this.dgvGroupDefaults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGroupDefaults.AutoGenerateColumns = false;
+            this.dgvGroupDefaults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGroupDefaults.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvGroupDefaults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.modifierDataGridViewTextBoxColumn,
+            this.valueDataGridViewTextBoxColumn1});
+            this.dgvGroupDefaults.DataSource = this.GroupDefaultsBinder;
+            this.dgvGroupDefaults.Location = new System.Drawing.Point(8, 263);
+            this.dgvGroupDefaults.MultiSelect = false;
+            this.dgvGroupDefaults.Name = "dgvGroupDefaults";
+            this.dgvGroupDefaults.ReadOnly = true;
+            this.dgvGroupDefaults.RowHeadersVisible = false;
+            this.dgvGroupDefaults.RowHeadersWidth = 25;
+            this.dgvGroupDefaults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGroupDefaults.Size = new System.Drawing.Size(635, 135);
+            this.dgvGroupDefaults.TabIndex = 35;
+            this.dgvGroupDefaults.Sorted += new System.EventHandler(this.DataGrid_Sorted);
+            this.dgvGroupDefaults.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupDefaults_MouseUp);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Field";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Field";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // modifierDataGridViewTextBoxColumn
+            // 
+            this.modifierDataGridViewTextBoxColumn.DataPropertyName = "Modifier";
+            this.modifierDataGridViewTextBoxColumn.HeaderText = "Modifier";
+            this.modifierDataGridViewTextBoxColumn.Name = "modifierDataGridViewTextBoxColumn";
+            this.modifierDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valueDataGridViewTextBoxColumn1
+            // 
+            this.valueDataGridViewTextBoxColumn1.DataPropertyName = "Value";
+            this.valueDataGridViewTextBoxColumn1.HeaderText = "Value";
+            this.valueDataGridViewTextBoxColumn1.Name = "valueDataGridViewTextBoxColumn1";
+            this.valueDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(461, 11);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(68, 13);
+            this.label21.TabIndex = 25;
+            this.label21.Text = "Rule Mode";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(10, 12);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(77, 13);
+            this.label22.TabIndex = 26;
+            this.label22.Text = "Group Rules";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox4.BackColor = System.Drawing.Color.Black;
+            this.pictureBox4.Location = new System.Drawing.Point(103, 249);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(560, 1);
+            this.pictureBox4.TabIndex = 27;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(12, 242);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(87, 13);
+            this.label23.TabIndex = 34;
+            this.label23.Text = "Group Actions";
+            // 
+            // lblGroupOverview
+            // 
+            this.lblGroupOverview.AutoSize = true;
+            this.lblGroupOverview.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGroupOverview.Location = new System.Drawing.Point(13, 9);
+            this.lblGroupOverview.Name = "lblGroupOverview";
+            this.lblGroupOverview.Size = new System.Drawing.Size(268, 39);
+            this.lblGroupOverview.TabIndex = 6;
+            this.lblGroupOverview.Text = "Group Overview";
+            this.lblGroupOverview.UseMnemonic = false;
+            // 
+            // commentLabel
+            // 
+            this.commentLabel.AutoSize = true;
+            this.commentLabel.Location = new System.Drawing.Point(7, 89);
+            this.commentLabel.Name = "commentLabel";
+            this.commentLabel.Size = new System.Drawing.Size(54, 13);
+            this.commentLabel.TabIndex = 2;
+            this.commentLabel.Text = "Comment:";
+            this.commentLabel.UseMnemonic = false;
+            // 
+            // txtGroupComment
+            // 
+            this.txtGroupComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtGroupComment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.GroupBinder, "Comment", true));
+            this.txtGroupComment.Location = new System.Drawing.Point(67, 86);
+            this.txtGroupComment.Name = "txtGroupComment";
+            this.txtGroupComment.Size = new System.Drawing.Size(587, 20);
+            this.txtGroupComment.TabIndex = 3;
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(7, 63);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(38, 13);
+            this.nameLabel.TabIndex = 0;
+            this.nameLabel.Text = "Name:";
+            this.nameLabel.UseMnemonic = false;
+            // 
+            // txtGroupName
+            // 
+            this.txtGroupName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.GroupBinder, "Name", true));
+            this.txtGroupName.Location = new System.Drawing.Point(67, 60);
+            this.txtGroupName.Name = "txtGroupName";
+            this.txtGroupName.Size = new System.Drawing.Size(248, 20);
+            this.txtGroupName.TabIndex = 1;
+            this.txtGroupName.Validated += new System.EventHandler(this.txtGroupName_Validated);
+            // 
+            // pnlGeneral
+            // 
+            this.pnlGeneral.Controls.Add(this.btnCollectionRulesetMoveDown);
+            this.pnlGeneral.Controls.Add(this.btnCollectionRulesetMoveUp);
+            this.pnlGeneral.Controls.Add(this.btnCollectionGroupMoveDown);
+            this.pnlGeneral.Controls.Add(this.btnCollectionGroupMoveUp);
+            this.pnlGeneral.Controls.Add(this.label20);
+            this.pnlGeneral.Controls.Add(this.label4);
+            this.pnlGeneral.Controls.Add(this.label18);
+            this.pnlGeneral.Controls.Add(this.txtCollectionNotes);
+            this.pnlGeneral.Controls.Add(this.textBox2);
+            this.pnlGeneral.Controls.Add(this.txtCollectionAuthor);
+            this.pnlGeneral.Controls.Add(this.label17);
+            this.pnlGeneral.Controls.Add(this.label14);
+            this.pnlGeneral.Controls.Add(this.label15);
+            this.pnlGeneral.Controls.Add(this.label16);
+            this.pnlGeneral.Controls.Add(this.btnCollectionRulesetAdd);
+            this.pnlGeneral.Controls.Add(this.btnCollectionGroupAdd);
+            this.pnlGeneral.Controls.Add(this.dgvCollectionRulesets);
+            this.pnlGeneral.Controls.Add(this.btnCollectionRulesetsRemove);
+            this.pnlGeneral.Controls.Add(this.dgvCollectionGroups);
+            this.pnlGeneral.Controls.Add(this.btnCollectionGroupRemove);
+            this.pnlGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlGeneral.Location = new System.Drawing.Point(0, 0);
+            this.pnlGeneral.Name = "pnlGeneral";
+            this.pnlGeneral.Size = new System.Drawing.Size(688, 604);
+            this.pnlGeneral.TabIndex = 2;
+            this.pnlGeneral.Visible = false;
+            // 
+            // btnCollectionRulesetMoveDown
+            // 
+            this.btnCollectionRulesetMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCollectionRulesetMoveDown.Enabled = false;
+            this.btnCollectionRulesetMoveDown.ImageIndex = 13;
+            this.btnCollectionRulesetMoveDown.ImageList = this.imageList1;
+            this.btnCollectionRulesetMoveDown.Location = new System.Drawing.Point(650, 392);
+            this.btnCollectionRulesetMoveDown.Name = "btnCollectionRulesetMoveDown";
+            this.btnCollectionRulesetMoveDown.Size = new System.Drawing.Size(25, 25);
+            this.btnCollectionRulesetMoveDown.TabIndex = 10;
+            this.btnCollectionRulesetMoveDown.UseVisualStyleBackColor = true;
+            this.btnCollectionRulesetMoveDown.Click += new System.EventHandler(this.btnCollectionRulesetMoveDown_Click);
+            // 
+            // btnCollectionRulesetMoveUp
+            // 
+            this.btnCollectionRulesetMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCollectionRulesetMoveUp.Enabled = false;
+            this.btnCollectionRulesetMoveUp.ImageIndex = 12;
+            this.btnCollectionRulesetMoveUp.ImageList = this.imageList1;
+            this.btnCollectionRulesetMoveUp.Location = new System.Drawing.Point(650, 366);
+            this.btnCollectionRulesetMoveUp.Name = "btnCollectionRulesetMoveUp";
+            this.btnCollectionRulesetMoveUp.Size = new System.Drawing.Size(25, 25);
+            this.btnCollectionRulesetMoveUp.TabIndex = 9;
+            this.btnCollectionRulesetMoveUp.UseVisualStyleBackColor = true;
+            this.btnCollectionRulesetMoveUp.Click += new System.EventHandler(this.btnCollectionRulesetMoveUp_Click);
+            // 
+            // btnCollectionGroupMoveDown
+            // 
+            this.btnCollectionGroupMoveDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCollectionGroupMoveDown.Enabled = false;
+            this.btnCollectionGroupMoveDown.ImageIndex = 13;
+            this.btnCollectionGroupMoveDown.ImageList = this.imageList1;
+            this.btnCollectionGroupMoveDown.Location = new System.Drawing.Point(650, 202);
+            this.btnCollectionGroupMoveDown.Name = "btnCollectionGroupMoveDown";
+            this.btnCollectionGroupMoveDown.Size = new System.Drawing.Size(25, 25);
+            this.btnCollectionGroupMoveDown.TabIndex = 4;
+            this.btnCollectionGroupMoveDown.UseVisualStyleBackColor = true;
+            this.btnCollectionGroupMoveDown.Click += new System.EventHandler(this.btnCollectionGroupMoveDown_Click);
+            // 
+            // btnCollectionGroupMoveUp
+            // 
+            this.btnCollectionGroupMoveUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCollectionGroupMoveUp.Enabled = false;
+            this.btnCollectionGroupMoveUp.ImageIndex = 12;
+            this.btnCollectionGroupMoveUp.ImageList = this.imageList1;
+            this.btnCollectionGroupMoveUp.Location = new System.Drawing.Point(650, 176);
+            this.btnCollectionGroupMoveUp.Name = "btnCollectionGroupMoveUp";
+            this.btnCollectionGroupMoveUp.Size = new System.Drawing.Size(25, 25);
+            this.btnCollectionGroupMoveUp.TabIndex = 3;
+            this.btnCollectionGroupMoveUp.UseVisualStyleBackColor = true;
+            this.btnCollectionGroupMoveUp.Click += new System.EventHandler(this.btnCollectionGroupMoveUp_Click);
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(20, 501);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(35, 13);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Notes";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(479, 473);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Compatible Version:";
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(20, 470);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(35, 13);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Name";
+            // 
+            // txtCollectionNotes
+            // 
+            this.txtCollectionNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCollectionNotes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CollectionBinder, "Notes", true));
+            this.txtCollectionNotes.Location = new System.Drawing.Point(67, 501);
+            this.txtCollectionNotes.Multiline = true;
+            this.txtCollectionNotes.Name = "txtCollectionNotes";
+            this.txtCollectionNotes.Size = new System.Drawing.Size(612, 96);
+            this.txtCollectionNotes.TabIndex = 16;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CollectionBinder, "Version", true));
+            this.textBox2.Location = new System.Drawing.Point(585, 470);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(93, 20);
+            this.textBox2.TabIndex = 14;
+            // 
+            // txtCollectionAuthor
+            // 
+            this.txtCollectionAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtCollectionAuthor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CollectionBinder, "Author", true));
+            this.txtCollectionAuthor.Location = new System.Drawing.Point(67, 466);
+            this.txtCollectionAuthor.Name = "txtCollectionAuthor";
+            this.txtCollectionAuthor.Size = new System.Drawing.Size(162, 20);
+            this.txtCollectionAuthor.TabIndex = 14;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(7, 446);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 16);
+            this.label17.TabIndex = 13;
+            this.label17.Text = "Author Info";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(18, 266);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(199, 16);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Orphaned Rulesets In Collection";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(14, 62);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(127, 16);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Groups In Collection";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(13, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(452, 39);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Ruleset Collection Overview";
+            // 
+            // btnCollectionRulesetAdd
+            // 
+            this.btnCollectionRulesetAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCollectionRulesetAdd.ImageIndex = 17;
+            this.btnCollectionRulesetAdd.ImageList = this.imageList1;
+            this.btnCollectionRulesetAdd.Location = new System.Drawing.Point(484, 423);
+            this.btnCollectionRulesetAdd.Name = "btnCollectionRulesetAdd";
+            this.btnCollectionRulesetAdd.Size = new System.Drawing.Size(79, 23);
+            this.btnCollectionRulesetAdd.TabIndex = 11;
+            this.btnCollectionRulesetAdd.Text = "Add";
+            this.btnCollectionRulesetAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCollectionRulesetAdd.UseVisualStyleBackColor = true;
+            this.btnCollectionRulesetAdd.Click += new System.EventHandler(this.btnCollectionRulesetsAdd_Click);
+            // 
+            // btnCollectionGroupAdd
+            // 
+            this.btnCollectionGroupAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCollectionGroupAdd.ImageIndex = 17;
+            this.btnCollectionGroupAdd.ImageList = this.imageList1;
+            this.btnCollectionGroupAdd.Location = new System.Drawing.Point(484, 233);
+            this.btnCollectionGroupAdd.Name = "btnCollectionGroupAdd";
+            this.btnCollectionGroupAdd.Size = new System.Drawing.Size(79, 23);
+            this.btnCollectionGroupAdd.TabIndex = 5;
+            this.btnCollectionGroupAdd.Text = "Add";
+            this.btnCollectionGroupAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCollectionGroupAdd.UseVisualStyleBackColor = true;
+            this.btnCollectionGroupAdd.Click += new System.EventHandler(this.btnCollectionGroupAdd_Click);
+            // 
+            // dgvCollectionRulesets
+            // 
+            this.dgvCollectionRulesets.AllowUserToAddRows = false;
+            this.dgvCollectionRulesets.AllowUserToDeleteRows = false;
+            this.dgvCollectionRulesets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCollectionRulesets.AutoGenerateColumns = false;
+            this.dgvCollectionRulesets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCollectionRulesets.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvCollectionRulesets.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvCollectionRulesets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCollectionRulesets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvtcCollectionRulesetName,
+            this.dgvtcCollectionRulesetQuickView,
+            this.dgvtcCollectionRulesetComment});
+            this.dgvCollectionRulesets.DataSource = this.CollectionRulesetBinder;
+            this.dgvCollectionRulesets.Location = new System.Drawing.Point(14, 288);
+            this.dgvCollectionRulesets.MultiSelect = false;
+            this.dgvCollectionRulesets.Name = "dgvCollectionRulesets";
+            this.dgvCollectionRulesets.RowHeadersWidth = 25;
+            this.dgvCollectionRulesets.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvCollectionRulesets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCollectionRulesets.Size = new System.Drawing.Size(630, 129);
+            this.dgvCollectionRulesets.TabIndex = 8;
+            this.dgvCollectionRulesets.TabStop = false;
+            this.dgvCollectionRulesets.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCollectionRulesets_CellEndEdit);
+            this.dgvCollectionRulesets.Sorted += new System.EventHandler(this.DataGrid_Sorted);
+            this.dgvCollectionRulesets.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvCollectionRulesets_MouseUp);
+            // 
+            // dgvtcCollectionRulesetName
+            // 
+            this.dgvtcCollectionRulesetName.DataPropertyName = "Name";
+            this.dgvtcCollectionRulesetName.HeaderText = "Name";
+            this.dgvtcCollectionRulesetName.Name = "dgvtcCollectionRulesetName";
+            // 
+            // dgvtcCollectionRulesetQuickView
+            // 
+            this.dgvtcCollectionRulesetQuickView.DataPropertyName = "QuickView";
+            this.dgvtcCollectionRulesetQuickView.HeaderText = "QuickView";
+            this.dgvtcCollectionRulesetQuickView.Name = "dgvtcCollectionRulesetQuickView";
+            this.dgvtcCollectionRulesetQuickView.ReadOnly = true;
+            // 
+            // dgvtcCollectionRulesetComment
+            // 
+            this.dgvtcCollectionRulesetComment.DataPropertyName = "Comment";
+            this.dgvtcCollectionRulesetComment.HeaderText = "Comment";
+            this.dgvtcCollectionRulesetComment.Name = "dgvtcCollectionRulesetComment";
+            // 
+            // btnCollectionRulesetsRemove
+            // 
+            this.btnCollectionRulesetsRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCollectionRulesetsRemove.Enabled = false;
+            this.btnCollectionRulesetsRemove.ImageIndex = 18;
+            this.btnCollectionRulesetsRemove.ImageList = this.imageList1;
+            this.btnCollectionRulesetsRemove.Location = new System.Drawing.Point(565, 423);
+            this.btnCollectionRulesetsRemove.Name = "btnCollectionRulesetsRemove";
+            this.btnCollectionRulesetsRemove.Size = new System.Drawing.Size(79, 23);
+            this.btnCollectionRulesetsRemove.TabIndex = 12;
+            this.btnCollectionRulesetsRemove.Text = "Remove";
+            this.btnCollectionRulesetsRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCollectionRulesetsRemove.UseVisualStyleBackColor = true;
+            this.btnCollectionRulesetsRemove.Click += new System.EventHandler(this.btnCollectionRulesetsRemove_Click);
+            // 
+            // dgvCollectionGroups
+            // 
+            this.dgvCollectionGroups.AllowUserToAddRows = false;
+            this.dgvCollectionGroups.AllowUserToDeleteRows = false;
+            this.dgvCollectionGroups.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCollectionGroups.AutoGenerateColumns = false;
+            this.dgvCollectionGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCollectionGroups.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvCollectionGroups.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvCollectionGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCollectionGroups.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvtcCollectionGroupName,
+            this.dgvtcCollectionGroupComment,
+            this.dgvtcCollectionGroupGroupCount,
+            this.dgvtcCollectionGroupRulesetCount});
+            this.dgvCollectionGroups.DataSource = this.CollectionGroupBinder;
+            this.dgvCollectionGroups.Location = new System.Drawing.Point(11, 83);
+            this.dgvCollectionGroups.MultiSelect = false;
+            this.dgvCollectionGroups.Name = "dgvCollectionGroups";
+            this.dgvCollectionGroups.RowHeadersWidth = 25;
+            this.dgvCollectionGroups.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvCollectionGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCollectionGroups.Size = new System.Drawing.Size(633, 144);
+            this.dgvCollectionGroups.TabIndex = 2;
+            this.dgvCollectionGroups.TabStop = false;
+            this.dgvCollectionGroups.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCollectionGroups_CellEndEdit);
+            this.dgvCollectionGroups.Sorted += new System.EventHandler(this.DataGrid_Sorted);
+            this.dgvCollectionGroups.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvCollectionGroups_MouseUp);
+            // 
+            // dgvtcCollectionGroupName
+            // 
+            this.dgvtcCollectionGroupName.DataPropertyName = "Name";
+            this.dgvtcCollectionGroupName.HeaderText = "Name";
+            this.dgvtcCollectionGroupName.Name = "dgvtcCollectionGroupName";
+            // 
+            // dgvtcCollectionGroupComment
+            // 
+            this.dgvtcCollectionGroupComment.DataPropertyName = "Comment";
+            this.dgvtcCollectionGroupComment.HeaderText = "Comment";
+            this.dgvtcCollectionGroupComment.Name = "dgvtcCollectionGroupComment";
+            // 
+            // dgvtcCollectionGroupGroupCount
+            // 
+            this.dgvtcCollectionGroupGroupCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgvtcCollectionGroupGroupCount.DataPropertyName = "GroupCount";
+            this.dgvtcCollectionGroupGroupCount.HeaderText = "Groups";
+            this.dgvtcCollectionGroupGroupCount.Name = "dgvtcCollectionGroupGroupCount";
+            this.dgvtcCollectionGroupGroupCount.ReadOnly = true;
+            this.dgvtcCollectionGroupGroupCount.Width = 66;
+            // 
+            // dgvtcCollectionGroupRulesetCount
+            // 
+            this.dgvtcCollectionGroupRulesetCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dgvtcCollectionGroupRulesetCount.DataPropertyName = "RulesetCount";
+            this.dgvtcCollectionGroupRulesetCount.HeaderText = "Rulesets";
+            this.dgvtcCollectionGroupRulesetCount.Name = "dgvtcCollectionGroupRulesetCount";
+            this.dgvtcCollectionGroupRulesetCount.ReadOnly = true;
+            this.dgvtcCollectionGroupRulesetCount.Width = 73;
+            // 
+            // btnCollectionGroupRemove
+            // 
+            this.btnCollectionGroupRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCollectionGroupRemove.Enabled = false;
+            this.btnCollectionGroupRemove.ImageIndex = 18;
+            this.btnCollectionGroupRemove.ImageList = this.imageList1;
+            this.btnCollectionGroupRemove.Location = new System.Drawing.Point(565, 233);
+            this.btnCollectionGroupRemove.Name = "btnCollectionGroupRemove";
+            this.btnCollectionGroupRemove.Size = new System.Drawing.Size(79, 23);
+            this.btnCollectionGroupRemove.TabIndex = 6;
+            this.btnCollectionGroupRemove.Text = "Remove";
+            this.btnCollectionGroupRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCollectionGroupRemove.UseVisualStyleBackColor = true;
+            this.btnCollectionGroupRemove.Click += new System.EventHandler(this.btnCollectionGroupRemove_Click);
+            // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabEdit);
             this.tabControl1.Controls.Add(this.tabSearch);
@@ -2986,38 +2986,14 @@ namespace DataManagerGUI
             this.toolStripContainer2.TopToolStripPanel.PerformLayout();
             this.toolStripContainer2.ResumeLayout(false);
             this.toolStripContainer2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tsSearch.ResumeLayout(false);
             this.tsSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabEdit.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.pnlGeneral.ResumeLayout(false);
-            this.pnlGeneral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionGroups)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionRulesets)).EndInit();
-            this.pnlGroups.ResumeLayout(false);
-            this.pnlGroups.PerformLayout();
-            this.tabGroupTabs.ResumeLayout(false);
-            this.tabGrpRuleset.ResumeLayout(false);
-            this.tabGrpRuleset.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupDefaults)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupFilters)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupGroups)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupRulesets)).EndInit();
-            this.pnlRulesets.ResumeLayout(false);
-            this.pnlRulesets.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRulesetActions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRulesetRules)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.BottomToolStripPanel.PerformLayout();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
@@ -3025,6 +3001,30 @@ namespace DataManagerGUI
             this.toolStripContainer1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.pnlRulesets.ResumeLayout(false);
+            this.pnlRulesets.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRulesetRules)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRulesetActions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlGroups.ResumeLayout(false);
+            this.pnlGroups.PerformLayout();
+            this.tabGroupTabs.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupRulesets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupGroups)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.tabGrpRuleset.ResumeLayout(false);
+            this.tabGrpRuleset.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupFilters)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupDefaults)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.pnlGeneral.ResumeLayout(false);
+            this.pnlGeneral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionRulesets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCollectionGroups)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
