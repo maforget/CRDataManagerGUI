@@ -5,3 +5,4 @@ bin
 *.suo
 /csharp/DataManagerGUI/dataman.ini
 /csharp/DataManagerGUI/user.ini
+/.vs
