@@ -361,7 +361,18 @@ namespace DataManagerGUI
                                 txtCalcValue.Text = txtTextValue.Text;
                                 break;
                             default:
-                                pnlTextValue.Visible = true;
+                                switch (_type)
+                                {
+                                    case ParameterType.Action:
+                                        pnlSelectableValue.Visible = true;
+                                        PopulateMultiSelect(Global.GetKeyType(cmbField.Text));
+                                        cmbTextValue.Text = txtTextValue.Text;
+                                        cmbTextValue.AutoCompleteCustomSource.Clear();
+                                        break;
+                                    default:
+                                        pnlTextValue.Visible = true;
+                                        break;
+                                }
                                 break;
                         }
                     break;
