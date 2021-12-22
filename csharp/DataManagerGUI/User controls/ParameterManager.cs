@@ -475,6 +475,11 @@ namespace DataManagerGUI
                             dtDateTimeRangeUpper.Value = dtDateTimeRangeUpper.MinDate;
                             dtDateTimeRangeUpper_ValueChanged(sender, e);
                             break;
+                        case "Calc":
+                            pnlCalcValue.Visible = true;
+                            txtCalcValue.ReadOnly = false;
+                            txtCalcValue_TextChanged(sender, e);
+                            break;
                         default:
                             pnlDateTimeValue.Visible = true;
                             dtDateTimeValue_ValueChanged(sender, e);
@@ -1084,6 +1089,13 @@ namespace DataManagerGUI
                     tsmiDelete.Enabled = !string.IsNullOrEmpty(txtBeingEdited.Text);
                     tmpStrings = new List<string>(Global.DateTimeKeys);
                     tmpStrings.Remove(cmbField.Text);
+                    for (int i = 0; i < tmpStrings.Count; i++)
+                    {
+                        ToolStripMenuItem tmp = new ToolStripMenuItem(tmpStrings[i]);
+                        tmp.Click += new EventHandler(MenuItemCalcOther_Click);
+
+                        tsmiAddFieldValue.DropDownItems.Add(tmp);
+                    }
                     break;
                 default:
 
