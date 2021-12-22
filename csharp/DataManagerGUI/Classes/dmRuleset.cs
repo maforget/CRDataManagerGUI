@@ -17,19 +17,15 @@ namespace DataManagerGUI
             }
         }
 
-        private string _original;
         public string OriginalText
         {
             get
             {
-                if (string.IsNullOrEmpty(_original))
-                    return QuickView;
-                else
-                    return _original;
+                return QuickView;
             }
             set
             {
-                _original = value;
+                this.FromXML(value);
             }
         }
         public RulesetModes RuleMode { get; set; }
@@ -115,7 +111,10 @@ namespace DataManagerGUI
                 parseRules(tmpString[0].Trim(), version);
                 parseActions(tmpString[1].Trim(), version);
             }
-            catch { }
+            catch 
+            {
+                FromXML(strRule);
+            }
         }
 
         public void Parse(string strRule)
@@ -143,7 +142,10 @@ namespace DataManagerGUI
                 parseRules(tmpString[0]);
                 parseActions(tmpString[1]);
             }
-            catch { }
+            catch 
+            {
+                FromXML(strRule);
+            }
         }
 
         private void parseRules(string strRulesToParse)
@@ -170,7 +172,7 @@ namespace DataManagerGUI
         private void parseRules(string strRulesToParse, Version version)
         {
             string[] strArrayRules = strRulesToParse.Trim().Split(new string[] { ">> ", ">>", " <<", "<<" }, StringSplitOptions.RemoveEmptyEntries);
-            
+
 
             for (int i = 0; i < strArrayRules.Length; i++)
             {
@@ -297,8 +299,12 @@ namespace DataManagerGUI
 
         public void FromXML(string xString)
         {
-            XElement xParameters = XElement.Parse(xString);
-            FromXML(xParameters);
+            try
+            {
+                XElement xParameters = XElement.Parse(xString);
+                FromXML(xParameters);
+            }
+            catch { }
         }
 
         public override void Clear()
