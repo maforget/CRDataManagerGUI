@@ -598,6 +598,7 @@ namespace DataManagerGUI
                 #endregion
                 #region Numeric
                 case keyType.Numeric:
+                case keyType.NumericString:
                     switch (cmbModifier.Text)
                     {
                         case "Calc":
