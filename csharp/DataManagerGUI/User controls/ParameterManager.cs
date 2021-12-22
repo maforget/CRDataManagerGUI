@@ -617,6 +617,8 @@ namespace DataManagerGUI
                                         numNumericValue.Value = new decimal(val);
                                     break;
                                 default:
+                                    if (int.TryParse(strValue, out int val2))
+                                        numNumericValue.Value = val2;
                                     cmbTextValue.Text = strValue;
                                     break;
                             }
