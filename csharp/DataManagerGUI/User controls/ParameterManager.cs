@@ -565,6 +565,9 @@ namespace DataManagerGUI
                         case "RegExVarAppend":
                             regExVarReplace1.Results = strValue;
                             break;
+                        case "Calc":
+                            txtCalcValue.Text = strValue;
+                            break;
                         default:
                             cmbTextValue.Text = strValue;
                             break;
@@ -598,7 +601,7 @@ namespace DataManagerGUI
                     switch (cmbModifier.Text)
                     {
                         case "Calc":
-                            txtTextValue.Text = strValue;
+                            txtCalcValue.Text = strValue;
                             break;
                         default:
                             switch (cmbField.Text)
