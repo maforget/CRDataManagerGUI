@@ -307,6 +307,14 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Debug Goto :Exit
+
+xcopy /s /y "$(ProjectDir)$(OutDir)*.exe" "$(SolutionDir)..\..\ComicRack\ComicRack\bin\Release\Data\Scripts\Data Manager\"
+xcopy /s /y "$(ProjectDir)$(OutDir)*.exe" "$(SolutionDir)..\..\CRDataManager\"
+
+:Exit</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
