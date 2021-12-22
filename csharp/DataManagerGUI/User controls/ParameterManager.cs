@@ -645,7 +645,10 @@ namespace DataManagerGUI
                                 if (!DateTime.TryParse(strValue, out tmpDate))
                                     dtDateTimeValue.Value = DBNull.Value;
                                 else
+                                {
+                                    dtDateTimeValue.Checked = true;
                                     dtDateTimeValue.Value = tmpDate;
+                                }
                             }
                             else
                                 dtDateTimeValue.Value = DBNull.Value;
@@ -833,6 +836,12 @@ namespace DataManagerGUI
                             dtDateTimeRangeUpper.Value = dt2;
                             break;
                         default:
+                            if (tmp.Length == 1)
+                            {
+                                dtDateTimeValue.Checked = true;
+                                if (DateTime.TryParse(tmp[0], out DateTime dt))
+                                    dtDateTimeValue.Value = dt;
+                            }
                             break;
                     }
                     break;
