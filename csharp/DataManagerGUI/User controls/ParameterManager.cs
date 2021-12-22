@@ -550,6 +550,7 @@ namespace DataManagerGUI
             switch (Global.GetKeyType(cmbField.Text))
             {
                 #region String Values
+                case keyType.Custom:
                 case keyType.String:
                     switch (cmbModifier.Text)
                     {
@@ -931,7 +932,7 @@ namespace DataManagerGUI
             if (cmbField.SelectedIndex < 0 || cmbModifier.SelectedIndex < 0) return;
 
             keyType tmpKey = Global.GetKeyType(cmbField.Text);
-            if ((tmpKey == keyType.List || tmpKey == keyType.String) && cmbModifier.Text.Contains("Replace"))
+            if ((tmpKey == keyType.List || tmpKey == keyType.String || tmpKey == keyType.Custom) && cmbModifier.Text.Contains("Replace"))
                 txtTextValue.Text = txtReplaceOldValue.Text + Global.DELIMITER + txtReplaceNewValue.Text;
         }
 
@@ -940,7 +941,7 @@ namespace DataManagerGUI
             if (cmbField.SelectedIndex < 0 || cmbModifier.SelectedIndex < 0) return;
 
             keyType tmpKey = Global.GetKeyType(cmbField.Text);
-            if ((tmpKey == keyType.List || tmpKey == keyType.String) && cmbModifier.Text.Contains("Replace"))
+            if ((tmpKey == keyType.List || tmpKey == keyType.String || tmpKey == keyType.Custom) && cmbModifier.Text.Contains("Replace"))
                 txtTextValue.Text = txtReplaceOldValue.Text + Global.DELIMITER + txtReplaceNewValue.Text;
         }
 
