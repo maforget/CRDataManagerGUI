@@ -1041,6 +1041,7 @@ namespace DataManagerGUI
                 case keyType.List:
                 case keyType.String:
                 case keyType.Custom:
+                case keyType.NumericString:
                     tsmiCopy.Enabled = txtBeingEdited.SelectionLength > 0;
                     tsmiCut.Enabled = txtBeingEdited.SelectionLength > 0;
                     tsmiDelete.Enabled = txtBeingEdited.SelectionLength > 0;
