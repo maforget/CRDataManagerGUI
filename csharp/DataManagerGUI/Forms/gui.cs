@@ -4267,7 +4267,7 @@ namespace DataManagerGUI
         private void btnRulesetReparse_Click(object sender, EventArgs e)
         {
             if (RulesetBinder.Position < 0) return;
-            ((dmRuleset)RulesetBinder.Current).Reparse();
+            ((dmRuleset)RulesetBinder.Current).Reparse(txtRulesetReparse.Text);
             FileChanged = true;
             RulesetBinder.ResetCurrentItem();
         }

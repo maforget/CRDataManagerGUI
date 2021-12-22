@@ -324,11 +324,11 @@ namespace DataManagerGUI
             return thisHash == other.GetHashCode();
         }
 
-        internal void Reparse()
+        internal void Reparse(string value)
         {
             try
             {
-                Parse(OriginalText);
+                Parse(value);
             }
             catch { }
         }
