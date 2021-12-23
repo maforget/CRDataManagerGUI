@@ -5107,6 +5107,7 @@ namespace DataManagerGUI
                 //use delete function to remove
                 tsmiContextDelete_Click(tsmiContextDelete, e);
                 FileChanged = true;
+                RulesetBinder.ResetCurrentItem();
             }
         }
 
@@ -5125,6 +5126,7 @@ namespace DataManagerGUI
                         string tmpParameters = (string)tmp.GetData(typeof(dmAction).FullName);
                         ((BindingSource)((ToolStripMenuItem)sender).Tag).Add(new dmAction(XElement.Parse(tmpParameters)));
                         FileChanged = true;
+                        RulesetBinder.ResetCurrentItem();
                     }
                     break;
                 case ItemType.ListOfActions:
@@ -5136,6 +5138,7 @@ namespace DataManagerGUI
                         {
                             ((BindingSource)((ToolStripMenuItem)sender).Tag).Add(new dmAction(XElement.Parse(tmpParameters)));
                             FileChanged = true;
+                            RulesetBinder.ResetCurrentItem();
                         }
                     }
                     break;
@@ -5145,6 +5148,7 @@ namespace DataManagerGUI
                         string tmpParameters = (string)tmp.GetData(typeof(dmRule).FullName);
                         ((BindingSource)((ToolStripMenuItem)sender).Tag).Add(new dmRule(XElement.Parse(tmpParameters)));
                         FileChanged = true;
+                        RulesetBinder.ResetCurrentItem();
                     }
                     break;
                 case ItemType.ListOfRules:
@@ -5156,6 +5160,7 @@ namespace DataManagerGUI
                         {
                             ((BindingSource)((ToolStripMenuItem)sender).Tag).Add(new dmRule(XElement.Parse(tmpParameters)));
                             FileChanged = true;
+                            RulesetBinder.ResetCurrentItem();
                         }
                     }
                     break;
@@ -5324,6 +5329,7 @@ namespace DataManagerGUI
                         }
                         operativeNode.Remove();
                         FileChanged = true;
+                        RulesetBinder.ResetCurrentItem();
                     }
                 }
             }
@@ -5353,6 +5359,7 @@ namespace DataManagerGUI
                         operativeNode.Remove();
                     }
                     FileChanged = true;
+                    RulesetBinder.ResetCurrentItem();
                 }
             }
         }
