@@ -636,7 +636,7 @@ namespace DataManagerGUI
                     switch (cmbModifier.Text)
                     {
                         case "Calc":
-                            txtTextValue.Text = strValue;
+                            txtCalcValue.Text = strValue;
                             break;
                         default:
                             if (!string.IsNullOrEmpty(strValue))
