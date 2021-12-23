@@ -32,6 +32,7 @@ namespace DataManagerGUI
                 {
                     _type = value;
                     FillFields();
+                    FillModifiers();
                 }
             }
         }
@@ -52,6 +53,20 @@ namespace DataManagerGUI
 
         }
 
+        private void FillModifiers()
+        {
+            cmbModifier.Items.Clear();
+            switch (this._type)
+            {
+                case ParameterType.Action:
+                    cmbModifier.Items.AddRange(Global.GetAllowedValueModifiers(cmbField.Text));
+                    break;
+                case ParameterType.Rule:
+                    cmbModifier.Items.AddRange(Global.GetAllowedKeyModifiers(cmbField.Text));
+                    break;
+            }
+            if (cmbModifier.Items.Count > 0) cmbModifier.SelectedIndex = 0;
+        }
 
 
         public ParameterManager()
@@ -73,22 +88,10 @@ namespace DataManagerGUI
         {
             string PreviousModifier = cmbModifier.Text;
 
-            cmbModifier.Items.Clear();
-            switch (this._type)
-            {
-                case ParameterType.Action:
-                    cmbModifier.Items.AddRange(Global.GetAllowedValueModifiers(cmbField.Text));
-                    break;
-                case ParameterType.Rule:
-                    cmbModifier.Items.AddRange(Global.GetAllowedKeyModifiers(cmbField.Text));
-                    break;
-            }
+            FillModifiers();
 
             if (cmbModifier.Items.Contains(PreviousModifier))
                 cmbModifier.SelectedItem = PreviousModifier;
-            else
-                if (cmbModifier.Items.Count > 0)
-                    cmbModifier.SelectedIndex = 0;
         }
 
         #region Dynamic Sizing
