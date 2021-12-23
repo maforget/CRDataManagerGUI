@@ -839,12 +839,14 @@ namespace DataManagerGUI
                             dtDateTimeRangeUpper.Value = dt2;
                             break;
                         default:
-                            if (tmp.Length == 1)
+                            if (tmp.Length == 1 && !string.IsNullOrEmpty(tmp[0]))
                             {
                                 dtDateTimeValue.Checked = true;
                                 if (DateTime.TryParse(tmp[0], out DateTime dt))
                                     dtDateTimeValue.Value = dt;
                             }
+                            else
+                                dtDateTimeValue.Value = DBNull.Value;
                             break;
                     }
                     break;
