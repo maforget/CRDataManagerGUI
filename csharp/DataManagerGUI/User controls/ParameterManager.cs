@@ -536,7 +536,10 @@ namespace DataManagerGUI
             if (cmbField.Items.Contains(dmpItem.Field))
                 cmbField.SelectedItem = dmpItem.Field;
             else
+            {
+                cmbField.SelectedItem = null;
                 cmbField.Text = dmpItem.Field;
+            }
 
             cmbModifier.SelectedItem = dmpItem.Modifier;
 
