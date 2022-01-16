@@ -335,7 +335,6 @@ namespace DataManagerGUI
             {
                 case keyType.Custom:
                 case keyType.String:
-                case keyType.NumericString:
                     if (cmbModifier.Text == "Replace" || cmbModifier.Text == "RegexReplace")
                     {
                         pnlReplaceValue.Visible = true;
@@ -419,6 +418,7 @@ namespace DataManagerGUI
                         }
                     break;
                 case keyType.Numeric:
+                case keyType.NumericString:
                     if (cmbModifier.Text.Contains("Range"))
                     {
                         pnlNumericRange.Visible = true;
