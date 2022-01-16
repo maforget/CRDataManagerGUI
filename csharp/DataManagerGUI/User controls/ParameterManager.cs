@@ -751,6 +751,7 @@ namespace DataManagerGUI
                     }
                     break;
                 case keyType.Numeric:
+                case keyType.NumericString:
                     switch (cmbModifier.Text)
                     {
                         case "Range":
