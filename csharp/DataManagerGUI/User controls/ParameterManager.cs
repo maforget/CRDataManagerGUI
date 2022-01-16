@@ -1007,7 +1007,7 @@ namespace DataManagerGUI
 
             if (cmbField.SelectedIndex < 0 || cmbModifier.SelectedIndex < 0) return;
 
-            if (Global.GetKeyType(cmbField.Text) == keyType.Numeric && cmbModifier.Text.Contains("Range"))
+            if ((Global.GetKeyType(cmbField.Text) == keyType.Numeric || Global.GetKeyType(cmbField.Text) == keyType.NumericString) && cmbModifier.Text.Contains("Range"))
                 txtTextValue.Text = numNumericRangeLower.Value.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US")) + Global.DELIMITER + numNumericRangeUpper.Value.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"));
         }
 
@@ -1015,7 +1015,7 @@ namespace DataManagerGUI
         {
             if (cmbField.SelectedIndex < 0 || cmbModifier.SelectedIndex < 0) return;
 
-            if (Global.GetKeyType(cmbField.Text) == keyType.Numeric && cmbModifier.Text.Contains("Range"))
+            if ((Global.GetKeyType(cmbField.Text) == keyType.Numeric || Global.GetKeyType(cmbField.Text) == keyType.NumericString) && cmbModifier.Text.Contains("Range"))
                 txtTextValue.Text = numNumericRangeLower.Value.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US")) + Global.DELIMITER + numNumericRangeUpper.Value.ToString(System.Globalization.CultureInfo.GetCultureInfo("en-US"));
         }
 
