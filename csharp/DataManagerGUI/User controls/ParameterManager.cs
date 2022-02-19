@@ -579,6 +579,9 @@ namespace DataManagerGUI
                         case "Calc":
                             txtCalcValue.Text = strValue;
                             break;
+                        case "Add":
+                            txtMultiValue.Text = tmp.Join(Global.DELIMITER);
+                            break;
                         default:
                             cmbTextValue.Text = strValue;
                             break;
