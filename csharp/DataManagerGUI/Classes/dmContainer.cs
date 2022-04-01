@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 namespace DataManagerGUI
@@ -210,16 +211,23 @@ namespace DataManagerGUI
 
         protected Dictionary<string, string> GetParameters(string string0)
         {
-            string strPrepare = string0.TrimStart(new char[] { '#', '@', ' '});
             Dictionary<string, string> tmpReturn = new Dictionary<string, string>();
+            string delimiter = $"({Global.GroupHeader})|({Global.RulesetNameHeader})|({Global.CommentHeader})|({Global.GroupFilterAndDefaults})";
+            var parts = Regex.Split(string0, delimiter)
+                 .Where(p => p != string.Empty)
+                 .ToList();
 
-            string[] strList = strPrepare.Split(new char[] { '@' });
-            foreach (string item in strList)
+            for (int i = 0; i < parts.Count; i++)
             {
-                string[] newList = item.TrimStart().Split(new char[] { ' ' }, 2);
-                tmpReturn.Add(newList[0].TrimStart(), newList[1].TrimStart());
-                
+                string item = parts[i];
+                string key = item.TrimStart(new char[] { '#', '@' }).Trim();
+                if ((i + 1) < parts.Count && (item.StartsWith("#") || item.StartsWith("@")))
+                {
+                    tmpReturn.Add(key, parts[i + 1]);
+                    i++;
+                }
             }
+
             return tmpReturn;
         }
 
@@ -363,7 +371,7 @@ namespace DataManagerGUI
         public override void FromXML(System.Xml.Linq.XElement xParameters)
         {
             base.FromXML(xParameters);
-            
+
             foreach (XElement group in xParameters.Elements("group"))
                 this.Groups.Add(new dmGroup(this, group));
             foreach (XElement ruleset in xParameters.Elements("ruleset"))
@@ -387,7 +395,7 @@ namespace DataManagerGUI
             this.Groups = new SortableBindingList<dmGroup>();
             this.Rulesets = new SortableBindingList<dmRuleset>();
         }
-                
+
         #endregion
 
     }
