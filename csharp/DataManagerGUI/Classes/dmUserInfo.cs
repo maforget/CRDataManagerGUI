@@ -123,6 +123,7 @@ namespace DataManagerGUI
             BreakAfterFirstError = false;
             AutoCompleteStrings = new Dictionary<string, List<string>>();
             DebugLevel = DebugLevel.StartupOnly;
+            CaseSensitive = false;
         }
 
         public bool ConfirmOverwrite 
@@ -140,6 +141,24 @@ namespace DataManagerGUI
                     KeyStorage.Add("ConfirmOverwrite", ConfirmOverwrite.ToString());
                 else
                     KeyStorage["ConfirmOverwrite"] = value.ToString();
+            }
+        }
+
+        public bool CaseSensitive
+        {
+            get
+            {
+                if (KeyStorage.ContainsKey("CaseSensitive"))
+                    return bool.Parse(KeyStorage["CaseSensitive"]);
+                else
+                    return false;
+            }
+            set
+            {
+                if (!KeyStorage.ContainsKey("CaseSensitive"))
+                    KeyStorage.Add("CaseSensitive", CaseSensitive.ToString());
+                else
+                    KeyStorage["CaseSensitive"] = value.ToString();
             }
         }
 
