@@ -29,7 +29,7 @@ namespace DataManagerGUI
         }
 
         public MultiEdit(string[] strStrings)
-            :this()
+            : this()
         {
             for (int i = 0; i < strStrings.Length; i++)
                 bindingSource1.Add(strStrings[i]);
@@ -43,20 +43,40 @@ namespace DataManagerGUI
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            string[] tmpStr = cmbBox.Text.Split(new string[] { Global.DELIMITER }, StringSplitOptions.None);
+            switch (e.KeyCode)
             {
-                string[] tmpStr = cmbBox.Text.Split(new string[] { Global.DELIMITER }, StringSplitOptions.None);
-                for (int i = 0; i < tmpStr.Length; i++)
-                {
-
-                    if (!bindingSource1.Contains(tmpStr[i]))
+                case Keys.Enter:
+                    for (int i = 0; i < tmpStr.Length; i++)
                     {
-                        bindingSource1.Add(tmpStr[i]);
-                        cmbBox.Text = "";
+                        Add(tmpStr[i]);
+                    }
+                    break;
+
+                case Keys.F5:
+                    for (int i = 0; i < tmpStr.Length; i++)
+                    {
+                        if (i == 0)
+                            bindingSource1.List[listBox1.SelectedIndex] = tmpStr[i];
+                        else
+                            Add(tmpStr[i]);
                         cmbBox.Focus();
                     }
-                    else AlreadyExists(tmpStr[i]);
+                    break;
+
+                default:
+                    break;
+            }
+
+            void Add(string str)
+            {
+                if (!bindingSource1.Contains(str))
+                {
+                    bindingSource1.Add(str);
+                    cmbBox.Text = "";
+                    cmbBox.Focus();
                 }
+                else AlreadyExists(str);
             }
         }
 
