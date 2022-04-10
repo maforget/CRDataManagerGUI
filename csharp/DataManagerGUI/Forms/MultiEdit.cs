@@ -82,7 +82,7 @@ namespace DataManagerGUI
 
         private void AlreadyExists(string p)
         {
-            MessageBox.Show("The value'" + p + "already exists in the list", "Value Exists");
+            MessageBox.Show("The value'" + p + " already exists in the list", "Value Exists");
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
