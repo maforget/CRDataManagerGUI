@@ -58,6 +58,9 @@
     <Compile Include="Forms\AboutBox.designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="User controls\TreeViewReorder.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\ConfigReader.cs" />
     <Compile Include="Forms\Question.cs">
       <SubType>Form</SubType>
@@ -305,7 +308,6 @@
   <ItemGroup>
     <None Include="Resources\Icon.ico" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Debug Goto :Exit
