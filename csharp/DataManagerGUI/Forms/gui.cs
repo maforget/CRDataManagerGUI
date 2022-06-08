@@ -3529,21 +3529,21 @@ namespace DataManagerGUI
                         {
                             if (NewNodeType == typeof(dmRuleset))
                             {
-                                //delete the Ruleset from it's parent
-                                dmContainer tmp = (dmContainer)NewNode.Parent.Tag;
-
-                                if (GroupRulesetBinder.Contains(NewNode.Tag))
-                                {
-                                    GroupRulesetBinder.Remove(NewNode.Tag);
-                                }
-                                else if (CollectionRulesetBinder.Contains(NewNode.Tag))
-                                {
-                                    CollectionRulesetBinder.Remove(NewNode.Tag);
-                                }
-                                else tmp.RemoveRuleset((dmRuleset)NewNode.Tag);
-
                                 if (DestinationNodeType != typeof(dmRuleset))
                                 {
+                                    //delete the Ruleset from it's parent
+                                    dmContainer tmp = (dmContainer)NewNode.Parent.Tag;
+
+                                    if (GroupRulesetBinder.Contains(NewNode.Tag))
+                                    {
+                                        GroupRulesetBinder.Remove(NewNode.Tag);
+                                    }
+                                    else if (CollectionRulesetBinder.Contains(NewNode.Tag))
+                                    {
+                                        CollectionRulesetBinder.Remove(NewNode.Tag);
+                                    }
+                                    else tmp.RemoveRuleset((dmRuleset)NewNode.Tag);
+
                                     //add the Ruleset to the Group/Collection it's dropped on
                                     dmContainer DestinationContainer = (dmContainer)DestinationNode.Tag;
 
@@ -3565,20 +3565,31 @@ namespace DataManagerGUI
                                 }
                                 else
                                 {
-                                    NodePosition position = this.tvCollectionTree.GetNodePosition(DestinationNode, pt);
-                                    int newIndexChange = position == NodePosition.Below ? 1 : 0;
+                                    if (!string.IsNullOrEmpty(tvCollectionTree.NodeMap))
+                                    {
+                                        dmContainer DestinationContainer = (dmContainer)DestinationNode.Parent?.Tag;
+                                        dmContainer SourceContainer = ((dmContainer)NewNode.Parent?.Tag);
+                                        dmRuleset newRuleset = (dmRuleset)NewNode.Tag;
 
-                                    //add the Ruleset to the Group/Collection it's dropped on
-                                    dmContainer DestinationContainer = (dmContainer)DestinationNode.Parent?.Tag;
-                                    int newIndex = DestinationContainer.IndexOfRuleset((dmRuleset)DestinationNode.Tag) + newIndexChange;
-                                    DestinationContainer.InsertRuleset(newIndex, (dmRuleset)NewNode.Tag);
+                                        string[] NodeIndexes = tvCollectionTree.NodeMap.Split('|');
+                                        int newIndexFull = Int32.Parse(NodeIndexes[NodeIndexes.Length - 1]);
+                                        int newIndexRuleset = newIndexFull - DestinationContainer.GroupCount;
 
-                                    int fullIndex = DestinationNode.Index;
-                                    //delete the treenode from the tree
-                                    tvCollectionTree.Nodes.Remove(NewNode);
-                                    //add the node to the tree
-                                    DestinationNode.Parent.Nodes.Insert(fullIndex + newIndexChange, NewNode);
-                                    FileChanged = true;
+                                        //add the Ruleset to the Group/Collection it's dropped on
+                                        DestinationContainer.InsertRuleset(newIndexRuleset, newRuleset);
+                                        //remove the ruleset from it's own Group/Collection
+                                        int oldIndex = FindOldIndex(newIndexRuleset, SourceContainer, newRuleset);
+                                        int oldIndexFull = oldIndex + SourceContainer.GroupCount;
+                                        SourceContainer.RemoveRulesetAt(oldIndex);
+
+                                        //add the node to the tree
+                                        DestinationNode.Parent.Nodes.Insert(newIndexFull, (TreeNode)NewNode.Clone());
+                                        //delete the treenode from the tree
+                                        NewNode.Parent?.Nodes.RemoveAt(oldIndexFull);
+                                        //this.tvCollectionTree.SelectedNode = InsertCollection[newIndex])];
+
+                                        FileChanged = true;
+                                    }
                                 }
                             }
                             else if (NewNodeType == typeof(dmGroup) && DestinationNodeType != typeof(dmRuleset))
@@ -3631,6 +3642,24 @@ namespace DataManagerGUI
                 }
             }
             CollectionBinder.ResetBindings(false);
+        }
+
+        private int FindOldIndex(int newInsertedIndex, dmContainer newContainer, dmRuleset newRuleset)
+        {
+            List<int> list = new List<int>();
+            if (newContainer != null)
+            {
+                for (int i = 0; i < newContainer.RulesetCount; i++)
+                {
+                    dmRuleset item = (dmRuleset)newContainer.Rulesets[i];
+                    if (item.Equals(newRuleset))
+                        list.Add(i);
+                }
+
+                return list.Count == 1 ? list[0] : list.Where(x => x != newInsertedIndex).FirstOrDefault();
+            }
+
+            return -1;
         }
 
         private void tvCollectionTree_DragEnter(object sender, DragEventArgs e)

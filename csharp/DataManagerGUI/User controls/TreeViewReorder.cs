@@ -12,8 +12,7 @@ namespace DataManagerGUI
     {
         TreeView _treeView => this;
         Graphics g => this.CreateGraphics();
-        string NodeMap = string.Empty;
-        //StringBuilder NewNodeMap = new StringBuilder();
+        internal string NodeMap = string.Empty;
         bool LineIsShown;
 
         public TreeViewReorder()
