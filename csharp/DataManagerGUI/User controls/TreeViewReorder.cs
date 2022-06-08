@@ -86,13 +86,17 @@ namespace DataManagerGUI
 
             // Store the placeholder info into a pipe delimited string
             bool isBelow = position == NodePosition.Below ? true : false;
-            string oldNodeMap = SetNodeMap(NodeMoving, false);
             string newNodeMap = SetNodeMap(NodeOver, isBelow);
-            if (AreNodeMapsEqual(newNodeMap) || oldNodeMap == newNodeMap)
-                return;
 
+            //Checks for the lines that are above and below itself
+            string invalidNodeMapAbove = SetNodeMap(NodeMoving, false);
+            string invalidNodeMapBelow = SetNodeMap(NodeMoving, true);
+            bool IsInvalid = invalidNodeMapAbove == newNodeMap || invalidNodeMapBelow == newNodeMap;
+
+            //Don't redraw the line if the line is at the same index OR
+            //Don't draw the line if the line is in a invalid position (same position)
             //Don't Draw the Line when the Node that is Moving is a Group and the position is anyhting else other than an other Group
-            if (NodeMoving is TreeNodeGroup && position != NodePosition.In)
+            if (AreNodeMapsEqual(newNodeMap) || IsInvalid || (NodeMoving is TreeNodeGroup && position != NodePosition.In))
                 return;
 
             //Clear placeholders above and below
