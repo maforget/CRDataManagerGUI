@@ -2013,8 +2013,8 @@ namespace DataManagerGUI
             // 
             // tabGroupTabs
             // 
-            this.tabGroupTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabGroupTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabGroupTabs.Controls.Add(this.tabPage3);
             this.tabGroupTabs.Controls.Add(this.tabGrpRuleset);
@@ -2110,8 +2110,8 @@ namespace DataManagerGUI
             // 
             this.dgvGroupRulesets.AllowUserToAddRows = false;
             this.dgvGroupRulesets.AllowUserToDeleteRows = false;
-            this.dgvGroupRulesets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvGroupRulesets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGroupRulesets.AutoGenerateColumns = false;
             this.dgvGroupRulesets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -2158,7 +2158,7 @@ namespace DataManagerGUI
             // 
             this.dgvGroupGroups.AllowUserToAddRows = false;
             this.dgvGroupGroups.AllowUserToDeleteRows = false;
-            this.dgvGroupGroups.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvGroupGroups.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGroupGroups.AutoGenerateColumns = false;
             this.dgvGroupGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -2345,7 +2345,7 @@ namespace DataManagerGUI
             // 
             // pmGroupDefaultActions
             // 
-            this.pmGroupDefaultActions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.pmGroupDefaultActions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pmGroupDefaultActions.Location = new System.Drawing.Point(8, 403);
             this.pmGroupDefaultActions.MaximumSize = new System.Drawing.Size(2000, 33);
@@ -2357,7 +2357,7 @@ namespace DataManagerGUI
             // 
             // pmGroupFilters
             // 
-            this.pmGroupFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pmGroupFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pmGroupFilters.Location = new System.Drawing.Point(8, 174);
             this.pmGroupFilters.MaximumSize = new System.Drawing.Size(2000, 33);
@@ -2384,7 +2384,7 @@ namespace DataManagerGUI
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.BackColor = System.Drawing.Color.Black;
             this.pictureBox3.Location = new System.Drawing.Point(96, 18);
@@ -2398,7 +2398,7 @@ namespace DataManagerGUI
             this.dgvGroupFilters.AllowUserToAddRows = false;
             this.dgvGroupFilters.AllowUserToDeleteRows = false;
             this.dgvGroupFilters.AllowUserToResizeRows = false;
-            this.dgvGroupFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvGroupFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGroupFilters.AutoGenerateColumns = false;
             this.dgvGroupFilters.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -2446,8 +2446,8 @@ namespace DataManagerGUI
             this.dgvGroupDefaults.AllowUserToAddRows = false;
             this.dgvGroupDefaults.AllowUserToDeleteRows = false;
             this.dgvGroupDefaults.AllowUserToResizeRows = false;
-            this.dgvGroupDefaults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvGroupDefaults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGroupDefaults.AutoGenerateColumns = false;
             this.dgvGroupDefaults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -2513,7 +2513,7 @@ namespace DataManagerGUI
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BackColor = System.Drawing.Color.Black;
             this.pictureBox4.Location = new System.Drawing.Point(103, 249);
@@ -2555,7 +2555,7 @@ namespace DataManagerGUI
             // 
             // txtGroupComment
             // 
-            this.txtGroupComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtGroupComment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGroupComment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.GroupBinder, "Comment", true));
             this.txtGroupComment.Location = new System.Drawing.Point(67, 86);
@@ -2695,7 +2695,7 @@ namespace DataManagerGUI
             // 
             // txtCollectionNotes
             // 
-            this.txtCollectionNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCollectionNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCollectionNotes.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CollectionBinder, "Notes", true));
             this.txtCollectionNotes.Location = new System.Drawing.Point(67, 501);
@@ -2797,7 +2797,7 @@ namespace DataManagerGUI
             // 
             this.dgvCollectionRulesets.AllowUserToAddRows = false;
             this.dgvCollectionRulesets.AllowUserToDeleteRows = false;
-            this.dgvCollectionRulesets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvCollectionRulesets.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCollectionRulesets.AutoGenerateColumns = false;
             this.dgvCollectionRulesets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -2860,8 +2860,8 @@ namespace DataManagerGUI
             // 
             this.dgvCollectionGroups.AllowUserToAddRows = false;
             this.dgvCollectionGroups.AllowUserToDeleteRows = false;
-            this.dgvCollectionGroups.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvCollectionGroups.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCollectionGroups.AutoGenerateColumns = false;
             this.dgvCollectionGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -2934,8 +2934,8 @@ namespace DataManagerGUI
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabEdit);
             this.tabControl1.Controls.Add(this.tabSearch);
@@ -3513,12 +3513,12 @@ namespace DataManagerGUI
 
         private void tvCollectionTree_DragDrop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent("System.Windows.Forms.TreeNode", false))
+            TreeNode NewNode = tvCollectionTree.GetTreeNode(e);
+            if (NewNode != null)
             {
                 Point pt = ((TreeView)sender).PointToClient(new Point(e.X, e.Y));
                 TreeNode DestinationNode = ((TreeView)sender).GetNodeAt(pt);
                 Type DestinationNodeType = DestinationNode.Tag.GetType();
-                TreeNode NewNode = (TreeNode)e.Data.GetData("System.Windows.Forms.TreeNode");
                 Type NewNodeType = NewNode.Tag.GetType();
 
                 if (DestinationNode != NewNode && DestinationNode != NewNode.Parent && !DestinationNode.FullPath.StartsWith((NewNode.FullPath)))
@@ -3645,14 +3645,14 @@ namespace DataManagerGUI
 
         private void tvCollectionTree_DragOver(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent("System.Windows.Forms.TreeNode", false))
+            TreeNode NewNode = tvCollectionTree.GetTreeNode(e);
+            if (NewNode != null)
             {
                 Point pt = ((TreeView)sender).PointToClient(new Point(e.X, e.Y));
                 TreeNode DestinationNode = ((TreeView)sender).GetNodeAt(pt);
                 if (DestinationNode != null && DestinationNode.Tag != null)
                 {
                     Type DestinationNodeType = DestinationNode.Tag.GetType();
-                    TreeNode NewNode = (TreeNode)e.Data.GetData("System.Windows.Forms.TreeNode");
                     Type NewNodeType = NewNode.Tag.GetType();
 
                     if (DestinationNodeType.BaseType == typeof(dmContainer))

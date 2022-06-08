@@ -38,11 +38,11 @@ namespace DataManagerGUI
         private void TreeViewReorder_DragOver(object sender, DragEventArgs e)
         {
             TreeNode NodeOver = _treeView.GetNodeAt(this.PointToClient(Cursor.Position));
-            TreeNode NodeMoving = (TreeNode)e.Data.GetData("System.Windows.Forms.TreeNode");
+            TreeNode NodeMoving = GetTreeNode(e);
 
             // A bit long, but to summarize, process the following code only if the nodeover is null
             // and either the nodeover is not the same thing as nodemoving UNLESSS nodeover happens
-            if (NodeOver != null && NodeOver != NodeMoving)
+            if (NodeOver != null && NodeMoving != null && NodeOver != NodeMoving)
             {
                 Point pt = this.PointToClient(new Point(e.X, e.Y));
                 var nodePosition = GetNodePosition(NodeOver, pt);
@@ -89,6 +89,10 @@ namespace DataManagerGUI
             string oldNodeMap = SetNodeMap(NodeMoving, false);
             string newNodeMap = SetNodeMap(NodeOver, isBelow);
             if (AreNodeMapsEqual(newNodeMap) || oldNodeMap == newNodeMap)
+                return;
+
+            //Don't Draw the Line when the Node that is Moving is a Group and the position is anyhting else other than an other Group
+            if (NodeMoving is TreeNodeGroup && position != NodePosition.In)
                 return;
 
             //Clear placeholders above and below
@@ -168,6 +172,15 @@ namespace DataManagerGUI
                 this.NodeMap = NewNodeMap;
                 return false;
             }
+        }
+
+        internal TreeNode GetTreeNode(DragEventArgs drgevent)
+        {
+            TreeNode obj = (TreeNode)drgevent.Data.GetData(drgevent.Data.GetFormats()[0]);
+            if (typeof(TreeNode).IsAssignableFrom(obj.GetType()))
+                return obj;
+
+            return null;
         }
     }
 
