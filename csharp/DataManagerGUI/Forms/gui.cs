@@ -3521,7 +3521,7 @@ namespace DataManagerGUI
                 Type DestinationNodeType = DestinationNode.Tag.GetType();
                 Type NewNodeType = NewNode.Tag.GetType();
 
-                if (DestinationNode != NewNode && DestinationNode != NewNode.Parent && !DestinationNode.FullPath.StartsWith((NewNode.FullPath)))
+                if (DestinationNode != NewNode && !DestinationNode.FullPath.StartsWith((NewNode.FullPath)))
                 {
                     if (NewNode.Tag != null)
                     {
@@ -3570,6 +3570,7 @@ namespace DataManagerGUI
                                         dmContainer DestinationContainer = (dmContainer)DestinationNode.Parent?.Tag;
                                         dmContainer SourceContainer = ((dmContainer)NewNode.Parent?.Tag);
                                         dmRuleset newRuleset = (dmRuleset)NewNode.Tag;
+                                        if (DestinationContainer == null || SourceContainer == null) return;
 
                                         string[] NodeIndexes = tvCollectionTree.NodeMap.Split('|');
                                         int newIndexFull = Int32.Parse(NodeIndexes[NodeIndexes.Length - 1]);
@@ -3578,7 +3579,7 @@ namespace DataManagerGUI
                                         //add the Ruleset to the Group/Collection it's dropped on
                                         DestinationContainer.InsertRuleset(newIndexRuleset, newRuleset);
                                         //remove the ruleset from it's own Group/Collection
-                                        int oldIndex = FindOldIndex(newIndexRuleset, SourceContainer, newRuleset);
+                                        int oldIndex = FindOldIndex<dmRuleset>(newIndexRuleset, SourceContainer, newRuleset);
                                         int oldIndexFull = oldIndex + SourceContainer.GroupCount;
                                         SourceContainer.RemoveRulesetAt(oldIndex);
 
@@ -3592,48 +3593,47 @@ namespace DataManagerGUI
                                     }
                                 }
                             }
-                            else if (NewNodeType == typeof(dmGroup) && DestinationNodeType != typeof(dmRuleset))
+                            else if (NewNodeType == typeof(dmGroup))
                             {
-                                //delete the item from its parent
-                                dmContainer tmp = (dmContainer)NewNode.Parent.Tag;
-                                if (CollectionGroupBinder.Contains(NewNode.Tag))
-                                {
-                                    CollectionGroupBinder.Remove(NewNode.Tag);
-                                }
-                                else if (GroupGroupBinder.Contains(NewNode.Tag))
-                                {
-                                    GroupGroupBinder.Remove(NewNode.Tag);
-                                }
-                                else tmp.RemoveGroup((dmGroup)NewNode.Tag);
+                                dmGroup newGroup = (dmGroup)NewNode.Tag;
 
-                                //add the RulesetGroup to the Group/Collection it's dropped on
-                                dmContainer DestinationContainer = (dmContainer)DestinationNode.Tag;
+                                NodePosition? position = tvCollectionTree.nodePosition;
+                                if (position == null) return;
 
-                                if (DestinationContainer == (dmContainer)GroupBinder.Current)
+                                dmContainer SourceContainer = ((dmContainer)NewNode.Parent?.Tag);
+                                if (SourceContainer == null) return;
+
+                                if (position == NodePosition.In)
                                 {
-                                    GroupGroupBinder.Add(NewNode.Tag);
+                                    dmContainer DestinationContainer = (dmContainer)DestinationNode.Tag;
+                                    if (DestinationContainer == null) return;
+
+                                    SourceContainer.RemoveGroup(newGroup);
+                                    DestinationContainer.AddGroup(newGroup);
                                     //delete the treenode from the tree
                                     tvCollectionTree.Nodes.Remove(NewNode);
                                     //add the node to the tree
-                                    DestinationNode.Nodes.Insert(GroupGroupBinder.IndexOf(NewNode.Tag), NewNode);
+                                    DestinationNode.Nodes.Insert(DestinationContainer.IndexOfGroup(newGroup), NewNode);
                                     FileChanged = true;
                                 }
-                                else if (DestinationContainer == (dmContainer)CollectionBinder.Current)
+                                else if (!string.IsNullOrEmpty(tvCollectionTree.NodeMap))
                                 {
-                                    CollectionGroupBinder.Add(NewNode.Tag);
-                                    //delete the treenode from the tree
-                                    tvCollectionTree.Nodes.Remove(NewNode);
+                                    dmContainer DestinationContainer = (dmContainer)DestinationNode.Parent?.Tag;
+                                    if (DestinationContainer == null) return;
+
+                                    string[] NodeIndexes = tvCollectionTree.NodeMap.Split('|');
+                                    int newIndexFull = Int32.Parse(NodeIndexes[NodeIndexes.Length - 1]);
+
+                                    //add the Ruleset to the Group/Collection it's dropped on
+                                    DestinationContainer.InsertGroup(newIndexFull, newGroup);
+                                    //remove the ruleset from it's own Group/Collection
+                                    int oldIndex = FindOldIndex<dmGroup>(newIndexFull, SourceContainer, newGroup);
+                                    SourceContainer.RemoveGroupAt(oldIndex);
+
                                     //add the node to the tree
-                                    DestinationNode.Nodes.Insert(CollectionGroupBinder.IndexOf(NewNode.Tag), NewNode);
-                                    FileChanged = true;
-                                }
-                                else
-                                {
-                                    DestinationContainer.AddGroup((dmGroup)NewNode.Tag);
+                                    DestinationNode.Parent.Nodes.Insert(newIndexFull, (TreeNode)NewNode.Clone());
                                     //delete the treenode from the tree
-                                    tvCollectionTree.Nodes.Remove(NewNode);
-                                    //add the node to the tree
-                                    DestinationNode.Nodes.Insert(DestinationContainer.Groups.IndexOf((dmGroup)NewNode.Tag), NewNode);
+                                    NewNode.Parent?.Nodes.RemoveAt(oldIndex);
                                     FileChanged = true;
                                 }
                             }
@@ -3644,14 +3644,18 @@ namespace DataManagerGUI
             CollectionBinder.ResetBindings(false);
         }
 
-        private int FindOldIndex(int newInsertedIndex, dmContainer newContainer, dmRuleset newRuleset)
+        private int FindOldIndex<T>(int newInsertedIndex, dmContainer newContainer, T newRuleset) where T : dmNode
         {
+            bool isGroup = newRuleset.GetType() == typeof(dmGroup);
+            bool isRuleset = newRuleset.GetType() == typeof(dmRuleset);
+            int counter = isGroup ? newContainer.GroupCount : isRuleset ? newContainer.RulesetCount : 0;
+
             List<int> list = new List<int>();
             if (newContainer != null)
             {
-                for (int i = 0; i < newContainer.RulesetCount; i++)
+                for (int i = 0; i < counter; i++)
                 {
-                    dmRuleset item = (dmRuleset)newContainer.Rulesets[i];
+                    var item = isGroup ? (dmNode)newContainer.Groups[i] : isRuleset ? (dmNode)newContainer.Rulesets[i] : default(dmNode);
                     if (item.Equals(newRuleset))
                         list.Add(i);
                 }
