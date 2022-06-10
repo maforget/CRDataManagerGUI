@@ -12,33 +12,40 @@ namespace DataManagerGUI
     {
         TreeView _treeView => this;
         Graphics g => this.CreateGraphics();
-        internal string NodeMap = string.Empty;
-        internal NodePosition? nodePosition;
-        bool LineIsShown;
+        internal protected string NodeMap = string.Empty;
+        internal protected NodePosition? nodePosition;
+        private bool isLineShown;
 
         public TreeViewReorder()
         {
-            this.DragOver += TreeViewReorder_DragOver;
-            this.ItemDrag += TreeViewReorder_ItemDrag;
-            this.DragDrop += TreeViewReorder_DragDrop;
-            LineIsShown = false;
+            isLineShown = false;
             nodePosition = null;
         }
 
-        private void TreeViewReorder_DragDrop(object sender, DragEventArgs e)
+        protected override void OnCreateControl()
         {
-            _treeView.Refresh();
+            base.OnCreateControl();
+            base.DoubleBuffered = true;
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
         }
 
-        private void TreeViewReorder_ItemDrag(object sender, ItemDragEventArgs e)
+        protected override void OnDragDrop(DragEventArgs drgevent)
         {
+            base.OnDragDrop(drgevent);
+            this.Invalidate();
+        }
+
+        protected override void OnItemDrag(ItemDragEventArgs e)
+        {
+            base.OnItemDrag(e);
             NodeMap = string.Empty;
-            LineIsShown = false;
+            isLineShown = false;
             nodePosition = null;
         }
 
-        private void TreeViewReorder_DragOver(object sender, DragEventArgs e)
+        protected override void OnDragOver(DragEventArgs e)
         {
+            base.OnDragOver(e);
             TreeNode NodeOver = _treeView.GetNodeAt(this.PointToClient(Cursor.Position));
             TreeNode NodeMoving = GetTreeNode(e);
 
@@ -50,10 +57,11 @@ namespace DataManagerGUI
                 nodePosition = GetNodePosition(NodeOver, pt);
                 ProcessLine(NodeMoving, NodeOver);
             }
-            else if (NodeOver == null && LineIsShown)//So the Line dissapears when we are at the ends of the TreeView
+            else if (NodeOver == null && isLineShown)//Remove the line when at the end of the tree.
             {
-                this.Invalidate();
-                LineIsShown = false;
+                this.Invalidate(true);
+                isLineShown = false;
+                return;
             }
         }
 
@@ -90,8 +98,21 @@ namespace DataManagerGUI
         #region Draw Lines
         private void ProcessLine(TreeNode NodeMoving, TreeNode NodeOver)
         {
-            if (nodePosition == null)
+            if (!ValidateLocation(NodeOver, NodeMoving))
                 return;
+
+            //Clear placeholders above and below
+            if(isLineShown)
+                this.Refresh();
+
+            //Draw the line
+            DrawLine(NodeOver);
+        }
+
+        private bool ValidateLocation(TreeNode NodeOver, TreeNode NodeMoving)
+        {
+            if (nodePosition == null)
+                return false;
 
             // If NodeOver is a child then cancel
             TreeNode tnParadox = NodeOver;
@@ -101,7 +122,7 @@ namespace DataManagerGUI
                 {
                     this.NodeMap = "";
                     nodePosition = null;
-                    return;
+                    return false;
                 }
 
                 tnParadox = tnParadox.Parent;
@@ -111,39 +132,41 @@ namespace DataManagerGUI
             bool isBelow = nodePosition == NodePosition.Below ? true : false;
             string newNodeMap = SetNodeMap(NodeOver, isBelow, out int newIndex);
 
-            //Checks for the lines that are above and below itself
-            string invalidNodeMapAbove = SetNodeMap(NodeMoving, false);
-            string invalidNodeMapBelow = SetNodeMap(NodeMoving, true);
+            //Checks for the lines that are above and below itself same location
+            string sameLocationAbove = SetNodeMap(NodeMoving, false);
+            string sameLocationBelow = SetNodeMap(NodeMoving, true);
+            bool IsInvalid = (sameLocationAbove == newNodeMap || sameLocationBelow == newNodeMap);
 
-            bool LastIndex = (NodeMoving is TreeNodeGroup) && nodePosition == NodePosition.Below && NodeOver.Index == NodeOver.Parent?.Nodes.Count - 1;
-            bool normalInBetweenGroups = NodeMoving.GetType() != typeof(TreeNodeGroup) && NodeOver.GetType() == typeof(TreeNodeGroup) 
-                && (nodePosition == NodePosition.Below || nodePosition == NodePosition.Above);
+            //Remove the Lines after the groups are over and at the the end of the list
             int numberOfGroups = GetNumberOfGroups(NodeOver.Parent);
             bool areGroupsOver = (NodeMoving is TreeNodeGroup) && NodeOver.Index == numberOfGroups && (nodePosition == NodePosition.Below);
-            bool IsInvalid = nodePosition != NodePosition.In && (invalidNodeMapAbove == newNodeMap || invalidNodeMapBelow == newNodeMap || normalInBetweenGroups);
-            if (IsInvalid) nodePosition = null;
+            bool LastIndex = (NodeMoving is TreeNodeGroup) && nodePosition == NodePosition.Below && NodeOver.Index == NodeOver.Parent?.Nodes.Count - 1;
+            //No lines for normal nodes inbetween Groups, only In
+            bool normalInBetweenGroups = NodeMoving.GetType() != typeof(TreeNodeGroup) && NodeOver.GetType() == typeof(TreeNodeGroup)
+                && (nodePosition == NodePosition.Below || nodePosition == NodePosition.Above);
+            //Show the line when moving a group only when the groups are over, so the line to insert at the end of the groups, but not between normal nodes
+            bool firstNonGroup = (NodeMoving is TreeNodeGroup) && numberOfGroups > 0 && NodeOver.Index == numberOfGroups && (nodePosition == NodePosition.Above)
+                && NodeOver.GetType() != typeof(TreeNodeGroup);
 
-            if(LineIsShown && (areGroupsOver || LastIndex))
+            if (isLineShown && (areGroupsOver || LastIndex || normalInBetweenGroups))
             {
-                this.Invalidate();
-                LineIsShown = false;
-                return;
+                this.Invalidate(true);
+                isLineShown = false;
+                nodePosition = null;
+                NodeMap = newNodeMap;
+                return false;
             }
 
             //Don't redraw the line if the line is at the same index OR
             //Don't redraw the line if the line is in a invalid position (same position)
             //Don't redraw the Line when the Node that is Moving is a Group and the position is anyhting else other than an other Group
-            //Unless it's the first regular non Group item after the LastGroup
-            bool firstNonGroup = (NodeMoving is TreeNodeGroup) && numberOfGroups > 0 && NodeOver.Index == numberOfGroups && (nodePosition == NodePosition.Above)
-                && NodeOver.GetType() != typeof(TreeNodeGroup);
+            //Unless it's the first regular non Group item after the Last Group
             if (AreNodeMapsEqual(newNodeMap) || IsInvalid || (NodeMoving is TreeNodeGroup && !(NodeOver is TreeNodeGroup) && !firstNonGroup))
-                return;
+            {
+                return false;
+            }
 
-            //Clear placeholders above and below
-            this.Refresh();
-
-            //Draw the line
-            DrawLine(NodeOver);
+            return true;
         }
 
         private void DrawLine(TreeNode NodeOver)
@@ -181,7 +204,7 @@ namespace DataManagerGUI
                 g.DrawLine(customPen, new Point(LeftPos, boundary), new Point(RightPos, boundary));
             }
 
-            LineIsShown = true;
+            isLineShown = true;
         }
         #endregion
 
