@@ -139,16 +139,17 @@ namespace DataManagerGUI
 
             //Remove the Lines after the groups are over and at the the end of the list
             int numberOfGroups = GetNumberOfGroups(NodeOver.Parent);
-            bool areGroupsOver = (NodeMoving is TreeNodeGroup) && NodeOver.Index == numberOfGroups && (nodePosition == NodePosition.Below);
+            bool areGroupsOver = NodeOver.Index == numberOfGroups && (nodePosition == NodePosition.Below);
             bool LastIndex = (NodeMoving is TreeNodeGroup) && nodePosition == NodePosition.Below && NodeOver.Index == NodeOver.Parent?.Nodes.Count - 1;
             //No lines for normal nodes inbetween Groups, only In
             bool normalInBetweenGroups = NodeMoving.GetType() != typeof(TreeNodeGroup) && NodeOver.GetType() == typeof(TreeNodeGroup)
-                && (nodePosition == NodePosition.Below || nodePosition == NodePosition.Above);
+                && (nodePosition == NodePosition.Below || nodePosition == NodePosition.Above) && newIndex != numberOfGroups;
             //Show the line when moving a group only when the groups are over, so the line to insert at the end of the groups, but not between normal nodes
             bool firstNonGroup = (NodeMoving is TreeNodeGroup) && numberOfGroups > 0 && NodeOver.Index == numberOfGroups && (nodePosition == NodePosition.Above)
                 && NodeOver.GetType() != typeof(TreeNodeGroup);
+            bool betweenRootNode = NodeOver.Parent == null;
 
-            if (isLineShown && (areGroupsOver || LastIndex || normalInBetweenGroups))
+            if (isLineShown && (areGroupsOver || LastIndex || normalInBetweenGroups || betweenRootNode))
             {
                 this.Invalidate(true);
                 isLineShown = false;
@@ -161,7 +162,7 @@ namespace DataManagerGUI
             //Don't redraw the line if the line is in a invalid position (same position)
             //Don't redraw the Line when the Node that is Moving is a Group and the position is anyhting else other than an other Group
             //Unless it's the first regular non Group item after the Last Group
-            if (AreNodeMapsEqual(newNodeMap) || IsInvalid || (NodeMoving is TreeNodeGroup && !(NodeOver is TreeNodeGroup) && !firstNonGroup))
+            if (AreNodeMapsEqual(newNodeMap) || IsInvalid || normalInBetweenGroups || (NodeMoving is TreeNodeGroup && !(NodeOver is TreeNodeGroup) && !firstNonGroup))
             {
                 return false;
             }
