@@ -66,19 +66,7 @@ namespace DataManagerGUI
         {
             isLineShown = false;
             nodePosition = null;
-        }
-
-        protected override void OnCreateControl()
-        {
-            base.OnCreateControl();
-            base.DoubleBuffered = true;
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-        }
-
-        protected override void OnDragDrop(DragEventArgs drgevent)
-        {
-            base.OnDragDrop(drgevent);
-            RemoveLines();
         }
 
         protected override void OnItemDrag(ItemDragEventArgs e)
