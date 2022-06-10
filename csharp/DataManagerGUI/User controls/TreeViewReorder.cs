@@ -10,6 +10,51 @@ namespace DataManagerGUI
 {
     public class TreeViewReorder : TreeView
     {
+        private class TreeNodeInfo
+        {
+            public TreeNodeInfo(TreeNode node)
+            {
+                if (node == null)
+                {
+                    NumberOfGroups = 0;
+                    NumberOfRulesets = 0;
+                    return;
+                }
+
+                List<TreeNode> groups = new List<TreeNode>();
+                List<TreeNode> rulesets = new List<TreeNode>();
+                for (int i = 0; i < node.Nodes.Count; i++)
+                {
+                    TreeNode item = node.Nodes[i];
+                    if (item.GetType() == typeof(TreeNodeGroup))
+                        groups.Add(item);
+                    else
+                        rulesets.Add(item);
+                }
+
+                NumberOfGroups = groups.Count;
+                NumberOfRulesets = rulesets.Count;
+            }
+
+            private int GetNumberOfGroups(TreeNode node)
+            {
+                if (node == null) return 0;
+
+                List<TreeNode> list = new List<TreeNode>();
+                for (int i = 0; i < node.Nodes.Count; i++)
+                {
+                    TreeNode item = node.Nodes[i];
+                    if (item.GetType() == typeof(TreeNodeGroup))
+                        list.Add(item);
+                }
+
+                return list.Count;
+            }
+
+            public int NumberOfGroups { get; set; }
+            public int NumberOfRulesets { get; set; }
+        }
+
         TreeView _treeView => this;
         Graphics g => this.CreateGraphics();
         internal protected string NodeMap = string.Empty;
@@ -138,16 +183,16 @@ namespace DataManagerGUI
             bool IsInvalid = (sameLocationAbove == newNodeMap || sameLocationBelow == newNodeMap);
 
             //Remove the Lines after the groups are over and at the the end of the list
-            int numberOfGroups = GetNumberOfGroups(NodeOver.Parent);
-            bool areGroupsOver = NodeOver.Index == numberOfGroups && (nodePosition == NodePosition.Below);
-            bool LastIndex = (NodeMoving is TreeNodeGroup) && nodePosition == NodePosition.Below && NodeOver.Index == NodeOver.Parent?.Nodes.Count - 1;
+            TreeNodeInfo tni = new TreeNodeInfo(NodeOver.Parent);
+            bool areGroupsOver = !(NodeOver is TreeNodeGroup) && (NodeMoving is TreeNodeGroup) && tni.NumberOfGroups > 0 && NodeOver.Index == tni.NumberOfGroups && (nodePosition == NodePosition.Below);
+            bool LastIndex = (NodeMoving is TreeNodeGroup) && nodePosition == NodePosition.Below && NodeOver.Index == NodeOver.Parent?.Nodes.Count - 1 && tni.NumberOfRulesets > 0;
             //No lines for normal nodes inbetween Groups, only In
             bool normalInBetweenGroups = NodeMoving.GetType() != typeof(TreeNodeGroup) && NodeOver.GetType() == typeof(TreeNodeGroup)
-                && (nodePosition == NodePosition.Below || nodePosition == NodePosition.Above) && newIndex != numberOfGroups;
+                && (nodePosition == NodePosition.Below || nodePosition == NodePosition.Above) && newIndex != tni.NumberOfGroups;
             //Show the line when moving a group only when the groups are over, so the line to insert at the end of the groups, but not between normal nodes
-            bool firstNonGroup = (NodeMoving is TreeNodeGroup) && numberOfGroups > 0 && NodeOver.Index == numberOfGroups && (nodePosition == NodePosition.Above)
+            bool firstNonGroup = (NodeMoving is TreeNodeGroup) && tni.NumberOfGroups > 0 && NodeOver.Index == tni.NumberOfGroups && (nodePosition == NodePosition.Above)
                 && NodeOver.GetType() != typeof(TreeNodeGroup);
-            bool betweenRootNode = NodeOver.Parent == null;
+            bool betweenRootNode = NodeOver.Parent == null && nodePosition != NodePosition.In;
 
             if (isLineShown && (areGroupsOver || LastIndex || normalInBetweenGroups || betweenRootNode))
             {
@@ -172,7 +217,7 @@ namespace DataManagerGUI
 
         private void DrawLine(TreeNode NodeOver)
         {
-            int NodeOverImageWidth = this.ImageList.Images[NodeOver.ImageIndex].Size.Width + 30;
+            int NodeOverImageWidth = this.ImageList.Images[NodeOver.ImageIndex].Size.Width + 24;
             int LeftPos = NodeOver.Bounds.Left - NodeOverImageWidth;
             int RightPos = _treeView.Width - 8;
             int boundary = nodePosition == NodePosition.Below ? NodeOver.Bounds.Bottom :
@@ -208,21 +253,6 @@ namespace DataManagerGUI
             isLineShown = true;
         }
         #endregion
-
-        private int GetNumberOfGroups(TreeNode node)
-        {
-            if (node == null) return 0;
-
-            List<TreeNode> list = new List<TreeNode>();
-            for (int i = 0; i < node.Nodes.Count; i++)
-            {
-                TreeNode item = node.Nodes[i];
-                if (item.GetType() == typeof(TreeNodeGroup))
-                    list.Add(item);
-            }
-
-            return list.Count;
-        }
 
         private string SetNodeMap(TreeNode tnNode, bool boolBelowNode)
         {
