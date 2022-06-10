@@ -60,6 +60,7 @@ namespace DataManagerGUI
         internal protected string NodeMap = string.Empty;
         internal protected NodePosition? nodePosition;
         private bool isLineShown;
+        List<Rectangle> rects = new List<Rectangle>();
 
         public TreeViewReorder()
         {
@@ -77,7 +78,7 @@ namespace DataManagerGUI
         protected override void OnDragDrop(DragEventArgs drgevent)
         {
             base.OnDragDrop(drgevent);
-            this.Invalidate();
+            RemoveLines();
         }
 
         protected override void OnItemDrag(ItemDragEventArgs e)
@@ -147,8 +148,8 @@ namespace DataManagerGUI
                 return;
 
             //Clear placeholders above and below
-            if(isLineShown)
-                this.Refresh();
+            if (isLineShown)
+                RemoveLines();
 
             //Draw the line
             DrawLine(NodeOver);
@@ -196,7 +197,7 @@ namespace DataManagerGUI
 
             if (isLineShown && (areGroupsOver || LastIndex || normalInBetweenGroups || betweenRootNode))
             {
-                this.Invalidate(true);
+                RemoveLines();
                 isLineShown = false;
                 nodePosition = null;
                 NodeMap = newNodeMap;
@@ -237,6 +238,7 @@ namespace DataManagerGUI
                 new Point(RightPos - 4, boundary)
             };
 
+
             Pen customPen = new Pen(Color.Black, 2);
             if (nodePosition == NodePosition.In)
             {
@@ -250,7 +252,19 @@ namespace DataManagerGUI
                 g.DrawLine(customPen, new Point(LeftPos, boundary), new Point(RightPos, boundary));
             }
 
+            Rectangle rect = new Rectangle(LeftPos, boundary - 4, RightPos, 8);
+            rects.Add(rect);
             isLineShown = true;
+        }
+
+        private void RemoveLines()
+        {
+            foreach (Rectangle item in rects)
+            {
+                this.Invalidate(item);
+            }
+
+            rects = new List<Rectangle>();
         }
         #endregion
 
