@@ -3532,23 +3532,20 @@ namespace DataManagerGUI
 
                             if (NewNodeType == typeof(dmRuleset))
                             {
-                                if (DestinationNodeType != typeof(dmRuleset))
+                                if (position == NodePosition.In)
                                 {
-                                    if (position == NodePosition.In)
-                                    {
-                                        dmContainer DestinationContainer = (dmContainer)DestinationNode.Tag;
-                                        dmContainer SourceContainer = ((dmContainer)NewNode.Parent?.Tag);
-                                        dmRuleset newRuleset = (dmRuleset)NewNode.Tag;
-                                        if (DestinationContainer == null || SourceContainer == null) return;
+                                    dmContainer DestinationContainer = (dmContainer)DestinationNode.Tag;
+                                    dmContainer SourceContainer = ((dmContainer)NewNode.Parent?.Tag);
+                                    dmRuleset newRuleset = (dmRuleset)NewNode.Tag;
+                                    if (DestinationContainer == null || SourceContainer == null) return;
 
-                                        SourceContainer.RemoveRuleset(newRuleset);
-                                        DestinationContainer.AddRuleset(newRuleset);
-                                        //delete the treenode from the tree
-                                        tvCollectionTree.Nodes.Remove(NewNode);
-                                        //add the node to the tree
-                                        DestinationNode.Nodes.Add(NewNode);
-                                        FileChanged = true;
-                                    }
+                                    SourceContainer.RemoveRuleset(newRuleset);
+                                    DestinationContainer.AddRuleset(newRuleset);
+                                    //delete the treenode from the tree
+                                    tvCollectionTree.Nodes.Remove(NewNode);
+                                    //add the node to the tree
+                                    DestinationNode.Nodes.Add(NewNode);
+                                    FileChanged = true;
                                 }
                                 else
                                 {
