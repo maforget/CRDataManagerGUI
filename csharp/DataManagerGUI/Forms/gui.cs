@@ -3527,41 +3527,28 @@ namespace DataManagerGUI
                     {
                         if (NewNodeType != typeof(dmCollection))
                         {
+                            NodePosition? position = tvCollectionTree.nodePosition;
+                            if (position == null) return;
+
                             if (NewNodeType == typeof(dmRuleset))
                             {
                                 if (DestinationNodeType != typeof(dmRuleset))
                                 {
-                                    //delete the Ruleset from it's parent
-                                    dmContainer tmp = (dmContainer)NewNode.Parent.Tag;
-
-                                    if (GroupRulesetBinder.Contains(NewNode.Tag))
+                                    if (position == NodePosition.In)
                                     {
-                                        GroupRulesetBinder.Remove(NewNode.Tag);
-                                    }
-                                    else if (CollectionRulesetBinder.Contains(NewNode.Tag))
-                                    {
-                                        CollectionRulesetBinder.Remove(NewNode.Tag);
-                                    }
-                                    else tmp.RemoveRuleset((dmRuleset)NewNode.Tag);
+                                        dmContainer DestinationContainer = (dmContainer)DestinationNode.Tag;
+                                        dmContainer SourceContainer = ((dmContainer)NewNode.Parent?.Tag);
+                                        dmRuleset newRuleset = (dmRuleset)NewNode.Tag;
+                                        if (DestinationContainer == null || SourceContainer == null) return;
 
-                                    //add the Ruleset to the Group/Collection it's dropped on
-                                    dmContainer DestinationContainer = (dmContainer)DestinationNode.Tag;
-
-                                    if (DestinationContainer == (dmContainer)GroupBinder.Current)
-                                    {
-                                        GroupRulesetBinder.Add(NewNode.Tag);
+                                        SourceContainer.RemoveRuleset(newRuleset);
+                                        DestinationContainer.AddRuleset(newRuleset);
+                                        //delete the treenode from the tree
+                                        tvCollectionTree.Nodes.Remove(NewNode);
+                                        //add the node to the tree
+                                        DestinationNode.Nodes.Add(NewNode);
+                                        FileChanged = true;
                                     }
-                                    else if (DestinationContainer == (dmContainer)CollectionBinder.Current)
-                                    {
-                                        CollectionRulesetBinder.Add(NewNode.Tag);
-                                    }
-                                    else DestinationContainer.AddRuleset((dmRuleset)NewNode.Tag);
-
-                                    //delete the treenode from the tree
-                                    tvCollectionTree.Nodes.Remove(NewNode);
-                                    //add the node to the tree
-                                    DestinationNode.Nodes.Add(NewNode);
-                                    FileChanged = true;
                                 }
                                 else
                                 {
@@ -3596,9 +3583,6 @@ namespace DataManagerGUI
                             else if (NewNodeType == typeof(dmGroup))
                             {
                                 dmGroup newGroup = (dmGroup)NewNode.Tag;
-
-                                NodePosition? position = tvCollectionTree.nodePosition;
-                                if (position == null) return;
 
                                 dmContainer SourceContainer = ((dmContainer)NewNode.Parent?.Tag);
                                 if (SourceContainer == null) return;
