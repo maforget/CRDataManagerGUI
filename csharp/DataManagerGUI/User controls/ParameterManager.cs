@@ -258,9 +258,8 @@ namespace DataManagerGUI
 
         private void txtMultiValue_TextChanged(object sender, EventArgs e)
         {
-            if (cmbField.SelectedIndex < 0 || cmbModifier.SelectedIndex < 0) return;
-
             keyType FieldType = Global.GetKeyType(cmbField.Text);
+            if ((cmbField.SelectedIndex < 0 && FieldType !=  keyType.Custom) || cmbModifier.SelectedIndex < 0) return;
 
             switch (FieldType)
             {
@@ -686,8 +685,8 @@ namespace DataManagerGUI
 
         private void SetRuleValue(string p)
         {
-            if (cmbField.SelectedIndex < 0) return;
             keyType FieldType = Global.GetKeyType(cmbField.Text);
+            if ((cmbField.SelectedIndex < 0 && FieldType != keyType.Custom) || cmbModifier.SelectedIndex < 0) return;
 
             string[] tmp = p.Split(new string[] { Global.DELIMITER }, StringSplitOptions.None);
 
@@ -964,18 +963,18 @@ namespace DataManagerGUI
 
         private void txtReplaceOldValue_TextChanged(object sender, EventArgs e)
         {
-            if (cmbField.SelectedIndex < 0 || cmbModifier.SelectedIndex < 0) return;
-
             keyType tmpKey = Global.GetKeyType(cmbField.Text);
+            if ((cmbField.SelectedIndex < 0 && tmpKey != keyType.Custom) || cmbModifier.SelectedIndex < 0) return;
+
             if ((tmpKey == keyType.List || tmpKey == keyType.String || tmpKey == keyType.Custom) && cmbModifier.Text.Contains("Replace"))
                 txtTextValue.Text = txtReplaceOldValue.Text + Global.DELIMITER + txtReplaceNewValue.Text;
         }
 
         private void txtReplaceNewValue_TextChanged(object sender, EventArgs e)
         {
-            if (cmbField.SelectedIndex < 0 || cmbModifier.SelectedIndex < 0) return;
-
             keyType tmpKey = Global.GetKeyType(cmbField.Text);
+            if ((cmbField.SelectedIndex < 0 && tmpKey != keyType.Custom) || cmbModifier.SelectedIndex < 0) return;
+
             if ((tmpKey == keyType.List || tmpKey == keyType.String || tmpKey == keyType.Custom) && cmbModifier.Text.Contains("Replace"))
                 txtTextValue.Text = txtReplaceOldValue.Text + Global.DELIMITER + txtReplaceNewValue.Text;
         }
@@ -1027,7 +1026,7 @@ namespace DataManagerGUI
 
         private void txtCalcValue_TextChanged(object sender, EventArgs e)
         {
-            if (cmbField.SelectedIndex < 0 || cmbModifier.SelectedIndex < 0) return;
+            if ((cmbField.SelectedIndex < 0 && Global.GetKeyType(cmbField.Text) != keyType.Custom) || cmbModifier.SelectedIndex < 0) return;
 
             if (cmbModifier.Text == "Calc")
                 txtTextValue.Text = txtCalcValue.Text;
