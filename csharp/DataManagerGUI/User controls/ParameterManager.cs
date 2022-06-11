@@ -320,13 +320,13 @@ namespace DataManagerGUI
             pnlCalcValue.Visible = false;
             pnlSelectableValue.Visible = false;
             regExVarReplace1.Visible = false;
-
+            
             //clean all values
-            txtMultiValue.Text = "";
-            txtReplaceNewValue.Text = "";
-            txtReplaceOldValue.Text = "";
-            txtTextValue.Text = "";
-            txtCalcValue.Text = "";
+            //txtMultiValue.Text = "";
+            //txtReplaceNewValue.Text = "";
+            //txtReplaceOldValue.Text = "";
+            //txtTextValue.Text = "";
+            //txtCalcValue.Text = "";
             cmbLimitedValues.Items.Clear();
             numNumericValue.Value = new decimal(0);
             dtDateTimeRangLower.Value = dtDateTimeRangLower.MinDate;
