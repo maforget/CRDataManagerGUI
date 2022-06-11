@@ -77,6 +77,12 @@ namespace DataManagerGUI
             nodePosition = null;
         }
 
+        protected override void OnDragDrop(DragEventArgs drgevent)
+        {
+            base.OnDragDrop(drgevent);
+            RemoveLines();
+        }
+
         protected override void OnDragOver(DragEventArgs e)
         {
             base.OnDragOver(e);
