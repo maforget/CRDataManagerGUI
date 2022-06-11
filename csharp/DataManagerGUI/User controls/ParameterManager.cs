@@ -220,6 +220,7 @@ namespace DataManagerGUI
                 case keyType.String:
                 case keyType.Numeric:
                 case keyType.NumericString:
+                case keyType.Custom:
                     Editor = new MultiEdit(strIn.ToArray());
                     break;
                 case keyType.LanguageISO:
