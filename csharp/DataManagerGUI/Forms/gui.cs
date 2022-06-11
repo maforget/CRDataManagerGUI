@@ -330,6 +330,9 @@ namespace DataManagerGUI
         private DataGridViewTextBoxColumn dgvtcCollectionGroupRulesetCount;
         private Button btnCollectionGroupRemove;
         private TabControl tabControl1;
+        private ToolStripSeparator tssContext2;
+        private ToolStripMenuItem tsmiAddGroup;
+        private ToolStripMenuItem tsmiAddRuleset;
         private ToolStripStatusLabel tsslLastSave;
 
         private void InitializeComponent()
@@ -526,6 +529,9 @@ namespace DataManagerGUI
             this.btnCollectionRulesetAdd = new System.Windows.Forms.Button();
             this.btnCollectionGroupAdd = new System.Windows.Forms.Button();
             this.dgvCollectionRulesets = new System.Windows.Forms.DataGridView();
+            this.tsmiAddGroup = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAddRuleset = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssContext2 = new System.Windows.Forms.ToolStripSeparator();
             this.dgvtcCollectionRulesetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtcCollectionRulesetQuickView = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtcCollectionRulesetComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -674,7 +680,7 @@ namespace DataManagerGUI
             this.GroupRulesetBinder.DataMember = "Rulesets";
             this.GroupRulesetBinder.DataSource = this.GroupBinder;
             this.GroupRulesetBinder.PositionChanged += new System.EventHandler(this.GroupRulesetBinder_PositionChanged);
-            // 
+            //
             // GroupBinder
             // 
             this.GroupBinder.DataSource = typeof(DataManagerGUI.dmGroup);
@@ -753,9 +759,12 @@ namespace DataManagerGUI
             this.tsmiContextPaste,
             this.tsmiContextDelete,
             this.tssContext1,
-            this.tsmiContextExportGroup});
+            this.tsmiContextExportGroup,
+            this.tssContext2,
+            this.tsmiAddGroup,
+            this.tsmiAddRuleset});
             this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(145, 142);
+            this.cmsMenu.Size = new System.Drawing.Size(145, 192);
             this.cmsMenu.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.cmsMenu_Closing);
             this.cmsMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMenu_Opening);
             // 
@@ -2946,6 +2955,20 @@ namespace DataManagerGUI
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
+            // tsmiAddGroup
+            // 
+            this.tsmiAddGroup.Image = global::DataManagerGUI.Properties.Resources.add_to_folder;
+            this.tsmiAddGroup.Name = "tsmiAddGroup";
+            this.tsmiAddGroup.Size = new System.Drawing.Size(144, 22);
+            this.tsmiAddGroup.Text = "Add Group";
+            // 
+            // tsmiAddRuleset
+            // 
+            this.tsmiAddRuleset.Image = global::DataManagerGUI.Properties.Resources.add_page;
+            this.tsmiAddRuleset.Name = "tsmiAddRuleset";
+            this.tsmiAddRuleset.Size = new System.Drawing.Size(144, 22);
+            this.tsmiAddRuleset.Text = "Add Ruleset";
+            // 
             // gui
             // 
             this.AllowDrop = true;
@@ -3864,7 +3887,8 @@ namespace DataManagerGUI
         private void btnCollectionGroupAdd_Click(object sender, EventArgs e)
         {
             //get the treenode cause we'll be adding a node to it
-            TreeNode tmpNode = tvCollectionTree.Nodes[0];
+            TreeNode tsNode = (sender as ToolStripMenuItem)?.Tag as TreeNode;
+            TreeNode tmpNode = tsNode ?? tvCollectionTree.Nodes[0];
 
             //create new group
             dmGroup tmpGroup = new dmGroup((dmContainer)tmpNode.Tag);
@@ -3891,7 +3915,8 @@ namespace DataManagerGUI
 
         private void btnCollectionRulesetsAdd_Click(object sender, EventArgs e)
         {
-            TreeNode tmpNode = tvCollectionTree.Nodes[0];
+            TreeNode tsNode = (sender as ToolStripMenuItem)?.Tag as TreeNode;
+            TreeNode tmpNode = tsNode ?? tvCollectionTree.Nodes[0];
             dmContainer dmnItem = (dmContainer)tmpNode.Tag;
 
             dmRuleset tmpRS = new dmRuleset(dmnItem);
@@ -4072,7 +4097,8 @@ namespace DataManagerGUI
         private void btnGroupGroupAdd_Click(object sender, EventArgs e)
         {
             //get tree node
-            TreeNode myNode = tvCollectionTree.SelectedNode;
+            TreeNode tsNode = (sender as ToolStripMenuItem)?.Tag as TreeNode;
+            TreeNode myNode = tsNode ?? tvCollectionTree.SelectedNode;
             //get group
             dmContainer dmnTemp = (dmContainer)myNode.Tag;
 
@@ -4113,7 +4139,8 @@ namespace DataManagerGUI
 
         private void btnGroupRulesetAdd_Click(object sender, EventArgs e)
         {
-            TreeNode tmpNode = tvCollectionTree.SelectedNode;
+            TreeNode tsNode = (sender as ToolStripMenuItem)?.Tag as TreeNode;
+            TreeNode tmpNode = tsNode ?? tvCollectionTree.SelectedNode;
             dmContainer dmnItem = (dmContainer)tmpNode.Tag;
 
             dmRuleset tmpRS = new dmRuleset(dmnItem);
@@ -4880,6 +4907,9 @@ namespace DataManagerGUI
             tsmiContextDelete.Enabled = false;
             tsmiContextExportGroup.Visible = false;
             tsmiCopyAll.Visible = false;
+            tssContext2.Visible = false;
+            tsmiAddGroup.Visible = false;
+            tsmiAddRuleset.Visible = false;
 
             #region Tree Handling
             if (((ContextMenuStrip)sender).SourceControl == tvCollectionTree)
@@ -4891,11 +4921,19 @@ namespace DataManagerGUI
 
                     if (AlternativelySelectedNode.Tag != null)
                     {
+
+                        tsmiAddGroup.Click -= btnGroupGroupAdd_Click;
+                        tsmiAddGroup.Click -= btnCollectionGroupAdd_Click;
+                        tsmiAddRuleset.Click -= btnCollectionRulesetsAdd_Click;
+                        tsmiAddRuleset.Click -= btnGroupRulesetAdd_Click;
+
                         tsmiContextExportGroup.Tag = AlternativelySelectedNode;
                         tsmiContextCut.Tag = AlternativelySelectedNode;
                         tsmiContextCopy.Tag = AlternativelySelectedNode;
                         tsmiContextDelete.Tag = AlternativelySelectedNode;
                         tsmiContextPaste.Tag = AlternativelySelectedNode;
+                        tsmiAddGroup.Tag = AlternativelySelectedNode;
+                        tsmiAddRuleset.Tag = AlternativelySelectedNode;
 
                         //determine by type what menus should be enabled
                         Type tmpType = AlternativelySelectedNode.Tag.GetType();
@@ -4905,6 +4943,9 @@ namespace DataManagerGUI
                         {
                             // Only allow paste if there is a group or ruleset in clipboard
                             tsmiContextPaste.Enabled = clipboardContents == ItemType.Group || clipboardContents == ItemType.Ruleset;
+                            tssContext2.Visible = tsmiAddGroup.Visible = tsmiAddGroup.Enabled = tsmiAddRuleset.Visible = tsmiAddRuleset.Enabled = true;
+                            tsmiAddGroup.Click += btnCollectionGroupAdd_Click;
+                            tsmiAddRuleset.Click += btnCollectionRulesetsAdd_Click;
                         }
                         else if (tmpType == typeof(dmGroup))
                         {
@@ -4914,6 +4955,9 @@ namespace DataManagerGUI
                             tsmiContextCopy.Enabled = tsmiContextCut.Enabled = tsmiContextDelete.Enabled = true;
                             //enable Group Export
                             tssContext1.Visible = tsmiContextExportGroup.Visible = tsmiContextExportGroup.Enabled = true;
+                            tssContext2.Visible = tsmiAddGroup.Visible = tsmiAddGroup.Enabled = tsmiAddRuleset.Visible = tsmiAddRuleset.Enabled = true;
+                            tsmiAddGroup.Click += btnGroupGroupAdd_Click;
+                            tsmiAddRuleset.Click += btnGroupRulesetAdd_Click;
                         }
                         else if (tmpType == typeof(dmRuleset))
                         {
