@@ -219,6 +219,7 @@ namespace DataManagerGUI
                 case keyType.List:
                 case keyType.String:
                 case keyType.Numeric:
+                case keyType.NumericString:
                     Editor = new MultiEdit(strIn.ToArray());
                     break;
                 case keyType.LanguageISO:
