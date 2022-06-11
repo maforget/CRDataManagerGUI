@@ -5150,7 +5150,7 @@ namespace DataManagerGUI
         private void tsmiContextCopy_Click(object sender, EventArgs e)
         {
             Clipboard.Clear();
-            if (((ToolStripMenuItem)sender).Tag.GetType() == typeof(TreeNode))
+            if (((ToolStripMenuItem)sender).Tag is TreeNode)
             {
                 TreeNode tmpNode = (TreeNode)((ToolStripMenuItem)sender).Tag;
                 Program.SendToClipboard(tmpNode.Tag);
@@ -5168,7 +5168,7 @@ namespace DataManagerGUI
             object item = null;
             Clipboard.Clear();
 
-            if (((ToolStripMenuItem)sender).Tag.GetType() == typeof(TreeNode))
+            if (((ToolStripMenuItem)sender).Tag is TreeNode)
             {
                 operativeNode = (TreeNode)((ToolStripMenuItem)sender).Tag;
                 item = operativeNode.Tag;
@@ -5246,7 +5246,7 @@ namespace DataManagerGUI
                 #region Ruleset
                 case ItemType.Ruleset:
                     #region TreeNode As Tag
-                    if (((ToolStripMenuItem)sender).Tag.GetType() == typeof(TreeNode))
+                    if (((ToolStripMenuItem)sender).Tag is TreeNode)
                     {
                         TreeNode item = (TreeNode)((ToolStripMenuItem)sender).Tag;
                         if (item == tvCollectionTree.SelectedNode)
@@ -5318,7 +5318,7 @@ namespace DataManagerGUI
                     ToolStripMenuItem menuItem = (ToolStripMenuItem)sender;
                     //create the treenode for the group
 
-                    if (menuItem.Tag.GetType() == typeof(TreeNode))
+                    if (menuItem.Tag is TreeNode)
                     {
                         TreeNode operativeNode = (TreeNode)menuItem.Tag;
 
@@ -5384,7 +5384,7 @@ namespace DataManagerGUI
             TreeNode operativeNode = null;
             object item = null;
 
-            if (((ToolStripMenuItem)sender).Tag.GetType() == typeof(TreeNode))
+            if (((ToolStripMenuItem)sender).Tag is TreeNode)
             {
                 operativeNode = (TreeNode)((ToolStripMenuItem)sender).Tag;
                 item = operativeNode.Tag;
@@ -5469,7 +5469,7 @@ namespace DataManagerGUI
             ToolStripMenuItem tsmiTemp = (ToolStripMenuItem)sender;
             dmCollection tmp = null;
 
-            if (tsmiTemp.Tag.GetType() == typeof(TreeNode))
+            if (tsmiTemp.Tag is TreeNode)
             {
                 TreeNode tmpNode = (TreeNode)tsmiTemp.Tag;
 
