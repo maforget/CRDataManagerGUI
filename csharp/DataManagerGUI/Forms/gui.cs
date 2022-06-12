@@ -5212,9 +5212,9 @@ namespace DataManagerGUI
                     {
                         string tmpParameters = (string)tmp.GetData(typeof(List<dmAction>).FullName);
                         XElement xElement = XElement.Parse(tmpParameters);
-                        foreach (XElement item in xElement.Elements("actions"))
+                        foreach (XElement item in xElement.Elements("action"))
                         {
-                            ((BindingSource)((ToolStripMenuItem)sender).Tag).Add(new dmAction(XElement.Parse(tmpParameters)));
+                            ((BindingSource)((ToolStripMenuItem)sender).Tag).Add(new dmAction(item));
                             FileChanged = true;
                             RulesetBinder.ResetCurrentItem();
                         }
@@ -5236,7 +5236,7 @@ namespace DataManagerGUI
                         XElement xElement = XElement.Parse(tmpParameters);
                         foreach (XElement item in xElement.Elements("rule"))
                         {
-                            ((BindingSource)((ToolStripMenuItem)sender).Tag).Add(new dmRule(XElement.Parse(tmpParameters)));
+                            ((BindingSource)((ToolStripMenuItem)sender).Tag).Add(new dmRule(item));
                             FileChanged = true;
                             RulesetBinder.ResetCurrentItem();
                         }
