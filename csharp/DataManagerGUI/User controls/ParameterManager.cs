@@ -577,6 +577,7 @@ namespace DataManagerGUI
                         case "RegExVarReplace":
                         case "RegExVarAppend":
                             regExVarReplace1.Results = strValue;
+                            txtTextValue.Text = strValue;
                             break;
                         case "Calc":
                             txtCalcValue.Text = strValue;
