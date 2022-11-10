@@ -1036,7 +1036,7 @@ namespace DataManagerGUI
         {
             if (cmbField.SelectedIndex < 0 || cmbModifier.SelectedIndex < 0) return;
 
-            if (Global.GetKeyType(cmbField.Text) == keyType.Numeric)
+            if (Global.GetKeyType(cmbField.Text) == keyType.Numeric || Global.GetKeyType(cmbField.Text) == keyType.NumericString)
             {
                 switch (cmbModifier.Text)
                 {
