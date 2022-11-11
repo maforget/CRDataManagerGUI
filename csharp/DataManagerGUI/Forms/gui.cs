@@ -3471,39 +3471,46 @@ namespace DataManagerGUI
 
         private void tvCollectionTree_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            pnlGeneral.Visible = false;
-            pnlGroups.Visible = false;
-            pnlRulesets.Visible = false;
+            TreeNode tsNode = (sender as ContextMenuStrip)?.Tag as TreeNode;
+            bool viaContextMenu = tsNode == null ? false : true;
+
+            if (!viaContextMenu)
+            {
+                pnlGeneral.Visible = false;
+                pnlGroups.Visible = false;
+                pnlRulesets.Visible = false;
+            }
+
             GroupBinder.Clear();
             RulesetBinder.Clear();
 
             switch (tvCollectionTree.SelectedNode.Name)
             {
                 default:
-                    TreeNode tsNode = (sender as ContextMenuStrip)?.Tag as TreeNode;
                     object item = tsNode?.Tag ?? tvCollectionTree.SelectedNode.Tag;
                     if (item != null)
                     {
                         if (item.GetType() == typeof(dmRuleset))
                         {
                             RulesetBinder.Add(item);
-                            pnlRulesets.Visible = true;
+                            if (!viaContextMenu) pnlRulesets.Visible = true;
                         }
 
                         else if (item.GetType() == typeof(dmGroup))
                         {
-                            pnlGroups.Visible = true;
+                            if (!viaContextMenu) pnlGroups.Visible = true;
                             GroupBinder.Add(item);
                         }
                         else if (item.GetType() == typeof(dmCollection))
                         {
-                            pnlGeneral.Visible = true;
+                            if (!viaContextMenu) pnlGeneral.Visible = true;
                             CollectionBinder.ResetBindings(false);
                         }
                     }
                     break;
             }
         }
+
 
         private void tvCollectionTree_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
