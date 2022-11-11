@@ -3480,8 +3480,9 @@ namespace DataManagerGUI
             switch (tvCollectionTree.SelectedNode.Name)
             {
                 default:
-                    object item = tvCollectionTree.SelectedNode.Tag;
-                    if (tvCollectionTree.SelectedNode.Tag != null)
+                    TreeNode tsNode = (sender as ContextMenuStrip)?.Tag as TreeNode;
+                    object item = tsNode?.Tag ?? tvCollectionTree.SelectedNode.Tag;
+                    if (item != null)
                     {
                         if (item.GetType() == typeof(dmRuleset))
                         {
@@ -3492,7 +3493,7 @@ namespace DataManagerGUI
                         else if (item.GetType() == typeof(dmGroup))
                         {
                             pnlGroups.Visible = true;
-                            GroupBinder.Add(tvCollectionTree.SelectedNode.Tag);
+                            GroupBinder.Add(item);
                         }
                         else if (item.GetType() == typeof(dmCollection))
                         {
@@ -4142,7 +4143,7 @@ namespace DataManagerGUI
             TreeNode tsNode = (sender as ToolStripMenuItem)?.Tag as TreeNode;
             TreeNode tmpNode = tsNode ?? tvCollectionTree.SelectedNode;
             dmContainer dmnItem = (dmContainer)tmpNode.Tag;
-
+         
             dmRuleset tmpRS = new dmRuleset(dmnItem);
 
             //put it in the group.
@@ -4934,6 +4935,7 @@ namespace DataManagerGUI
                         tsmiContextPaste.Tag = AlternativelySelectedNode;
                         tsmiAddGroup.Tag = AlternativelySelectedNode;
                         tsmiAddRuleset.Tag = AlternativelySelectedNode;
+                        cmsMenu.Tag = AlternativelySelectedNode;
 
                         //determine by type what menus should be enabled
                         Type tmpType = AlternativelySelectedNode.Tag.GetType();
@@ -4946,6 +4948,7 @@ namespace DataManagerGUI
                             tssContext2.Visible = tsmiAddGroup.Visible = tsmiAddGroup.Enabled = tsmiAddRuleset.Visible = tsmiAddRuleset.Enabled = true;
                             tsmiAddGroup.Click += btnCollectionGroupAdd_Click;
                             tsmiAddRuleset.Click += btnCollectionRulesetsAdd_Click;
+                            tvCollectionTree_AfterSelect(sender, null);
                         }
                         else if (tmpType == typeof(dmGroup))
                         {
@@ -4958,6 +4961,7 @@ namespace DataManagerGUI
                             tssContext2.Visible = tsmiAddGroup.Visible = tsmiAddGroup.Enabled = tsmiAddRuleset.Visible = tsmiAddRuleset.Enabled = true;
                             tsmiAddGroup.Click += btnGroupGroupAdd_Click;
                             tsmiAddRuleset.Click += btnGroupRulesetAdd_Click;
+                            tvCollectionTree_AfterSelect(sender, null);
                         }
                         else if (tmpType == typeof(dmRuleset))
                         {
