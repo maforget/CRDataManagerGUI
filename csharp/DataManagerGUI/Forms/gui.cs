@@ -3594,9 +3594,9 @@ namespace DataManagerGUI
                                         //add the Ruleset to the Group/Collection it's dropped on
                                         DestinationContainer.InsertRuleset(newIndexRuleset, newRuleset);
                                         //remove the ruleset from it's own Group/Collection
-                                        int oldIndex = FindOldIndex<dmRuleset>(newIndexRuleset, SourceContainer, newRuleset);
-                                        int oldIndexFull = oldIndex + SourceContainer.GroupCount;
-                                        SourceContainer.RemoveRulesetAt(oldIndex);
+                                        var oldIndexFull = newIndexFull <= NewNode.Index ? NewNode.Index + 1 : NewNode.Index; 
+                                        int oldIndexRuleset = oldIndexFull - SourceContainer.GroupCount;
+                                        SourceContainer.RemoveRulesetAt(oldIndexRuleset);
 
                                         //add the node to the tree
                                         DestinationNode.Parent.Nodes.Insert(newIndexFull, (TreeNode)NewNode.Clone());
@@ -3639,7 +3639,7 @@ namespace DataManagerGUI
                                     //add the Ruleset to the Group/Collection it's dropped on
                                     DestinationContainer.InsertGroup(newIndexFull, newGroup);
                                     //remove the ruleset from it's own Group/Collection
-                                    int oldIndex = FindOldIndex<dmGroup>(newIndexFull, SourceContainer, newGroup);
+                                    var oldIndex = newIndexFull <= NewNode.Index ? NewNode.Index + 1 : NewNode.Index;
                                     SourceContainer.RemoveGroupAt(oldIndex);
 
                                     //add the node to the tree
@@ -3654,28 +3654,6 @@ namespace DataManagerGUI
                 }
             }
             CollectionBinder.ResetBindings(false);
-        }
-
-        private int FindOldIndex<T>(int newInsertedIndex, dmContainer newContainer, T newRuleset) where T : dmNode
-        {
-            bool isGroup = newRuleset.GetType() == typeof(dmGroup);
-            bool isRuleset = newRuleset.GetType() == typeof(dmRuleset);
-            int counter = isGroup ? newContainer.GroupCount : isRuleset ? newContainer.RulesetCount : 0;
-
-            List<int> list = new List<int>();
-            if (newContainer != null)
-            {
-                for (int i = 0; i < counter; i++)
-                {
-                    var item = isGroup ? (dmNode)newContainer.Groups[i] : isRuleset ? (dmNode)newContainer.Rulesets[i] : default(dmNode);
-                    if (item.Equals(newRuleset))
-                        list.Add(i);
-                }
-
-                return list.Count == 1 ? list[0] : list.Where(x => x != newInsertedIndex).FirstOrDefault();
-            }
-
-            return -1;
         }
 
         private void tvCollectionTree_DragEnter(object sender, DragEventArgs e)
