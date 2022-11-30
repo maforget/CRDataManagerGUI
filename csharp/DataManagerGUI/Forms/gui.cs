@@ -4952,6 +4952,7 @@ namespace DataManagerGUI
                         {
                             // Allow copy cut and delete
                             tsmiContextCopy.Enabled = tsmiContextCut.Enabled = tsmiContextDelete.Enabled = true;
+                            tsmiContextPaste.Enabled = false;
                         }
                     }
                 }
