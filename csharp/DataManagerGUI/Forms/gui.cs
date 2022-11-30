@@ -3552,7 +3552,7 @@ namespace DataManagerGUI
                 Type DestinationNodeType = DestinationNode.Tag.GetType();
                 Type NewNodeType = NewNode.Tag.GetType();
 
-                if (DestinationNode != NewNode && !DestinationNode.FullPath.StartsWith((NewNode.FullPath)))
+                if (DestinationNode != NewNode)
                 {
                     if (NewNode.Tag != null)
                     {
