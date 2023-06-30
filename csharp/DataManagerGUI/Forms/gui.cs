@@ -4635,6 +4635,7 @@ namespace DataManagerGUI
                 tmp.FilterIndex = 0;
                 tmp.AddExtension = true;
                 tmp.DefaultExt = ".dmr";
+                tmp.InitialDirectory = this.startupPath;
 
                 if (tmp.ShowDialog() == DialogResult.OK)
                 {
