@@ -24,6 +24,7 @@ namespace DataManagerGUI
             this.checkBox1.Checked = userInfo.ConfirmOverwrite;
             this.checkBox4.Checked = userInfo.ShowStartupDialog;
             this.checkBox2.Checked = userInfo.BreakAfterFirstError;
+            this.cbWriteDataManagerProcessed.Checked = userInfo.WriteDataManagerProcessed;
             this.cbCase.Checked = userInfo.CaseSensitive;
             this.textBox1.Text = uiInfo.DateTimeFormat;
             radioButton2.Checked = !userInfo.LogBookOnlyWhenValuesChanged;
@@ -43,6 +44,7 @@ namespace DataManagerGUI
             userInfo.ConfirmOverwrite = checkBox1.Checked;
             userInfo.ShowStartupDialog = checkBox4.Checked;
             userInfo.BreakAfterFirstError = checkBox2.Checked;
+            userInfo.WriteDataManagerProcessed = this.cbWriteDataManagerProcessed.Checked;
             userInfo.LogBookOnlyWhenValuesChanged = radioButton1.Checked;
             userInfo.CaseSensitive = cbCase.Checked;
             Close();

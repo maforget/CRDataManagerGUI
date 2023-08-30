@@ -85,6 +85,22 @@ namespace DataManagerGUI
             }
         }
 
+        public bool WriteDataManagerProcessed
+        {
+            get
+            {
+                if (!KeyStorage.ContainsKey("WriteDataManagerProcessed"))
+                    KeyStorage.Add("WriteDataManagerProcessed", true.ToString());
+                return Boolean.Parse(KeyStorage["WriteDataManagerProcessed"]);
+            }
+            set
+            {
+                if (!KeyStorage.ContainsKey("WriteDataManagerProcessed"))
+                    KeyStorage.Add("WriteDataManagerProcessed", value.ToString());
+                KeyStorage["WriteDataManagerProcessed"] = value.ToString();
+            }
+        }
+
         public bool DebugMode
         {
             get
@@ -124,6 +140,7 @@ namespace DataManagerGUI
             AutoCompleteStrings = new Dictionary<string, List<string>>();
             DebugLevel = DebugLevel.StartupOnly;
             CaseSensitive = false;
+            WriteDataManagerProcessed = false;
         }
 
         public bool ConfirmOverwrite 
