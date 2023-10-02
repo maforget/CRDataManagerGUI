@@ -3594,7 +3594,8 @@ namespace DataManagerGUI
                                         //add the Ruleset to the Group/Collection it's dropped on
                                         DestinationContainer.InsertRuleset(newIndexRuleset, newRuleset);
                                         //remove the ruleset from it's own Group/Collection
-                                        var oldIndexFull = newIndexFull <= NewNode.Index ? NewNode.Index + 1 : NewNode.Index; 
+                                        //we add 1 within the same container because we inserted the new one already
+                                        var oldIndexFull = DestinationContainer == SourceContainer && newIndexFull <= NewNode.Index ? NewNode.Index + 1 : NewNode.Index; 
                                         int oldIndexRuleset = oldIndexFull - SourceContainer.GroupCount;
                                         SourceContainer.RemoveRulesetAt(oldIndexRuleset);
 
@@ -3639,7 +3640,8 @@ namespace DataManagerGUI
                                     //add the Ruleset to the Group/Collection it's dropped on
                                     DestinationContainer.InsertGroup(newIndexFull, newGroup);
                                     //remove the ruleset from it's own Group/Collection
-                                    var oldIndex = newIndexFull <= NewNode.Index ? NewNode.Index + 1 : NewNode.Index;
+                                    //we add 1 within the same container because we inserted the new one already
+                                    var oldIndex = DestinationContainer == SourceContainer && newIndexFull <= NewNode.Index ? NewNode.Index + 1 : NewNode.Index;
                                     SourceContainer.RemoveGroupAt(oldIndex);
 
                                     //add the node to the tree
