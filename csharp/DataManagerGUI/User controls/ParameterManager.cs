@@ -733,6 +733,8 @@ namespace DataManagerGUI
                     switch (cmbModifier.Text)
                     {
                         case "Add":
+                        case "StartsWithAnyOf":
+                        case "NotStartsWithAnyOf":
                         case "ContainsAnyOf":
                         case "NotContainsAnyOf":
                         case "ContainsAllOf":
