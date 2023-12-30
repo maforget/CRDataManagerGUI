@@ -170,6 +170,7 @@
             // 
             // txtMultiValue
             // 
+            this.txtMultiValue.ContextMenuStrip = this.contextMenuStrip1;
             this.txtMultiValue.HideSelection = false;
             this.txtMultiValue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtMultiValue.Location = new System.Drawing.Point(3, 3);
@@ -355,6 +356,7 @@
             // 
             // txtTextValue
             // 
+            this.txtTextValue.ContextMenuStrip = this.contextMenuStrip1;
             this.txtTextValue.HideSelection = false;
             this.txtTextValue.Location = new System.Drawing.Point(4, 3);
             this.txtTextValue.Name = "txtTextValue";
