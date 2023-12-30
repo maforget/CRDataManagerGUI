@@ -1068,6 +1068,7 @@ namespace DataManagerGUI
         {
             txtBeingEdited = (TextBox)contextMenuStrip1.SourceControl;
             tsmiAddFieldValue.DropDownItems.Clear();
+            tsmiAddFieldValue.Enabled = true;
             List<string> tmpStrings = new List<string>();
             switch (Global.GetKeyType(cmbField.Text))
             {
@@ -1129,6 +1130,9 @@ namespace DataManagerGUI
 
                     break;
             }
+
+            if(tsmiAddFieldValue.DropDownItems.Count == 0)
+                tsmiAddFieldValue.Enabled = false;
         }
 
         private void MenuItemCalcOther_Click(object sender, EventArgs e)
