@@ -320,7 +320,7 @@ namespace DataManagerGUI
             pnlCalcValue.Visible = false;
             pnlSelectableValue.Visible = false;
             regExVarReplace1.Visible = false;
-            
+
             //clean all values
             //txtMultiValue.Text = "";
             //txtReplaceNewValue.Text = "";
@@ -341,6 +341,7 @@ namespace DataManagerGUI
                     {
                         pnlReplaceValue.Visible = true;
                         string[] splitStr = txtTextValue.Text.Split(new string[] { Global.DELIMITER }, 2, StringSplitOptions.None);
+                        txtReplaceNewValue.Text = string.Empty;
                         if (splitStr.Length > 0)
                             txtReplaceOldValue.Text = splitStr[0];
                         if (splitStr.Length > 1)
@@ -385,6 +386,7 @@ namespace DataManagerGUI
                     {
                         pnlReplaceValue.Visible = true;
                         string[] splitStr = txtTextValue.Text.Split(new string[] { Global.DELIMITER }, 2, StringSplitOptions.None);
+                        txtReplaceNewValue.Text = string.Empty;
                         if (splitStr.Length > 0)
                             txtReplaceOldValue.Text = splitStr[0];
                         if (splitStr.Length > 1)
@@ -569,6 +571,7 @@ namespace DataManagerGUI
                     {
                         case "RegexReplace":
                         case "Replace":
+                            txtReplaceNewValue.Text = string.Empty;
                             if (tmp.Length > 0)
                                 txtReplaceOldValue.Text = tmp[0];
                             if (tmp.Length > 1)
@@ -601,6 +604,7 @@ namespace DataManagerGUI
                         case "RegexReplace":
                         case "Replace":
                             {
+                                txtReplaceNewValue.Text = string.Empty;
                                 if (tmp.Length > 0)
                                     txtReplaceOldValue.Text = tmp[0];
                                 if (tmp.Length > 1)
