@@ -428,6 +428,16 @@ namespace DataManagerGUI
                         pnlNumericRange.Visible = true;
                         numNumericRangeUpper_ValueChanged(sender, e);
                     }
+                    else if (cmbModifier.Text == "Replace" || cmbModifier.Text == "RegexReplace")
+                    {
+                        pnlReplaceValue.Visible = true;
+                        string[] splitStr = txtTextValue.Text.Split(new string[] { Global.DELIMITER }, 2, StringSplitOptions.None);
+                        txtReplaceNewValue.Text = string.Empty;
+                        if (splitStr.Length > 0)
+                            txtReplaceOldValue.Text = splitStr[0];
+                        if (splitStr.Length > 1)
+                            txtReplaceNewValue.Text = splitStr[1];
+                    }
                     else if (Global.MultiParamKeyModifiers.Contains(cmbModifier.Text))
                     {
                         pnlMultiValues.Visible = true;
@@ -624,6 +634,14 @@ namespace DataManagerGUI
                     {
                         case "Calc":
                             txtCalcValue.Text = strValue;
+                            break;
+                        case "RegexReplace":
+                        case "Replace":
+                            txtReplaceNewValue.Text = string.Empty;
+                            if (tmp.Length > 0)
+                                txtReplaceOldValue.Text = tmp[0];
+                            if (tmp.Length > 1)
+                                txtReplaceNewValue.Text = tmp[1];
                             break;
                         default:
                             switch (cmbField.Text)
@@ -975,7 +993,7 @@ namespace DataManagerGUI
             keyType tmpKey = Global.GetKeyType(cmbField.Text);
             if ((cmbField.SelectedIndex < 0 && tmpKey != keyType.Custom) || cmbModifier.SelectedIndex < 0) return;
 
-            if ((tmpKey == keyType.List || tmpKey == keyType.String || tmpKey == keyType.Custom) && cmbModifier.Text.Contains("Replace"))
+            if ((tmpKey == keyType.List || tmpKey == keyType.String || tmpKey == keyType.NumericString || tmpKey == keyType.Custom) && cmbModifier.Text.Contains("Replace"))
                 txtTextValue.Text = txtReplaceOldValue.Text + Global.DELIMITER + txtReplaceNewValue.Text;
         }
 
@@ -984,7 +1002,7 @@ namespace DataManagerGUI
             keyType tmpKey = Global.GetKeyType(cmbField.Text);
             if ((cmbField.SelectedIndex < 0 && tmpKey != keyType.Custom) || cmbModifier.SelectedIndex < 0) return;
 
-            if ((tmpKey == keyType.List || tmpKey == keyType.String || tmpKey == keyType.Custom) && cmbModifier.Text.Contains("Replace"))
+            if ((tmpKey == keyType.List || tmpKey == keyType.String || tmpKey == keyType.NumericString || tmpKey == keyType.Custom) && cmbModifier.Text.Contains("Replace"))
                 txtTextValue.Text = txtReplaceOldValue.Text + Global.DELIMITER + txtReplaceNewValue.Text;
         }
 
