@@ -36,13 +36,13 @@ namespace DataManagerGUI
         public static string[] StringKeysModifiers = new string[0];
         public static string[] StringValueModifiers = new string[0];
 
-
         public static string[] NumericKeys = new string[0];
         public static string[] NumericalKeysModifiers = new string[0];
         public static string[] NumericValueModifiers = new string[0];
 
-
-        public static string[] PsuedoNumericKeys = new string[0];
+        public static string[] PseudoNumericKeys = new string[0];
+        public static string[] PseudoNumericKeyModifiers = new string[0];
+        public static string[] PseudoNumericValueModifiers = new string[0];
 
         public static string[] ListKeys = new string[0];
         public static string[] ListKeyModifiers = new string[0];
@@ -55,7 +55,6 @@ namespace DataManagerGUI
         public static string[] MangaYesNoKeys = new string[0];
         public static string[] MangaYesNoKeyModifiers = new string[0];
         public static string[] MangaYesNoValueModifiers = new string[0];
-
 
         public static string[] LanguageISOKeys = new string[0];
         public static string[] LanguageISOKeyModifiers = new string[0];
@@ -86,11 +85,13 @@ namespace DataManagerGUI
                 case keyType.String:
                     arrAllowedModifiers = new List<string>(StringKeysModifiers);
                     break;
+                case keyType.NumericString:
+                    arrAllowedModifiers = new List<string>(PseudoNumericKeyModifiers);
+                    break;
                 case keyType.Bool:
                     arrAllowedModifiers = new List<string>(BoolKeyModifiers);
                     break;
                 case keyType.Numeric:
-                case keyType.NumericString:
                     arrAllowedModifiers = new List<string>(NumericalKeysModifiers);
                     break;
                 case keyType.List:
@@ -129,11 +130,13 @@ namespace DataManagerGUI
                 case keyType.String:
                     arrAllowedModifiers = new List<string>(StringValueModifiers);
                     break;
+                case keyType.NumericString:
+                    arrAllowedModifiers = new List<string>(PseudoNumericValueModifiers);
+                    break;
                 case keyType.Bool:
                     arrAllowedModifiers = new List<string>(BoolValueModifiers);
                     break;
                 case keyType.Numeric:
-                case keyType.NumericString:
                     arrAllowedModifiers = new List<string>(NumericValueModifiers);
                     break;
                 case keyType.List:
@@ -247,6 +250,12 @@ namespace DataManagerGUI
                     allModifiers.Add(item);
             }
 
+            foreach (string item in PseudoNumericValueModifiers)
+            {
+                if (!allModifiers.Contains(item))
+                    allModifiers.Add(item);
+            }
+
             allModifiers.Sort();
             return allModifiers.ToArray();
         }
@@ -284,7 +293,7 @@ namespace DataManagerGUI
                 return keyType.DateTime;
             else if (StringKeys.Contains(strAllowedKey))
                 return keyType.String;
-            else if (PsuedoNumericKeys.Contains(strAllowedKey))
+            else if (PseudoNumericKeys.Contains(strAllowedKey))
                 return keyType.NumericString;
             else return keyType.Custom;
         }
@@ -420,7 +429,7 @@ namespace DataManagerGUI
                                     ListKeys = strValue.Split(new string[] { "," }, StringSplitOptions.None);
                                     break;
                                 case "pseudonumericalkeys":
-                                    PsuedoNumericKeys = strValue.Split(new string[] { "," }, StringSplitOptions.None);
+                                    PseudoNumericKeys = strValue.Split(new string[] { "," }, StringSplitOptions.None);
                                     break;
                                 case "yesnokeys":
                                     YesNoKeys = strValue.Split(new string[] { "," }, StringSplitOptions.None);
@@ -442,6 +451,9 @@ namespace DataManagerGUI
                                     break;
                                 case "allowedkeymodifiersnumeric":
                                     NumericalKeysModifiers = strValue.Split(new string[] { "," }, StringSplitOptions.None);
+                                    break;
+                                case "allowedkeymodifierspseudonumeric":
+                                    PseudoNumericKeyModifiers = strValue.Split(new string[] { "," }, StringSplitOptions.None);
                                     break;
                                 case "allowedkeymodifierlanguageiso":
                                     LanguageISOKeyModifiers = strValue.Split(new string[] { "," }, StringSplitOptions.None);
@@ -472,6 +484,9 @@ namespace DataManagerGUI
                                     break;
                                 case "allowedvalmodifiersnumeric":
                                     NumericValueModifiers = strValue.Split(new string[] { "," }, StringSplitOptions.None);
+                                    break;
+                                case "allowedvalmodifierspseudonumeric":
+                                    PseudoNumericValueModifiers = strValue.Split(new string[] { "," }, StringSplitOptions.None);
                                     break;
                                 case "allowedvalmodifiers":
                                     AllowedValueModifiers = strValue.Split(new string[] { "," }, StringSplitOptions.None);

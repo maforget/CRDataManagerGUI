@@ -908,7 +908,7 @@ namespace DataManagerGUI
                 case keyType.Numeric:
                     cmbTextValue.DropDownStyle = ComboBoxStyle.DropDown;
                     List<string> tmpStr = new List<string>(Global.NumericKeys);
-                    tmpStr.AddRange(Global.PsuedoNumericKeys);
+                    tmpStr.AddRange(Global.PseudoNumericKeys);
                     tmpStr.Sort();
                     for (int i = 0; i < tmpStr.Count; i++)
                         cmbTextValue.Items.Add("{" + tmpStr[i] + "}");
@@ -1105,7 +1105,7 @@ namespace DataManagerGUI
                     tsmiPaste.Enabled = Clipboard.ContainsText();
                     //only allow numeric items
                     tmpStrings = new List<string>(Global.NumericKeys);
-                    tmpStrings.AddRange(Global.PsuedoNumericKeys);
+                    tmpStrings.AddRange(Global.PseudoNumericKeys);
                     tmpStrings.Sort();
                     for (int i = 0; i < tmpStrings.Count; i++)
                     {
