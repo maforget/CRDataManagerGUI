@@ -356,7 +356,6 @@ namespace DataManagerGUI
                     {
                         pnlMultiValues.Visible = true;
                         txtMultiValue.Text = txtTextValue.Text;
-                        txtMultiValue_TextChanged(sender, e);
                     }
                     else
                         switch (cmbModifier.Text)
@@ -396,7 +395,6 @@ namespace DataManagerGUI
                     {
                         pnlMultiValues.Visible = true;
                         txtMultiValue.Text = txtTextValue.Text;
-                        txtMultiValue_TextChanged(sender, e);
                     }
                     else
                         switch (cmbModifier.Text)
@@ -442,15 +440,13 @@ namespace DataManagerGUI
                     {
                         pnlMultiValues.Visible = true;
                         txtMultiValue.Text = txtTextValue.Text;
-                        txtMultiValue_TextChanged(sender, e);
                     }
                     else
                         switch (cmbModifier.Text)
                         {
                             case "Calc":
                                 pnlCalcValue.Visible = true;
-                                txtCalcValue.ReadOnly = false;
-                                txtCalcValue_TextChanged(sender, e);
+                                txtCalcValue.Text = txtTextValue.Text;
                                 break;
                             case "SetValue":
                                 pnlNumericValue.Visible = true;
@@ -494,8 +490,7 @@ namespace DataManagerGUI
                             break;
                         case "Calc":
                             pnlCalcValue.Visible = true;
-                            txtCalcValue.ReadOnly = false;
-                            txtCalcValue_TextChanged(sender, e);
+                            txtCalcValue.Text = txtTextValue.Text;
                             break;
                         default:
                             pnlDateTimeValue.Visible = true;
@@ -509,7 +504,6 @@ namespace DataManagerGUI
                     {
                         pnlMultiValues.Visible = true;
                         txtMultiValue.Text = txtTextValue.Text;
-                        txtMultiValue_TextChanged(sender, e);
                     }
                     else
                         switch (cmbModifier.Text)
