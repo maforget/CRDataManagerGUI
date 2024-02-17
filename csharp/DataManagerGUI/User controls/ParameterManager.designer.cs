@@ -207,15 +207,20 @@
             0,
             131072});
             this.numNumericRangeLower.Minimum = new decimal(new int[] {
-            10,
+            100,
             0,
             0,
-            -2147418112});
+            -2147352576});
             this.numNumericRangeLower.Name = "numNumericRangeLower";
             this.numNumericRangeLower.Size = new System.Drawing.Size(77, 20);
             this.numNumericRangeLower.TabIndex = 10;
             this.numNumericRangeLower.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numNumericRangeLower.ThousandsSeparator = true;
+            this.numNumericRangeLower.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147352576});
             this.numNumericRangeLower.ValueChanged += new System.EventHandler(this.numNumericRangeLower_ValueChanged);
             // 
             // numNumericRangeUpper
@@ -242,6 +247,11 @@
             this.numNumericRangeUpper.TabIndex = 9;
             this.numNumericRangeUpper.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numNumericRangeUpper.ThousandsSeparator = true;
+            this.numNumericRangeUpper.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147352576});
             this.numNumericRangeUpper.ValueChanged += new System.EventHandler(this.numNumericRangeUpper_ValueChanged);
             // 
             // lblNumericRangeFrom
@@ -281,14 +291,19 @@
             0,
             131072});
             this.numNumericValue.Minimum = new decimal(new int[] {
-            1,
+            100,
             0,
             0,
-            -2147483648});
+            -2147352576});
             this.numNumericValue.Name = "numNumericValue";
             this.numNumericValue.Size = new System.Drawing.Size(214, 20);
             this.numNumericValue.TabIndex = 0;
             this.numNumericValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numNumericValue.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147352576});
             this.numNumericValue.ValueChanged += new System.EventHandler(this.numNumericValue_ValueChanged);
             // 
             // pnlDateTimeRange

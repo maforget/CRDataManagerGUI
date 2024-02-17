@@ -84,16 +84,6 @@ namespace DataManagerGUI
         {
             return Global.GetKeyType(cmbField.Text);
         }
-        private void cmbField_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string PreviousModifier = cmbModifier.Text;
-
-            FillModifiers();
-
-            if (cmbModifier.Items.Contains(PreviousModifier))
-                cmbModifier.SelectedItem = PreviousModifier;
-        }
-
         #region Dynamic Sizing
 
         private void pnlField_SizeChanged(object sender, EventArgs e)
@@ -206,6 +196,17 @@ namespace DataManagerGUI
             regExVarReplace1.Location = panelLocations;
         }
 
+        private void pnlCalcValue_SizeChanged(object sender, EventArgs e)
+        {
+            txtCalcValue.Size = new Size(pnlCalcValue.Width - 6, 20);
+            txtCalcValue.Location = new Point(3, 3);
+        }
+
+        private void pnlNumericValue_SizeChanged(object sender, EventArgs e)
+        {
+            numNumericValue.Size = new Size(pnlNumericValue.Width - 3, 20);
+            numNumericValue.Location = new Point(3, 3);
+        }
         #endregion
 
         private void btnMultiValueEdit_Click(object sender, EventArgs e)
@@ -256,56 +257,24 @@ namespace DataManagerGUI
             }
         }
 
-        private void txtMultiValue_TextChanged(object sender, EventArgs e)
+        private void cmbField_SelectedIndexChanged(object sender, EventArgs e)
         {
-            keyType FieldType = Global.GetKeyType(cmbField.Text);
-            if ((cmbField.SelectedIndex < 0 && FieldType !=  keyType.Custom) || cmbModifier.SelectedIndex < 0) return;
+            string PreviousModifier = cmbModifier.Text;
 
-            switch (FieldType)
-            {
-                case keyType.Custom:
-                case keyType.String:
-                case keyType.List:
-                    switch (cmbModifier.Text)
-                    {
-                        case "IsAnyOf":
-                        case "NotIsAnyOf":
-                        case "StartsWithAnyOf":
-                        case "NotStartsWithAnyOf":
-                        case "ContainsAnyOf":
-                        case "NotContainsAnyOf":
-                        case "ContainsAllOf":
-                        case "Add":
-                            txtTextValue.Text = txtMultiValue.Text;
-                            break;
-                        default:
-                            break;
+            FillModifiers();
 
-                    }
-                    break;
-                case keyType.Numeric:
-                case keyType.NumericString:
-                    switch (cmbModifier.Text)
-                    {
-                        case "IsAnyOf":
-                        case "NotIsAnyOf":
-                            txtTextValue.Text = txtMultiValue.Text;
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
-                case keyType.LanguageISO:
-                    txtTextValue.Text = txtMultiValue.Text;
-                    break;
-                default:
-                    break;
-            }
+            if (cmbModifier.Items.Contains(PreviousModifier))
+                cmbModifier.SelectedItem = PreviousModifier;
         }
 
         private void cmbModifier_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cmbField.Text)) return;
+            SetModifierPanels(cmbModifier.Text);
+            SetItemValue(txtTextValue.Text);
+        }
+
+        private void SetModifierPanels(string modifier)
+        {
             keyType FieldType = Global.GetKeyType(cmbField.Text);
 
             //kill all panels
@@ -328,194 +297,108 @@ namespace DataManagerGUI
             //txtTextValue.Text = "";
             //txtCalcValue.Text = "";
             cmbLimitedValues.Items.Clear();
-            numNumericValue.Value = new decimal(0);
+            numNumericValue.Value = new decimal(-1);
             dtDateTimeRangLower.Value = dtDateTimeRangLower.MinDate;
             dtDateTimeRangeUpper.Value = dtDateTimeRangeUpper.MinDate;
 
+            if (Global.MultiParamKeyModifiers.Contains(modifier) && !modifier.Contains("Range") && !modifier.Contains("Replace"))
+            {
+                pnlMultiValues.Visible = true;
+                return;
+            }
 
             switch (FieldType)
             {
                 case keyType.Custom:
                 case keyType.String:
-                    if (cmbModifier.Text == "Replace" || cmbModifier.Text == "RegexReplace")
-                    {
-                        pnlReplaceValue.Visible = true;
-                        string[] splitStr = txtTextValue.Text.Split(new string[] { Global.DELIMITER }, 2, StringSplitOptions.None);
-                        txtReplaceNewValue.Text = string.Empty;
-                        if (splitStr.Length > 0)
-                            txtReplaceOldValue.Text = splitStr[0];
-                        if (splitStr.Length > 1)
-                            txtReplaceNewValue.Text = splitStr[1];
-                    }
-                    else if (cmbModifier.Text == "RegExVarReplace" || cmbModifier.Text == "RegExVarAppend")
-                    {
-                        regExVarReplace1.Visible = true;
-                        regExVarReplace1.Results = txtTextValue.Text;
-                    }
-                    else if (Global.MultiParamKeyModifiers.Contains(cmbModifier.Text))
-                    {
-                        pnlMultiValues.Visible = true;
-                        txtMultiValue.Text = txtTextValue.Text;
-                    }
-                    else
-                        switch (cmbModifier.Text)
-                        {
-                            case "Calc":
-                                pnlCalcValue.Visible = true;
-                                txtCalcValue.Text = txtTextValue.Text;
-                                break;
-                            default:
-                                switch (_type)
-                                {
-                                    case ParameterType.Action:
-                                        pnlSelectableValue.Visible = true;
-                                        PopulateMultiSelect(Global.GetKeyType(cmbField.Text));
-                                        cmbTextValue.Text = txtTextValue.Text;
-                                        cmbTextValue.AutoCompleteCustomSource.Clear();
-                                        break;
-                                    default:
-                                        pnlTextValue.Visible = true;
-                                        break;
-                                }
-                                break;
-                        }
-                    break;
                 case keyType.List:
-                    if (cmbModifier.Text == "Replace" || cmbModifier.Text == "RegexReplace")
+                    switch (modifier)
                     {
-                        pnlReplaceValue.Visible = true;
-                        string[] splitStr = txtTextValue.Text.Split(new string[] { Global.DELIMITER }, 2, StringSplitOptions.None);
-                        txtReplaceNewValue.Text = string.Empty;
-                        if (splitStr.Length > 0)
-                            txtReplaceOldValue.Text = splitStr[0];
-                        if (splitStr.Length > 1)
-                            txtReplaceNewValue.Text = splitStr[1];
+                        case "Calc":
+                            pnlCalcValue.Visible = true;
+                            break;
+                        case "RegexReplace":
+                        case "Replace":
+                            pnlReplaceValue.Visible = true;
+                            break;
+                        case "Range":
+                        case "NotRange":
+                            pnlNumericRange.Visible = true;
+                            break;
+                        case "RegExVarReplace":
+                        case "RegExVarAppend":
+                            regExVarReplace1.Visible = true;
+                            break;
+                        default:
+                            switch (_type)
+                            {
+                                case ParameterType.Action:
+                                    pnlSelectableValue.Visible = true;
+                                    break;
+                                default:
+                                    pnlTextValue.Visible = true;
+                                    break;
+                            }
+                            break;
                     }
-                    else if (Global.MultiParamKeyModifiers.Contains(cmbModifier.Text))
-                    {
-                        pnlMultiValues.Visible = true;
-                        txtMultiValue.Text = txtTextValue.Text;
-                    }
-                    else
-                        switch (cmbModifier.Text)
-                        {
-                            case "Calc":
-                                pnlCalcValue.Visible = true;
-                                txtCalcValue.Text = txtTextValue.Text;
-                                break;
-                            default:
-                                switch (_type)
-                                {
-                                    case ParameterType.Action:
-                                        pnlSelectableValue.Visible = true;
-                                        PopulateMultiSelect(Global.GetKeyType(cmbField.Text));
-                                        cmbTextValue.Text = txtTextValue.Text;
-                                        cmbTextValue.AutoCompleteCustomSource.Clear();
-                                        break;
-                                    default:
-                                        pnlTextValue.Visible = true;
-                                        break;
-                                }
-                                break;
-                        }
                     break;
                 case keyType.Numeric:
                 case keyType.NumericString:
-                    if (cmbModifier.Text.Contains("Range"))
+                    switch (modifier)
                     {
-                        pnlNumericRange.Visible = true;
-                        numNumericRangeUpper_ValueChanged(sender, e);
+                        case "Calc":
+                            pnlCalcValue.Visible = true;
+                            break;
+                        case "RegexReplace":
+                        case "Replace":
+                            pnlReplaceValue.Visible = true;
+                            break;
+                        case "Range":
+                        case "NotRange":
+                            pnlNumericRange.Visible = true;
+                            break;
+                        case "SetValue":
+                            pnlNumericValue.Visible = true;
+                            break;
+                        default:
+                            switch (cmbField.Text)
+                            {
+                                case "CommunityRating":
+                                case "Rating":
+                                case "BookPrice":
+                                    pnlNumericValue.Visible = true;
+                                    break;
+                                default:
+                                    switch (_type)
+                                    {
+                                        case ParameterType.Action:
+                                            pnlSelectableValue.Visible = true;
+                                            break;
+                                        default:
+                                            pnlTextValue.Visible = true;
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
                     }
-                    else if (cmbModifier.Text == "Replace" || cmbModifier.Text == "RegexReplace")
-                    {
-                        pnlReplaceValue.Visible = true;
-                        string[] splitStr = txtTextValue.Text.Split(new string[] { Global.DELIMITER }, 2, StringSplitOptions.None);
-                        txtReplaceNewValue.Text = string.Empty;
-                        if (splitStr.Length > 0)
-                            txtReplaceOldValue.Text = splitStr[0];
-                        if (splitStr.Length > 1)
-                            txtReplaceNewValue.Text = splitStr[1];
-                    }
-                    else if (Global.MultiParamKeyModifiers.Contains(cmbModifier.Text))
-                    {
-                        pnlMultiValues.Visible = true;
-                        txtMultiValue.Text = txtTextValue.Text;
-                    }
-                    else
-                        switch (cmbModifier.Text)
-                        {
-                            case "Calc":
-                                pnlCalcValue.Visible = true;
-                                txtCalcValue.Text = txtTextValue.Text;
-                                break;
-                            case "SetValue":
-                                pnlNumericValue.Visible = true;
-                                numNumericValue_ValueChanged(numNumericValue, new EventArgs());
-                                break;
-                            default:
-                                switch (cmbField.Text)
-                                {
-                                    case "CommunityRating":
-                                    case "Rating":
-                                    case "BookPrice":
-                                        pnlNumericValue.Visible = true;
-                                        numNumericValue_ValueChanged(sender, e);
-                                        break;
-                                    default:
-                                        switch (_type)
-                                        {
-                                            case ParameterType.Action:
-                                                pnlSelectableValue.Visible = true;
-                                                PopulateMultiSelect(Global.GetKeyType(cmbField.Text));
-                                                cmbTextValue.Text = txtTextValue.Text;
-                                                break;
-                                            default:
-                                                pnlTextValue.Visible = true;
-                                                break;
-                                        }
-                                        break;
-                                }
-                                break;
-                        }
                     break;
                 case keyType.DateTime:
-                    switch (cmbModifier.Text)
+                    switch (modifier)
                     {
                         case "Range":
                         case "NotRange":
                             pnlDateTimeRange.Visible = true;
-                            dtDateTimeRangLower.Value = dtDateTimeRangLower.MinDate;
-                            dtDateTimeRangeUpper.Value = dtDateTimeRangeUpper.MinDate;
-                            dtDateTimeRangeUpper_ValueChanged(sender, e);
                             break;
                         case "Calc":
                             pnlCalcValue.Visible = true;
-                            txtCalcValue.Text = txtTextValue.Text;
                             break;
                         default:
                             pnlDateTimeValue.Visible = true;
-                            dtDateTimeValue_ValueChanged(sender, e);
-
                             break;
                     }
                     break;
                 case keyType.LanguageISO:
-                    if (Global.MultiParamKeyModifiers.Contains(cmbModifier.Text))
-                    {
-                        pnlMultiValues.Visible = true;
-                        txtMultiValue.Text = txtTextValue.Text;
-                    }
-                    else
-                        switch (cmbModifier.Text)
-                        {
-                            default:
-                                pnlLimitedValues.Visible = true;
-                                cmbLimitedValues.Items.AddRange(Global.GetAcceptedValues(cmbField.Text));
-                                if (cmbLimitedValues.Items.Count > 0)
-                                    cmbLimitedValues.SelectedIndex = 0;
-                                break;
-                        }
-                    break;
                 case keyType.Bool:
                 case keyType.YesNo:
                 case keyType.MangaYesNo:
@@ -531,11 +414,6 @@ namespace DataManagerGUI
 
         public void SetDataManagerParameter(dmParameters dmpItem)
         {
-            //if (dmpItem.Type != this.ParameterTypeRestriction)
-            //{
-            //    throw new Exception(string.Format("Expected a '{0}', but recieved a '{1}'", Enum.GetName(typeof(ParameterType), ParameterTypeRestriction), Enum.GetName(typeof(ParameterType), dmpItem.Type)));
-            //}
-            //else
             SetItem(dmpItem);
         }
 
@@ -550,27 +428,41 @@ namespace DataManagerGUI
             }
 
             cmbModifier.SelectedItem = dmpItem.Modifier;
+            SetItemValue(dmpItem.Value);
+        }
 
+        private void SetItemValue(string value)
+        {
             switch (_type)
             {
                 case ParameterType.Action:
-                    SetActionValue(dmpItem.Value);
+                    SetActionValue(value);
                     break;
                 case ParameterType.Rule:
-                    SetRuleValue(dmpItem.Value);
+                    SetRuleValue(value);
                     break;
             }
         }
 
         private void SetActionValue(string strValue)
         {
-            string[] tmp = strValue.Split(new string[] { Global.DELIMITER }, StringSplitOptions.None);
+            keyType FieldType = Global.GetKeyType(cmbField.Text);
 
-            switch (Global.GetKeyType(cmbField.Text))
+            string[] tmp = strValue.Split(new string[] { Global.DELIMITER }, StringSplitOptions.None);
+            if (Global.MultiParamKeyModifiers.Contains(cmbModifier.Text)
+                && !cmbModifier.Text.Contains("Range")
+                && !cmbModifier.Text.Contains("Replace"))
+            {
+                txtMultiValue.Text = strValue;
+                return;
+            }
+
+            switch (FieldType)
             {
                 #region String Values
                 case keyType.Custom:
                 case keyType.String:
+                case keyType.NumericString:
                     switch (cmbModifier.Text)
                     {
                         case "RegexReplace":
@@ -593,7 +485,9 @@ namespace DataManagerGUI
                             txtMultiValue.Text = tmp.Join(Global.DELIMITER);
                             break;
                         default:
+                            PopulateMultiSelect(Global.GetKeyType(cmbField.Text));
                             cmbTextValue.Text = strValue;
+                            cmbTextValue.AutoCompleteCustomSource.Clear();
                             break;
                     }
                     break;
@@ -616,14 +510,15 @@ namespace DataManagerGUI
                             }
                             break;
                         default:
+                            PopulateMultiSelect(Global.GetKeyType(cmbField.Text));
                             cmbTextValue.Text = strValue;
+                            cmbTextValue.AutoCompleteCustomSource.Clear();
                             break;
                     }
                     break;
                 #endregion
                 #region Numeric
                 case keyType.Numeric:
-                case keyType.NumericString:
                     switch (cmbModifier.Text)
                     {
                         case "Calc":
@@ -652,7 +547,7 @@ namespace DataManagerGUI
                                 default:
                                     if (int.TryParse(strValue, out int val2))
                                         numNumericValue.Value = val2;
-                                    cmbTextValue.Text = strValue;
+                                    numNumericValue.Value = new decimal(0);
                                     break;
                             }
                             break;
@@ -707,6 +602,14 @@ namespace DataManagerGUI
 
             string[] tmp = p.Split(new string[] { Global.DELIMITER }, StringSplitOptions.None);
 
+            if (Global.MultiParamKeyModifiers.Contains(cmbModifier.Text)
+                && !cmbModifier.Text.Contains("Range")
+                && !cmbModifier.Text.Contains("Replace"))
+            {
+                txtMultiValue.Text = p;
+                return;
+            }
+
             switch (FieldType)
             {
                 case keyType.Custom:
@@ -733,15 +636,7 @@ namespace DataManagerGUI
                                 txtReplaceOldValue.Text = strSplit[1];
                             break;
                         default:
-                            switch (_type)
-                            {
-                                case ParameterType.Action:
-                                    cmbTextValue.Text = p;
-                                    break;
-                                default:
-                                    txtTextValue.Text = p;
-                                    break;
-                            }
+                            txtTextValue.Text = p;
                             break;
                     }
                     break;
@@ -767,15 +662,7 @@ namespace DataManagerGUI
                                 txtReplaceOldValue.Text = strSplit[1];
                             break;
                         default:
-                            switch (_type)
-                            {
-                                case ParameterType.Action:
-                                    cmbTextValue.Text = p;
-                                    break;
-                                default:
-                                    txtTextValue.Text = p;
-                                    break;
-                            }
+                            txtTextValue.Text = p;
                             break;
                     }
                     break;
@@ -824,15 +711,7 @@ namespace DataManagerGUI
                                     numNumericValue.Value = new decimal(tmpFloat);
                                     break;
                                 default:
-                                    switch (_type)
-                                    {
-                                        case ParameterType.Action:
-                                            cmbTextValue.Text = p;
-                                            break;
-                                        default:
-                                            txtTextValue.Text = p;
-                                            break;
-                                    }
+                                    txtTextValue.Text = p;
                                     break;
                             }
                             break;
@@ -841,7 +720,6 @@ namespace DataManagerGUI
                 case keyType.DateTime:
                     switch (cmbModifier.Text)
                     {
-
                         case "Range":
                             DateTime dt1;
                             DateTime dt2;
@@ -900,6 +778,7 @@ namespace DataManagerGUI
                     break;
             }
         }
+
         private void PopulateMultiSelect(keyType type)
         {
             cmbTextValue.Items.Clear();
@@ -908,6 +787,7 @@ namespace DataManagerGUI
                 case keyType.Custom:
                 case keyType.String:
                 case keyType.List:
+                case keyType.NumericString:
                     cmbTextValue.DropDownStyle = ComboBoxStyle.DropDown;
                     for (int i = 0; i < Global.AllowedKeys.Length; i++)
                     {
@@ -935,6 +815,7 @@ namespace DataManagerGUI
             }
 
         }
+
         public dmParameters GetDataManagerParameters()
         {
             string tmpString = string.Format("<<{0}.{1}:{2}>>", new string[] { cmbField.Text, cmbModifier.Text, txtTextValue.Text });
@@ -946,10 +827,52 @@ namespace DataManagerGUI
                 return new dmAction(tmpString);
         }
 
-        private void pnlNumericValue_SizeChanged(object sender, EventArgs e)
+        #region Value Changed
+        private void txtMultiValue_TextChanged(object sender, EventArgs e)
         {
-            numNumericValue.Size = new Size(pnlNumericValue.Width - 3, 20);
-            numNumericValue.Location = new Point(3, 3);
+            keyType FieldType = Global.GetKeyType(cmbField.Text);
+            if ((cmbField.SelectedIndex < 0 && FieldType != keyType.Custom) || cmbModifier.SelectedIndex < 0) return;
+
+            switch (FieldType)
+            {
+                case keyType.Custom:
+                case keyType.String:
+                case keyType.List:
+                    switch (cmbModifier.Text)
+                    {
+                        case "IsAnyOf":
+                        case "NotIsAnyOf":
+                        case "StartsWithAnyOf":
+                        case "NotStartsWithAnyOf":
+                        case "ContainsAnyOf":
+                        case "NotContainsAnyOf":
+                        case "ContainsAllOf":
+                        case "Add":
+                            txtTextValue.Text = txtMultiValue.Text;
+                            break;
+                        default:
+                            break;
+
+                    }
+                    break;
+                case keyType.Numeric:
+                case keyType.NumericString:
+                    switch (cmbModifier.Text)
+                    {
+                        case "IsAnyOf":
+                        case "NotIsAnyOf":
+                            txtTextValue.Text = txtMultiValue.Text;
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case keyType.LanguageISO:
+                    txtTextValue.Text = txtMultiValue.Text;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void cmbLimitedValues_SelectedIndexChanged(object sender, EventArgs e)
@@ -989,7 +912,7 @@ namespace DataManagerGUI
 
             if ((tmpKey == keyType.List || tmpKey == keyType.String || tmpKey == keyType.NumericString || tmpKey == keyType.Custom) && cmbModifier.Text.Contains("Replace"))
                 txtTextValue.Text = txtReplaceOldValue.Text + Global.DELIMITER + txtReplaceNewValue.Text;
-        }
+            }
 
         private void txtReplaceNewValue_TextChanged(object sender, EventArgs e)
         {
@@ -998,7 +921,7 @@ namespace DataManagerGUI
 
             if ((tmpKey == keyType.List || tmpKey == keyType.String || tmpKey == keyType.NumericString || tmpKey == keyType.Custom) && cmbModifier.Text.Contains("Replace"))
                 txtTextValue.Text = txtReplaceOldValue.Text + Global.DELIMITER + txtReplaceNewValue.Text;
-        }
+            }
 
         private void dtDateTimeValue_ValueChanged(object sender, EventArgs e)
         {
@@ -1074,12 +997,21 @@ namespace DataManagerGUI
             }
         }
 
-        private void pnlCalcValue_SizeChanged(object sender, EventArgs e)
+        private void cmbTextValue_TextChanged(object sender, EventArgs e)
         {
-            txtCalcValue.Size = new Size(pnlCalcValue.Width - 6, 20);
-            txtCalcValue.Location = new Point(3, 3);
+            if ((cmbField.SelectedIndex > -1 && (Global.GetKeyType(cmbField.Text) == keyType.String || Global.GetKeyType(cmbField.Text) == keyType.List)
+                || Global.GetKeyType(cmbField.Text) == keyType.Custom || Global.GetKeyType(cmbField.Text) == keyType.NumericString
+                || (Global.GetKeyType(cmbField.Text) == keyType.Numeric && (cmbField.Text != "BookPrice" && cmbField.Text != "Rating" && cmbField.Text != "CommunityRating"))))
+                txtTextValue.Text = cmbTextValue.Text;
         }
 
+        private void regExVarReplace1_RegularExpressionChanged(object sender, EventArgs e)
+        {
+            txtTextValue.Text = regExVarReplace1.Results;
+        }
+        #endregion
+
+        #region Menu
         private void cmsCalcMenu_Opening(object sender, CancelEventArgs e)
         {
             txtBeingEdited = (TextBox)contextMenuStrip1.SourceControl;
@@ -1147,7 +1079,7 @@ namespace DataManagerGUI
                     break;
             }
 
-            if(tsmiAddFieldValue.DropDownItems.Count == 0)
+            if (tsmiAddFieldValue.DropDownItems.Count == 0)
                 tsmiAddFieldValue.Enabled = false;
         }
 
@@ -1205,19 +1137,7 @@ namespace DataManagerGUI
             }
             txtBeingEdited = null;
         }
-
-        private void cmbTextValue_TextChanged(object sender, EventArgs e)
-        {
-            if ((cmbField.SelectedIndex > -1 && (Global.GetKeyType(cmbField.Text) == keyType.String || Global.GetKeyType(cmbField.Text) == keyType.List)
-                || Global.GetKeyType(cmbField.Text) == keyType.Custom
-                || (Global.GetKeyType(cmbField.Text) == keyType.Numeric && (cmbField.Text != "BookPrice" && cmbField.Text != "Rating" && cmbField.Text != "CommunityRating"))))
-                txtTextValue.Text = cmbTextValue.Text;
-        }
-
-        private void regExVarReplace1_RegularExpressionChanged(object sender, EventArgs e)
-        {
-            txtTextValue.Text = regExVarReplace1.Results;
-        }
+        #endregion
 
         private void cmbField_Validated(object sender, EventArgs e)
         {
