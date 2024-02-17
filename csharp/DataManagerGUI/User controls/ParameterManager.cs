@@ -312,6 +312,7 @@ namespace DataManagerGUI
                 case keyType.Custom:
                 case keyType.String:
                 case keyType.List:
+                case keyType.NumericString:
                     switch (modifier)
                     {
                         case "Calc":
@@ -343,7 +344,6 @@ namespace DataManagerGUI
                     }
                     break;
                 case keyType.Numeric:
-                case keyType.NumericString:
                     switch (modifier)
                     {
                         case "Calc":
