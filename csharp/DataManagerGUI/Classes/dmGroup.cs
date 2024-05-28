@@ -182,9 +182,9 @@ namespace DataManagerGUI
         #endregion
 
         #region Overrides
-        public override void FromXML(XElement xParameters)
+        public override void FromXML(XElement xParameters, bool merge = false)
         {
-            base.FromXML(xParameters);
+            base.FromXML(xParameters, merge);
             this.FiltersAndDefaults = new dmRuleset(this, xParameters.Element("filtersanddefaults"));
         }
 

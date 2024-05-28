@@ -29,7 +29,7 @@ namespace DataManagerGUI
             FromXML(xParameters);
         }
 
-        public virtual void FromXML(XElement xParameters)
+        public virtual void FromXML(XElement xParameters, bool merge = false)
         {
             if (xParameters.Attribute("name") != null)
                 this.Name = xParameters.Attribute("name").Value;
@@ -54,6 +54,16 @@ namespace DataManagerGUI
         {
             this.Name = "";
             this.Comment = "";
+        }
+
+        protected bool ValidateMerge<T>(XElement node, IEnumerable<T> list, bool merge) where T : dmNode
+        {
+            string nodeName = node.Attribute("name")?.Value;
+
+            if (merge && !string.IsNullOrEmpty(nodeName))
+                return !list.Any(g => g.Name == nodeName);
+
+            return true;
         }
     }
 }

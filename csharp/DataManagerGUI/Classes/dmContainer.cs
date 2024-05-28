@@ -368,14 +368,21 @@ namespace DataManagerGUI
         }
 
         #region Overrides
-        public override void FromXML(System.Xml.Linq.XElement xParameters)
+        public override void FromXML(XElement xParameters, bool merge = false)
         {
-            base.FromXML(xParameters);
+            base.FromXML(xParameters, merge);
 
             foreach (XElement group in xParameters.Elements("group"))
-                this.Groups.Add(new dmGroup(this, group));
+            {
+                if (ValidateMerge(group, this.Groups, merge))
+                    this.Groups.Add(new dmGroup(this, group));
+            }
+
             foreach (XElement ruleset in xParameters.Elements("ruleset"))
-                this.Rulesets.Add(new dmRuleset(this, ruleset));
+            {
+                if (ValidateMerge(ruleset, this.Rulesets, merge))
+                    this.Rulesets.Add(new dmRuleset(this, ruleset));
+            }
         }
 
         public override XElement ToXML(string strElementName)

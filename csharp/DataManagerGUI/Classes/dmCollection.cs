@@ -234,6 +234,19 @@ namespace DataManagerGUI
             }
         }
 
+        public void MergeXML(string masterRules)
+        {
+            try
+            {
+                XElement xe = XElement.Parse(masterRules);
+                this.FromXML(xe, true);
+            }
+            catch (XmlException e)
+            {
+                throw new Exception("NOT a v2 file", e);
+            }
+        }
+
         public void Import(string[] masterRules)
         {
             int i = 0;
@@ -411,9 +424,9 @@ namespace DataManagerGUI
             return xReturn;
         }
 
-        public override void FromXML(XElement xParameters)
+        public override void FromXML(XElement xParameters, bool merge = false)
         {
-            base.FromXML(xParameters);
+            base.FromXML(xParameters, merge);
             this.Version = xParameters.Attribute("version").Value;
             this.Disabled = new dmGroup(this, xParameters.Element("disabled"));
         }

@@ -4692,7 +4692,14 @@ namespace DataManagerGUI
                 {
                     tvCollectionTree.Nodes.Clear();
                     CollectionBinder.Clear();
-                    Collection.Merge(File.ReadAllLines(ofdOpen.FileName));
+                    try
+                    {
+                        Collection.MergeXML(File.ReadAllText(ofdOpen.FileName));
+                    }
+                    catch (Exception)
+                    {
+                        Collection.Merge(File.ReadAllLines(ofdOpen.FileName));
+                    }
                     CollectionBinder.Add(Collection);
                     PopulateTree();
                     currentRuleFile = "";

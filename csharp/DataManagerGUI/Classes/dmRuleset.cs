@@ -286,10 +286,10 @@ namespace DataManagerGUI
             return xReturn;
         }
 
-        public override void FromXML(XElement xParameters)
+        public override void FromXML(XElement xParameters, bool merge = false)
         {
             Clear();
-            base.FromXML(xParameters);
+            base.FromXML(xParameters, merge);
             this.RuleMode = (RulesetModes)Enum.Parse(typeof(RulesetModes), xParameters.Attribute("rulesetmode").Value);
             foreach (XElement item in xParameters.Elements("rule"))
                 this.Rules.Add(new dmRule(item));
