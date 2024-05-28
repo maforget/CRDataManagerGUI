@@ -4874,7 +4874,14 @@ namespace DataManagerGUI
                         {
                             tvCollectionTree.Nodes.Clear();
                             CollectionBinder.Clear();
-                            Collection.Import(File.ReadAllLines(ofdOpen.FileName));
+                            try
+                            {
+                                Collection.ImportXML(File.ReadAllText(ofdOpen.FileName));
+                            }
+                            catch (Exception)
+                            {
+                                Collection.Import(File.ReadAllLines(ofdOpen.FileName));
+                            }
                             CollectionBinder.Add(Collection);
                             PopulateTree();
                             FileChanged = true;

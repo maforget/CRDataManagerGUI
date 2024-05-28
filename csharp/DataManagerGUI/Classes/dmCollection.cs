@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 using System.Xml.Linq;
+using System.Xml;
 
 namespace DataManagerGUI
 {
@@ -270,6 +271,19 @@ namespace DataManagerGUI
             if (i < masterRules.Length)
             {
                 ParseResidual(masterRules, i, tmpVersion);
+            }
+        }
+
+        public void ImportXML(string masterRules)
+        {
+            try
+            {
+                XElement xe = XElement.Parse(masterRules);
+                this.FromXML(xe);
+            }
+            catch (XmlException e)
+            {
+                throw new Exception("NOT a v2 file", e);
             }
         }
 
