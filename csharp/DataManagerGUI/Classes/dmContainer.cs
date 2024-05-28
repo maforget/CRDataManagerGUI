@@ -204,7 +204,7 @@ namespace DataManagerGUI
                 }
             }
             nReturn++;
-            Parent.AddGroup(newGroup);
+            //Parent.AddGroup(newGroup);
 
             return nReturn;
         }
