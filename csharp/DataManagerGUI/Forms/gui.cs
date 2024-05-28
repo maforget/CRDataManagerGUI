@@ -5504,7 +5504,7 @@ namespace DataManagerGUI
                             {
                                 if (tmpQues.DialogResult == System.Windows.Forms.DialogResult.Yes)
                                 { tmp.Author = ((dmCollection)CollectionBinder.Current).Author; }
-                                File.WriteAllText(tmpSave.FileName, tmp.TextVersion);
+                                File.WriteAllText(tmpSave.FileName, tmp.GetGroupXML());
                             }
                         }
                     }

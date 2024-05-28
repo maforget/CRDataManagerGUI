@@ -85,6 +85,14 @@ namespace DataManagerGUI
             return strReturn;
         }
 
+        public string GetGroupXML()
+        {
+            Version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            XDocument x = new XDocument(new XDeclaration("1.0", "utf-8", "yes"));
+            x.Add(this.ToXML("group"));
+            return x.ToString();
+        }
+
         public dmCollection()
             : base(null)
         {
