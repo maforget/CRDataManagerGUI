@@ -26,6 +26,7 @@ namespace DataManagerGUI
             this.checkBox2.Checked = userInfo.BreakAfterFirstError;
             this.cbWriteDataManagerProcessed.Checked = userInfo.WriteDataManagerProcessed;
             this.cbCase.Checked = userInfo.CaseSensitive;
+            this.cbSaveLocation.Checked = userInfo.SaveLocationInStartupDir;
             this.textBox1.Text = uiInfo.DateTimeFormat;
             radioButton2.Checked = !userInfo.LogBookOnlyWhenValuesChanged;
             radioButton1.Checked = userInfo.LogBookOnlyWhenValuesChanged;
@@ -47,6 +48,7 @@ namespace DataManagerGUI
             userInfo.WriteDataManagerProcessed = this.cbWriteDataManagerProcessed.Checked;
             userInfo.LogBookOnlyWhenValuesChanged = radioButton1.Checked;
             userInfo.CaseSensitive = cbCase.Checked;
+            userInfo.SaveLocationInStartupDir = cbSaveLocation.Checked;
             Close();
         }
     }

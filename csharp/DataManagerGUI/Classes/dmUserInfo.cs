@@ -129,6 +129,21 @@ namespace DataManagerGUI
                     KeyStorage.Add("LogBookOnlyWhenValuesChanged", value.ToString());
             }
         }
+
+        public bool SaveLocationInStartupDir
+        {
+            get
+            {
+                if (KeyStorage.ContainsKey("SaveLocation"))
+                    return bool.Parse(KeyStorage["SaveLocation"]);
+                else
+                    return false;
+            }
+            set
+            {
+                KeyStorage["SaveLocation"] = value.ToString();
+            }
+        }
         Dictionary<string, List<string>> AutoCompleteStrings { get; set; }
 
         public dmUserInfo()
@@ -141,6 +156,7 @@ namespace DataManagerGUI
             DebugLevel = DebugLevel.StartupOnly;
             CaseSensitive = false;
             WriteDataManagerProcessed = false;
+            SaveLocationInStartupDir = false;
         }
 
         public bool ConfirmOverwrite 
