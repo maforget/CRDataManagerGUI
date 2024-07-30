@@ -312,7 +312,7 @@
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Debug Goto :Exit
 
-xcopy /s /y "$(ProjectDir)$(OutDir)*.exe" "$(SolutionDir)..\..\ComicRack\ComicRack\bin\Release\Data\Scripts\Data Manager\"
+xcopy /s /y "$(ProjectDir)$(OutDir)*.exe" "$(SolutionDir)..\..\ComicRack\ComicRack\bin\Release\net48\Data\Scripts\Data Manager\"
 xcopy /s /y "$(ProjectDir)$(OutDir)*.exe" "$(SolutionDir)..\..\CRDataManager\"
 
 :Exit</PostBuildEvent>
