@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+	<PlatformTarget>AnyCPU</PlatformTarget>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DataManagerGUI</RootNamespace>
     <AssemblyName>crdmgui</AssemblyName>
@@ -44,6 +44,12 @@
     <None Update="user.ini">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+	<EmbeddedResource Update="User controls\**\*.resx">
+		<LogicalName>$(RootNamespace).%(Filename).resources</LogicalName>
+	</EmbeddedResource>
+	<EmbeddedResource Update="Forms\**\*.resx">
+		<LogicalName>$(RootNamespace).%(Filename).resources</LogicalName>
+	</EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>if $(Configuration) == Debug Goto :Exit
