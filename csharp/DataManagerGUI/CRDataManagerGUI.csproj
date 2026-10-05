@@ -1,327 +1,56 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <TargetFramework>net48</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B313F337-EAF7-4516-BA61-0A96A265EAE1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DataManagerGUI</RootNamespace>
     <AssemblyName>crdmgui</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <FileAlignment>512</FileAlignment>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>none</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
+	</PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\AboutBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AboutBox.designer.cs">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User controls\TreeViewReorder.cs">
+    <Compile Update="User controls\TreeViewReorder.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utilities\ConfigReader.cs" />
-    <Compile Include="Forms\Question.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Question.designer.cs">
-      <DependentUpon>Question.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MultiEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MultiEdit.designer.cs">
-      <DependentUpon>MultiEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\gui.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Language Add.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Language Add.designer.cs">
-      <DependentUpon>Language Add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\RegExEditor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\RegExEditor.designer.cs">
-      <DependentUpon>RegExEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SettingsConfig.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SettingsConfig.designer.cs">
-      <DependentUpon>SettingsConfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TemplateNamer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TemplateNamer.designer.cs">
-      <DependentUpon>TemplateNamer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User controls\RegExVarReplace.cs">
+    <Compile Update="User controls\RegExVarReplace.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User controls\RegExVarReplace.designer.cs">
-      <DependentUpon>RegExVarReplace.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User controls\ParameterManager.cs">
+    <Compile Update="User controls\ParameterManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User controls\ParameterManager.designer.cs">
-      <DependentUpon>ParameterManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User controls\DateTimeSlicker.cs">
+    <Compile Update="User controls\DateTimeSlicker.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Classes\dmCollection.cs" />
-    <Compile Include="Classes\dmContainer.cs" />
-    <Compile Include="Classes\dmGroup.cs" />
-    <Compile Include="Classes\dmNode.cs" />
-    <Compile Include="Classes\dmParameters.cs" />
-    <Compile Include="Classes\dmRuleset.cs" />
-    <Compile Include="Classes\dmSearchResults.cs" />
-    <Compile Include="Classes\dmUserInfo.cs" />
-    <Compile Include="Utilities\DragHelper.cs" />
-    <Compile Include="Utilities\Extensions.cs" />
-    <Compile Include="Globals.cs" />
-    <Compile Include="Utilities\ItemType.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\PropertyComparer.cs" />
-    <Compile Include="Utilities\SortableBindingList.cs" />
-    <Compile Include="User controls\ToolStripNumericUpDown.cs">
+    <Compile Update="User controls\ToolStripNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Forms\AboutBox.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Question.resx">
-      <DependentUpon>Question.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MultiEdit.resx">
-      <DependentUpon>MultiEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\gui.resx">
-      <DependentUpon>gui.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Language Add.resx">
-      <DependentUpon>Language Add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RegExEditor.resx">
-      <DependentUpon>RegExEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SettingsConfig.resx">
-      <DependentUpon>SettingsConfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TemplateNamer.resx">
-      <DependentUpon>TemplateNamer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User controls\RegExVarReplace.resx">
-      <DependentUpon>RegExVarReplace.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User controls\ParameterManager.resx">
-      <DependentUpon>ParameterManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </None>
-    <None Include="app.config" />
-    <None Include="dataman.ini">
+    <None Update="dataman.ini">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Properties\DataSources\TextSearchResults.datasource" />
-    <None Include="Properties\DataSources\TreeSearchResults.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <None Include="user.ini">
+    <None Update="user.ini">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DataMan.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DataMan16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DataMan32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete_folder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Delete16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\directory.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\directory_opened.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Erase.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder_accept.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\folder_full.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\help.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\inventory.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Left.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Lightning.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\paste.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\question_mark.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Right.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Text.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Up.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\variables.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\warning.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Yes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\accept.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\accept_page.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add_page.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add_to_folder.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\block.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\comment.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cut.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icon.ico" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Debug Goto :Exit
+    <PostBuildEvent>if $(Configuration) == Debug Goto :Exit
 
-xcopy /s /y "$(ProjectDir)$(OutDir)*.exe" "$(SolutionDir)..\..\ComicRack\ComicRack\bin\Release\net48\Data\Scripts\Data Manager\"
-xcopy /s /y "$(ProjectDir)$(OutDir)*.exe" "$(SolutionDir)..\..\CRDataManager\"
+xcopy /s /y "$(OutDir)*.exe" "$(MSBuildProjectDirectory)\..\..\..\ComicRack\ComicRack\bin\Release\net48\Data\Scripts\Data Manager\"
+xcopy /s /y "$(OutDir)*.exe" "$(MSBuildProjectDirectory)\..\..\..\CRDataManager\"
 
 :Exit</PostBuildEvent>
   </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
